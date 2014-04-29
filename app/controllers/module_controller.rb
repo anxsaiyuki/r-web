@@ -12,16 +12,20 @@ class ModuleController < ApplicationController
   end
   
   def item
+  
 	render :layout => false
   end
   
   def menu
 	render :layout => false
   end
+
   
   def product
-	render :layout => false
+  @product = Product.all
+  render :layout => false
   end
+  
   
   def register
 	render :layout => false
