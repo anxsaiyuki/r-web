@@ -1,4 +1,6 @@
 Website::Application.routes.draw do
+  get "module/banner"
+
   get "welcome/index"
   get "welcome/banner"
   # The priority is based upon order of creation:
