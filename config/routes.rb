@@ -1,16 +1,16 @@
 Website::Application.routes.draw do
  
   get "welcome/index"
-  get "welcome/product"
-  get "welcome/product_list"
+  get "welcome/product.:id", to: 'welcome#product', as: 'product'
+  get "welcome/product_list", to: 'welcome#product_list', as: 'product_list'
   get "welcome/register"
   
   get "module/banner"
   get "module/footer"
   get "module/index_banner"
-  get "module/item"
+  get "module/item.:id", to: 'module#item', as: 'item'
   get "module/menu"
-  get "module/product"
+  get "module/product.:id", to: 'module#product', as: 'product_m'
   get "module/register"
   get "module/sideMenu"
   get "module/top_bar"

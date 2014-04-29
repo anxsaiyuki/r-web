@@ -4,9 +4,9 @@
 	<div class="col-md-11 col-md-offset-1 col-xs-11 col-xs-offset-1 name">
 		<%= product.product_name %>
 	</div>
-	<a href="../welcome/product.html"><div class="col-md-11 col-md-offset-1 col-xs-11 col-xs-offset-1 image">
-		Image
-	</div></a>
+	<div class="col-md-11 col-md-offset-1 col-xs-11 col-xs-offset-1 image">
+	<%= link_to "Image", product_path(product) %>
+	</div>
 	<div class="col-md-11 col-md-offset-1 col-xs-11 col-xs-offset-1 description">
 		Description
 	</div>
@@ -14,7 +14,7 @@
 		<%= product.price %>
 	</div>
 	<div class="col-md-4 buttons col-xs-4">
-		Buy
+	<%= link_to "Buy", product_path(product) %>
 	</div>
 </div>
 <% end %>
