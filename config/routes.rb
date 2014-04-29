@@ -1,6 +1,9 @@
 Website::Application.routes.draw do
  
   get "welcome/index"
+  get "welcome/product"
+  get "welcome/product_list"
+  get "welcome/register"
   
   get "module/banner"
   get "module/footer"
