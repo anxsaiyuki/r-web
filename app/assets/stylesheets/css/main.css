@@ -262,7 +262,7 @@ form.signin input::-webkit-input-placeholder {
 }
 
 /* line 237, ../sass/main.scss */
-.subList li {
+.subList a {
   color: white;
   text-decoration: none;
 }
