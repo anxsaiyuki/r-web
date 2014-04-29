@@ -3,7 +3,9 @@
 one:
   product_name: MyString
   price: 1
+  category: MyString
 
 two:
   product_name: MyString
   price: 1
+  category: MyString
