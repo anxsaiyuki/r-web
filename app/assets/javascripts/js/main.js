@@ -1,5 +1,5 @@
 require.config({
-    baseUrl: 'assets/js/lib',
+    baseUrl: '../assets/js/lib',
     paths: {
         jquery: 'jquery-1.11.0.min',
 		banner: 'widget/banner',
