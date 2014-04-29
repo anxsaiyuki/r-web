@@ -13,11 +13,9 @@ require.config({
     }
 });
 
-<<<<<<< HEAD
-require(['menu','sideMenu','product','footer','index_banner','top_bar','item'], function(b,c,d,e,f,g,h) {
-=======
+
 require(['banner','menu','sideMenu','product','footer','index_banner','top_bar','item'], function(a,b,c,d,e,f,g,h) {
->>>>>>> d8bdbdd09737469caf191e729a949c818b3bde43
+
   
 	a.start();
 	b.start();
