@@ -12,7 +12,7 @@ require.config({
     }
 });
 
-require(['banner','menu','sideMenu','product','footer','index_banner','top_bar','item'], function(b,c,d,e,f,g,h) {
+require(['menu','sideMenu','product','footer','index_banner','top_bar','item'], function(b,c,d,e,f,g,h) {
   
 	b.start();
 	c.start();
