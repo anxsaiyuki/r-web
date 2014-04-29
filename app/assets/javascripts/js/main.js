@@ -50,7 +50,7 @@ require(['banner','menu','sideMenu','product','footer','index_banner','top_bar',
 					return false;
 				});
 
-				// When clicking on the button close or the mask layer the popup closed
+				// When clicking on the button close or the mask layer the popup closedfdfd
 				$('a.close, #mask').on('click', function() { 
 				  $('#mask , .login-popup').fadeOut(300 , function() {
 					$('#mask').remove();  
