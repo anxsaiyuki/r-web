@@ -31,5 +31,8 @@ class ModuleController < ApplicationController
 	render :layout => false
   end
   
+   def top_bar
+	render :layout => false
+  end
   
 end

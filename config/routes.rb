@@ -11,6 +11,7 @@ Website::Application.routes.draw do
   get "module/register"
   get "module/sideMenu"
   get "module/top_bar"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
