@@ -1,8 +1,16 @@
 Website::Application.routes.draw do
-  get "module/banner"
-
+ 
   get "welcome/index"
-  get "welcome/banner"
+  
+  get "module/banner"
+  get "module/footer"
+  get "module/index_banner"
+  get "module/item"
+  get "module/menu"
+  get "module/product"
+  get "module/register"
+  get "module/sideMenu"
+  get "module/top_bar"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
