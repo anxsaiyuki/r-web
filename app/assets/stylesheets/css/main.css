@@ -1,0 +1,430 @@
+/* line 1, ../sass/main.scss */
+#container, .menu, .sideMenu, .sidebar, .product .name, .product .image, .product .description, .product .price, .product .buttons, .item-image-container, .item-image, .item-content, .item-description, .item-suggest-container, .index-big-banner, .index-small-banner, .register_container, .footer {
+  border: 1px solid #eee;
+}
+
+/* line 5, ../sass/main.scss */
+.list, .sidebar.is-Title {
+  color: #fff;
+}
+
+/* line 9, ../sass/main.scss */
+#container {
+  width: 975px;
+  margin: 0 auto;
+}
+
+/* line 15, ../sass/main.scss */
+.row {
+  /*margin-left:-15px;
+  margin-right:-15px;*/
+}
+
+/* line 20, ../sass/main.scss */
+.banner {
+  border: 1px solid #eee;
+  height: 150px;
+  background-color: grey;
+}
+
+/* ================================= */
+/* Top Bar CSS */
+/* ================================= */
+/* line 30, ../sass/main.scss */
+.top_bar {
+  background-color: black;
+  height: 20px;
+}
+
+/* line 34, ../sass/main.scss */
+.home_button {
+  float: right;
+}
+
+/* line 37, ../sass/main.scss */
+.home_button_top {
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 0 9px 9px 9px;
+  border-color: transparent transparent #ffffff transparent;
+}
+
+/* line 45, ../sass/main.scss */
+.home_button_bottom {
+  margin-left: 5px;
+  width: 9px;
+  height: 9px;
+  background: white;
+}
+
+/* line 52, ../sass/main.scss */
+.line {
+  float: right;
+  padding-right: 10px;
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-right-color: white;
+  position: relative;
+  display: block;
+  z-index: 65;
+}
+
+/* line 63, ../sass/main.scss */
+.login-container {
+  margin-top: -20px;
+  position: absolute;
+  padding-left: 890px;
+}
+
+/* line 69, ../sass/main.scss */
+.register_form {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+/* line 74, ../sass/main.scss */
+.top_bar_text {
+  color: white;
+  text-decoration: none;
+}
+
+/* line 78, ../sass/main.scss */
+#mask {
+  display: none;
+  background: #000;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  z-index: 999;
+}
+
+/* You can customize to your needs  */
+/* line 92, ../sass/main.scss */
+.login-popup {
+  display: none;
+  background: #333;
+  padding: 10px;
+  border: 2px solid #ddd;
+  float: left;
+  font-size: 1.2em;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 99999;
+  box-shadow: 0px 0px 20px #999;
+  /* CSS3 */
+  -moz-box-shadow: 0px 0px 20px #999;
+  /* Firefox */
+  -webkit-box-shadow: 0px 0px 20px #999;
+  /* Safari, Chrome */
+  border-radius: 3px 3px 3px 3px;
+  -moz-border-radius: 3px;
+  /* Firefox */
+  -webkit-border-radius: 3px;
+  /* Safari, Chrome */
+}
+
+/* line 116, ../sass/main.scss */
+img.btn_close {
+  float: right;
+  margin: -28px -28px 0 0;
+}
+
+/* line 121, ../sass/main.scss */
+fieldset {
+  border: none;
+}
+
+/* line 125, ../sass/main.scss */
+form.signin .textbox label {
+  display: block;
+  padding-bottom: 7px;
+}
+
+/* line 130, ../sass/main.scss */
+form.signin .textbox span {
+  display: block;
+}
+
+/* line 134, ../sass/main.scss */
+form.signin p, form.signin span {
+  color: #999;
+  font-size: 11px;
+  line-height: 18px;
+}
+
+/* line 140, ../sass/main.scss */
+form.signin .textbox input {
+  background: #666666;
+  border-bottom: 1px solid #333;
+  border-left: 1px solid #000;
+  border-right: 1px solid #333;
+  border-top: 1px solid #000;
+  color: #fff;
+  border-radius: 3px 3px 3px 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  font: 13px Arial, Helvetica, sans-serif;
+  padding: 6px 6px 4px;
+  width: 200px;
+}
+
+/* line 155, ../sass/main.scss */
+form.signin input:-moz-placeholder {
+  color: #bbb;
+  text-shadow: 0 0 2px #000;
+}
+
+/* line 160, ../sass/main.scss */
+form.signin input::-webkit-input-placeholder {
+  color: #bbb;
+  text-shadow: 0 0 2px #000;
+}
+
+/* line 165, ../sass/main.scss */
+.button {
+  background: -moz-linear-gradient(center top, #f3f3f3, #dddddd);
+  background: -webkit-gradient(linear, left top, left bottom, from(#f3f3f3), to(#dddddd));
+  background: -o-linear-gradient(top, #f3f3f3, #dddddd);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#f3f3f3', EndColorStr='#dddddd');
+  border-color: #000;
+  border-width: 1px;
+  border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  color: #333;
+  cursor: pointer;
+  display: inline-block;
+  padding: 6px 6px 4px;
+  margin-top: 10px;
+  font: 12px;
+  width: 214px;
+}
+
+/* line 184, ../sass/main.scss */
+.button:hover {
+  background: #ddd;
+}
+
+/* ================================= */
+/* ================================= */
+/* ================================= */
+/* Menu CSS */
+/* ================================= */
+/* line 195, ../sass/main.scss */
+#menu_bar {
+  background-color: #2D5781;
+}
+
+/* line 199, ../sass/main.scss */
+.menu {
+  height: 24px;
+}
+
+/* line 204, ../sass/main.scss */
+.list {
+  display: inline-block;
+  width: 10%;
+  padding-left: 33px;
+  /*border: 1px solid #eee;*/
+}
+
+/* line 212, ../sass/main.scss */
+.subList {
+  display: none;
+}
+
+/* line 217, ../sass/main.scss */
+.subList li {
+  border-top: 1px solid black;
+  list-style-type: none;
+  margin-left: -33px;
+  background-color: grey;
+  width: 115px;
+  padding-left: 50px;
+}
+
+/* line 226, ../sass/main.scss */
+.list:hover .subList {
+  position: absolute;
+  display: block;
+  z-index: 100;
+}
+
+/* line 232, ../sass/main.scss */
+.list:hover {
+  background-color: grey;
+}
+
+/* line 237, ../sass/main.scss */
+.subList a {
+  color: white;
+  text-decoration: none;
+}
+
+/* line 242, ../sass/main.scss */
+.subList li:hover {
+  background-color: #2D5781;
+  text-decoration: none;
+}
+
+/* ================================= */
+/* ================================= */
+/* ================================= */
+/* Side Menu CSS */
+/* ================================= */
+/* line 254, ../sass/main.scss */
+.sideMenu {
+  height: 900px;
+}
+
+/* line 259, ../sass/main.scss */
+.side_container {
+  padding-top: 10px;
+  height: 1000px;
+}
+
+/* line 264, ../sass/main.scss */
+.sidebar {
+  text-align: center;
+}
+/* line 268, ../sass/main.scss */
+.sidebar.is-Title {
+  background-color: #2D5781;
+}
+/* line 271, ../sass/main.scss */
+.sidebar.is-Title.NewArrival {
+  margin-top: 5px;
+}
+/* line 275, ../sass/main.scss */
+.sidebar.is-Arrival {
+  height: 10%;
+}
+/* line 278, ../sass/main.scss */
+.sidebar.is-Top {
+  background-color: lightblue;
+}
+
+/* ================================= */
+/* ================================= */
+/* ================================= */
+/* Product CSS */
+/* ================================= */
+/* line 288, ../sass/main.scss */
+#product_container {
+  padding-top: 10px;
+}
+
+/* line 292, ../sass/main.scss */
+.product {
+  /*border: 1px solid #eee;*/
+  height: 200px;
+}
+
+/* line 297, ../sass/main.scss */
+.product .name {
+  height: 10%;
+}
+
+/* line 302, ../sass/main.scss */
+.product .image {
+  height: 50%;
+}
+
+/* line 307, ../sass/main.scss */
+.product .description {
+  height: 20%;
+}
+
+/* line 312, ../sass/main.scss */
+.product .price {
+  height: 10%;
+}
+
+/* line 317, ../sass/main.scss */
+.product .buttons {
+  height: 10%;
+}
+
+/* ================================= */
+/* ================================= */
+/* ================================= */
+/* Item Css */
+/* ================================= */
+/* line 328, ../sass/main.scss */
+#item_container {
+  padding-top: 10px;
+}
+
+/* line 333, ../sass/main.scss */
+.item-image-container {
+  padding-left: 50px;
+  padding-right: 50px;
+  height: 600px;
+}
+
+/* line 340, ../sass/main.scss */
+.item-image {
+  height: 78%;
+}
+
+/* line 345, ../sass/main.scss */
+.item-content {
+  height: 600px;
+}
+
+/* line 350, ../sass/main.scss */
+.item-description {
+  height: 18%;
+  margin-top: 4%;
+}
+
+/* line 356, ../sass/main.scss */
+.item-suggest-container {
+  height: 300px;
+  margin-top: 4%;
+}
+
+/* ================================= */
+/* ================================= */
+/* ================================= */
+/* Index Banner */
+/* ================================= */
+/* line 368, ../sass/main.scss */
+#index_banner {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* line 373, ../sass/main.scss */
+.index-big-banner {
+  height: 200px;
+}
+
+/* line 377, ../sass/main.scss */
+.index-small-banner {
+  height: 100px;
+}
+
+/* ================================= */
+/* ================================= */
+/* ================================= */
+/* Login */
+/* ================================= */
+/* line 393, ../sass/main.scss */
+.register_container {
+  height: 400px;
+}
+
+/* ================================= */
+/* ================================= */
+/* line 401, ../sass/main.scss */
+.footer {
+  background-color: grey;
+  height: 150px;
+}
