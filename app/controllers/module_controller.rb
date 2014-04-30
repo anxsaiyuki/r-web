@@ -22,7 +22,7 @@ class ModuleController < ApplicationController
 
   
   def product
-  @product = Product.joins(:image)
+  @product = Product.find(params[:id])
   render :layout => false
   end
   
