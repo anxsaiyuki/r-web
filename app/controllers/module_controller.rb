@@ -12,7 +12,7 @@ class ModuleController < ApplicationController
   end
   
   def item
-	@product = Product.joins(:image).find(params[:id])
+	@product = Product.includes(:image).find(params[:id])
 	render :layout => false
   end
   
@@ -22,7 +22,7 @@ class ModuleController < ApplicationController
 
   
   def product
-  @product = Product.where(category: params[:id])
+  @product = Product.includes(:image).where(category: params[:id])
   render :layout => false
   end
   
