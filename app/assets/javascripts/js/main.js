@@ -46,7 +46,8 @@ require(['banner','menu','sideMenu','product','footer','index_banner','top_bar',
 					});
 					
 					// Add the mask to body
-					$('body').append('<div id="mask"></div>');
+					//$('body').append('<div id="mask"></div>');
+					$('#mask').css('display','block');
 					$('#mask').fadeIn(300);
 					
 					return false;
@@ -55,10 +56,11 @@ require(['banner','menu','sideMenu','product','footer','index_banner','top_bar',
 				// When clicking on the button close or the mask layer the popup closedfdfd
 				$('a.close, #mask').on('click', function() { 
 				  $('#mask , .login-popup').fadeOut(300 , function() {
-					$('#mask').remove();  
+					$('#mask').css('display','none');  
 				}); 
 				return false;
 				});
+
 			});
 	
 	});
