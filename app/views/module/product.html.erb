@@ -7,7 +7,7 @@
 	<div class="col-md-11 col-md-offset-1 col-xs-11 col-xs-offset-1 image">
 	<%= link_to "Image", product_path(product) %>
 	<% if product.image.nil? then %>
-      <img src="../assets/img/no_image.png"></img>
+      <img src="../assets/img/No_Image.png"></img>
     <% else %>
       <%= product.image.image_name %>
     <% end %>
