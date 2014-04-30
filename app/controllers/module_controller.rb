@@ -22,7 +22,7 @@ class ModuleController < ApplicationController
 
   
   def product
-  @product = Product.find(params[:id])
+  @product = Product.where(category: params[:id])
   render :layout => false
   end
   
