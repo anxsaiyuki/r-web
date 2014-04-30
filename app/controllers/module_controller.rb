@@ -23,6 +23,7 @@ class ModuleController < ApplicationController
   
   def product
   @product = Product.includes(:image).where(category: params[:id])
+  @noimage = '../assets/img/No_Image.png'
   render :layout => false
   end
   
