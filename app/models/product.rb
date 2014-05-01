@@ -1,5 +1,36 @@
 class Product < ActiveRecord::Base
-  attr_accessible :category, :price, :product_name
-  has_one :image
-  validate :allow_nil => true, :presence => true
-end
+	has_many :images
+  attr_accessible :product_type, :price, :product_name
+  validates_presence_of :product_name #you can do custom validations too if you want to
+end 
+
+=begin
+
+when creating a new image to associate to a product, you do not need to do
+	product = Product.find(some_id)
+	image = Image.create(image_name: "some_image_name")
+	product.images << image
+
+
+all you need to do is:
+	product = Product.find(some_id)
+	product.images.create(image_name: "some_image_name")
+and they will be associated together automatically
+
+
+if there are going to be some unique entries, and you want to do create OR find in one step, you can do:
+	product = Product.find_or_create_by_product_name(product_name_here)
+
+
+keep in mind ActiveRecord's find and create methods are meta programming, so for example:
+	product = Product.find_or_create_by_product_name(product_name_here) #finds by column product_name
+	product = Product.find_or_create_by_product_type(product_type_here) #finds by column product_type
+meaning if I had a column called cheese_cake_explosion, you can
+	product = Product.find_or_create_by_cheese_cake_explosion(whatever_you_are_searching_for_here)
+
+
+There is also a pretty big difference between .update and .save, 
+and they affect performance pretty drastically. Look it up before determining which one to go with.
+
+
+=end
