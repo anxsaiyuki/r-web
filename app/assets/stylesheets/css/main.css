@@ -230,12 +230,13 @@ form.signin input::-webkit-input-placeholder {
 .list {
   display: inline-block;
   width: 10%;
-  padding-left: 33px;
+  padding-left: 19px;
   /*border: 1px solid #eee;*/
 }
 
 /* line 212, ../sass/main.scss */
 .subList {
+  padding-left: 13px;
   display: none;
 }
 
@@ -246,7 +247,7 @@ form.signin input::-webkit-input-placeholder {
   margin-left: -33px;
   background-color: grey;
   width: 115px;
-  padding-left: 50px;
+  padding-left: 40px;
 }
 
 /* line 226, ../sass/main.scss */
@@ -320,6 +321,9 @@ form.signin input::-webkit-input-placeholder {
   padding-top: 10px;
 }
 
+.product_image_little {
+  margin-left: -8px;
+}
 /* line 292, ../sass/main.scss */
 .product {
   /*border: 1px solid #eee;*/
@@ -328,18 +332,19 @@ form.signin input::-webkit-input-placeholder {
 
 /* line 297, ../sass/main.scss */
 .product .name {
+  font-size:13;
   height: 10%;
 }
 
 /* line 302, ../sass/main.scss */
 .product .image {
-  height: 50%;
+  height: 76%;
 }
 
 /* line 307, ../sass/main.scss */
-.product .description {
+/*.product .description {
   height: 20%;
-}
+}*/
 
 /* line 312, ../sass/main.scss */
 .product .price {
@@ -365,22 +370,22 @@ form.signin input::-webkit-input-placeholder {
 .item-image-container {
   padding-left: 50px;
   padding-right: 50px;
-  height: 600px;
+ /*height: 600px;*/
 }
 
 /* line 340, ../sass/main.scss */
 .item-image {
-  height: 78%;
+  /*height: 78%;*/
 }
 
 /* line 345, ../sass/main.scss */
 .item-content {
-  height: 600px;
+  /*height: 600px;*/
 }
 
 /* line 350, ../sass/main.scss */
 .item-description {
-  height: 18%;
+  /*height: 18%;*/
   margin-top: 4%;
 }
 

@@ -2,8 +2,8 @@
 
 one:
   product_id: 1
-  image_name: MyString
+  image_path: MyString
 
 two:
   product_id: 1
-  image_name: MyString
+  image_path: MyString

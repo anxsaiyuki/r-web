@@ -11,11 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140430061854) do
+ActiveRecord::Schema.define(:version => 20140501104524) do
 
   create_table "images", :force => true do |t|
     t.integer  "product_id"
-    t.string   "image_name"
+    t.string   "image_path"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(:version => 20140430061854) do
     t.string   "category"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.integer  "quantity"
+    t.string   "description"
   end
 
 end

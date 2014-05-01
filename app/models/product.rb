@@ -1,5 +1,4 @@
 class Product < ActiveRecord::Base
-  attr_accessible :category, :price, :product_name
+  attr_accessible :category, :description, :price, :product_name, :quantity
   has_one :image
-  validate :allow_nil => true, :presence => true
 end
