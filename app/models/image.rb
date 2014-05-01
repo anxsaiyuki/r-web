@@ -33,4 +33,13 @@ There is also a pretty big difference between .update and .save,
 and they affect performance pretty drastically. Look it up before determining which one to go with.
 
 
+And lastly, and most importantly, ActiveRecord association is based off GRAMMER, so for example
+I have a model/table called product, and another called image
+
+	image belongs_to product <---singular
+	product has_many images <---plural
+
+And I believe ActiveRecord is smart enough for special cases like 'sheep' as well
+
+
 =end
