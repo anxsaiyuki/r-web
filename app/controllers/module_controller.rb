@@ -22,7 +22,7 @@ class ModuleController < ApplicationController
 
   
   def product
-  @product = Product.includes(:image).where(category: params[:id]).page(params[:page]).per(5)
+  @product = Product.includes(:image).where(category: params[:id]).page(params[:page]).per(16)
   render :layout => false
   end
   
