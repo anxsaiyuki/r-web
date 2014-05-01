@@ -5,14 +5,15 @@
 				<% if @product.image.nil? then %>
 				  Image Name: No Image
 				<% else %>
-				  <%= @product.image.image_name %>
+				  <img src="../assets/img/<%= @product.category %>/<%= @product.image.image_path %>">
 				<% end %>
 		</div>
 		<div class="col-md-12 col-xs-12 item-description">
-			Price:<%= @product.price %>
+			Description: <%= @product.description %>
 		</div>
 	</div>
 	<div class="col-md-4 col-xs-4 item-content">
+		Price: $<%= @product.price %>
 	</div>
 	<div class="col-md-10 col-xs-10 item-suggest-container"> Suggestion </div>
 </div>

@@ -42,4 +42,5 @@ gem 'jquery-rails'
 #gem 'tzinfo-data', platforms: [:x64_mingw, :mingw, :mswin]
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
+gem 'kaminari'
 
