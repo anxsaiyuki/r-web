@@ -12,12 +12,11 @@ class SessionsController < ApplicationController
 			  
 				session[:user_name] = authorized_user.user_name
 				redirect_to index_path
-				flash[:notice] = "Wow Welcome again, you logged in as #{authorized_user.user_name}"
 			else
 
 			    #redirect_to index_path
 			  	flash[:notice] = "Invalid User_name or Password"
-				flash[:color]= "invalid"
+				redirect_to index_path
 			end
 
 	end
