@@ -8,10 +8,15 @@ class WelcomeController < ApplicationController
   end
   
   def product_list
+	@product = Product.includes(:image).where(category: params[:id]).page(params[:page]).per(16)
 	render :layout => false
   end
   
   def register
-	render :layout => false
+  
+	render :layout => false,
+	        :locals => {
+              user: User.new
+            }
   end
 end

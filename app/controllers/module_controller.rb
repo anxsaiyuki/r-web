@@ -22,8 +22,8 @@ class ModuleController < ApplicationController
 
   
   def product
-  @product = Product.includes(:image).where(category: params[:id]).page(params[:page]).per(16)
-  render :layout => false
+	@product = Product.includes(:image).where(category: params[:id]).page(params[:page]).per(16)
+	render :layout => false
   end
   
   
@@ -36,6 +36,10 @@ class ModuleController < ApplicationController
   end
   
    def top_bar
+	@user_logged_in = User.find_by_user_name(session[:user_name])
+	p "===================================="
+	p @user_logged_in.user_name
+	p "===================================="
 	render :layout => false
   end
   

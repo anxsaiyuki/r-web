@@ -1,14 +1,14 @@
 <div class="col-md-8 col-xs-8">
 
-	<div class="col-md-4 col-xs-4 login_container" >
-		
-		
-	
-	</div>
-	
 	<div class="col-md-4 col-xs-4 register_container" >
 	
-	
+		<%= form_tag sessions_path, id: 'account-login', remote: true do %>
+			<%= text_field_tag :username, '', :placeholder => "Username" %>
+			<%= password_field_tag :password,'', :placeholder => "Password" %>
+			<%= button_tag "Log In" , :class => "submit", data: {type: 'submit'} %>
+		<% end %>
+		<%= button_tag "Sign Up", :class => "signup", :data => { type: 'signup', url: new_account_path}, :remote => true %>
+		<br><br>
 	
 	</div>
 
