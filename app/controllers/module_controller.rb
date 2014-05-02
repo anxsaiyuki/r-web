@@ -37,9 +37,9 @@ class ModuleController < ApplicationController
   
    def top_bar
 	@user_logged_in = User.find_by_user_name(session[:user_name])
-	p "===================================="
+
 	p @user_logged_in.user_name
-	p "===================================="
+
 	render :layout => false
   end
   
