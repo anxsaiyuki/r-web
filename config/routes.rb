@@ -1,10 +1,13 @@
 Website::Application.routes.draw do
  
-  get "welcome/index"
+  get "welcome/index", as: 'index'
   get "welcome/product.:id", to: 'welcome#product', as: 'product'
   get "welcome/product_list", to: 'welcome#product_list', as: 'product_list'
   get "welcome/register", as: 'register'
-  
+  get "sessions/session_end"
+  get "welcome/register_succeed", as: 'register_succeed'
+  get "welcome/registration"
+  post "welcome/registration"
   
   get "module/banner"
   get "module/footer"
@@ -67,6 +70,7 @@ Website::Application.routes.draw do
   # just remember to delete public/index.html.
  root :to => 'welcome#index'
 	resources :users
+	resources :sessions
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

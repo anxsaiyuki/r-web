@@ -54,8 +54,10 @@
 				<div id="side_menu">
 					
 				</div>
-				<div id="item_container">
-
+				<div id="Register_Container">
+					<% flash.each do |name, msg| -%>
+					  <%= content_tag :div, msg, class: name %>
+					<% end -%>
 				</div>
 			</div>
 		</div>

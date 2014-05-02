@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="../assets/css/bootstrap.css">
 <link rel="stylesheet" href="../assets/css/bootstrap-theme.css">
 <link rel="stylesheet" href="../assets/css/main.css">
+<script src="../assets/js/lib/jquery-1.11.0.min.jstype="text/javascript"></script>
 <script data-main="../assets/js/main.js" src="../assets/js/lib/require.js" charset="utf-8" type="text/javascript"></script>
 </head>
 <style>
@@ -17,26 +18,30 @@
 
 		</div>
 		<div class="login-container">
-				<a class="login-window top_bar_text" dialog="login-box">Login</a>
+				<% if session[:user_name].nil? then %>
+					<a class="login-window top_bar_text" dialog="login-box">Login</a>
+				<% else %>
+					<%= link_to "Logout" , :controller => "sessions", :action => "session_end" %>
+				<% end %>
 				<div id="login-box" class="login-popup">
 				<a href="#" class="close"><img src="../assets/img/x_button.png" class="btn_close" title="Close Window" alt="Close" /></a>
-				  <form method="post" class="signin" action="#">
+
+				  <%= form_for @user, :url => url_for(:controller => 'sessions', :action => 'create'), :html => {:class => 'signin'} do |f| %>
 						<fieldset class="textbox">
 						<label class="username">
 						<span>Username or email</span>
-						<input id="username" name="username" value="" type="text" autocomplete="on" placeholder="Username">
+						 <%= f.text_field :user_name %>
 						</label>
 						<label class="password">
 						<span>Password</span>
-						<input id="password" name="password" value="" type="password" placeholder="Password">
+						<%= f.password_field :password %>
 						</label>
-						<button class="submit button" type="button">Sign in</button>
+						<%= f.submit "Login"%>
 						<p>
-						<a class="forgot register_form" href="welcome/register.html">Register</a>
-						<a class="forgot" href="#">Forgot your password?</a>
+						<a class="forgot register_form" href="/welcome/register.html">Register</a>
 						</p>        
 						</fieldset>
-				  </form>
+				  <% end %>
 				</div>
 		</div>
 		<div id="banner">
@@ -51,17 +56,34 @@
 					
 				</div>
 				<div id="Register_Container">
-					<%= form_for user do |f| %>
-					  <%= f.label :user_name %>
-					  <%= f.text_field :user_name %>
-					  <%= f.label :email %>
-					  <%= f.text_field :email %>
-					  <%= f.label :password %>
-					  <%= f.password_field :password %>
-					  <%= f.label :password_confirmation , 'Password Confirmation'%>
-					  <%= f.password_field :password_confirmation %>
-					  <%= f.submit %>
+					<div class="col-md-8 col-xs-8 register_label"> Registration </div>
+					<div class="col-md-8 col-xs-8 register_box">	
+					<%= form_for @user, remote: true do |f| %>
+						  <div class="col-md-8 col-xs-8">
+						  <%= f.label :user_name %>
+						  <%= f.text_field :user_name %>
+						  </div>
+						  <div class="col-md-8 col-xs-8">
+						  <%= f.label :email %>
+						  <%= f.text_field :email %>
+						  </div>
+						  <div class="col-md-8 col-xs-8">
+						  <%= f.label :password %>
+						  <%= f.password_field :password %>
+						  </div>
+						  <div class="col-md-8 col-xs-8">
+						  <%= f.label :password_confirmation , 'Password Confirmation'%>
+						  <%= f.password_field :password_confirmation %>
+						  </div>
+						  <div class="col-md-8 col-xs-8">
+						  <%= f.submit %>
+						  </div>
 					<% end %>
+					</div>
+					<div class="col-md-8 col-xs-8">
+					<% flash.each do |name, msg| -%>
+					  <%= content_tag :div, msg, class: name %>
+					<% end -%>
 				</div>
 			</div>
 		</div>
