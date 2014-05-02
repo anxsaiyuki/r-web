@@ -3,6 +3,9 @@
   border: 1px solid #eee;
 }
 
+.notice {
+	color:red;
+}
 /* line 5, ../sass/main.scss */
 .list, .sidebar.is-Title {
   color: #fff;

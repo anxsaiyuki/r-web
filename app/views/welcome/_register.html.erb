@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="../assets/css/bootstrap.css">
 <link rel="stylesheet" href="../assets/css/bootstrap-theme.css">
 <link rel="stylesheet" href="../assets/css/main.css">
+<script src="../assets/js/lib/jquery-1.11.0.min.jstype="text/javascript"></script>
 <script data-main="../assets/js/main.js" src="../assets/js/lib/require.js" charset="utf-8" type="text/javascript"></script>
 </head>
 <style>
@@ -25,7 +26,7 @@
 				<div id="login-box" class="login-popup">
 				<a href="#" class="close"><img src="../assets/img/x_button.png" class="btn_close" title="Close Window" alt="Close" /></a>
 
-				  <%= form_for user, :url => url_for(:controller => 'sessions', :action => 'create'), :html => {:class => 'signin'} do |f| %>
+				  <%= form_for @user, :url => url_for(:controller => 'sessions', :action => 'create'), :html => {:class => 'signin'} do |f| %>
 						<fieldset class="textbox">
 						<label class="username">
 						<span>Username or email</span>
@@ -54,8 +55,35 @@
 				<div id="side_menu">
 					
 				</div>
-				<div id="item_container">
-
+				<div id="Register_Container">
+					<div class="col-md-8 col-xs-8 register_label"> Registration </div>
+					<div class="col-md-8 col-xs-8 register_box">	
+					<%= form_for @user, remote: true do |f| %>
+						  <div class="col-md-8 col-xs-8">
+						  <%= f.label :user_name %>
+						  <%= f.text_field :user_name %>
+						  </div>
+						  <div class="col-md-8 col-xs-8">
+						  <%= f.label :email %>
+						  <%= f.text_field :email %>
+						  </div>
+						  <div class="col-md-8 col-xs-8">
+						  <%= f.label :password %>
+						  <%= f.password_field :password %>
+						  </div>
+						  <div class="col-md-8 col-xs-8">
+						  <%= f.label :password_confirmation , 'Password Confirmation'%>
+						  <%= f.password_field :password_confirmation %>
+						  </div>
+						  <div class="col-md-8 col-xs-8">
+						  <%= f.submit %>
+						  </div>
+					<% end %>
+					</div>
+					<div class="col-md-8 col-xs-8">
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
 				</div>
 			</div>
 		</div>

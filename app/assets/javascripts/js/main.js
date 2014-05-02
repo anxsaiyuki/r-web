@@ -28,6 +28,7 @@ require(['banner','menu','sideMenu','product','footer','index_banner','top_bar',
 	
 	require(['jquery'], function($) {
 			$(document).ready(function() {
+
 				$('a.login-window').click(function() {
 					
 							//Getting the variable's value from a link 
