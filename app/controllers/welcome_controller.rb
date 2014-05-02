@@ -1,6 +1,9 @@
 class WelcomeController < ApplicationController
   def index
-	render :layout => false
+	render :layout => false,
+		:locals => {
+		  user: User.new
+		}
   end
   
   def product
