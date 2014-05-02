@@ -426,6 +426,14 @@ form.signin input::-webkit-input-placeholder {
   height: 400px;
 }
 
+.register_box {
+	padding-top:20px;
+}
+
+.register_label{
+	padding-top:10px;
+	font-size:20;
+}	
 /* ================================= */
 /* ================================= */
 /* line 401, ../sass/main.scss */
