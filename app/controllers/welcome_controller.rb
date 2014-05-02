@@ -1,15 +1,23 @@
 class WelcomeController < ApplicationController
   def index
-	render :layout => false
+	render :layout => false,
+		:locals => {
+		  user: User.new
+		}
   end
   
   def product
-	render :layout => false
+	render :layout => false,
+		:locals => {
+		  user: User.new
+		}
   end
   
   def product_list
-	@product = Product.includes(:image).where(category: params[:id]).page(params[:page]).per(16)
-	render :layout => false
+	render :layout => false,
+		:locals => {
+		  user: User.new
+		}
   end
   
   def register
