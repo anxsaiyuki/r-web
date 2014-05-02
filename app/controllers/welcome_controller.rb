@@ -7,14 +7,14 @@ class WelcomeController < ApplicationController
   end
   
   def product
-	render :layout => false,
+		render :layout => false,
 		:locals => {
 		  user: User.new
 		}
   end
   
   def product_list
-	render :layout => false,
+		render :layout => false,
 		:locals => {
 		  user: User.new
 		}
