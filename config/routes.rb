@@ -3,7 +3,8 @@ Website::Application.routes.draw do
   get "welcome/index"
   get "welcome/product.:id", to: 'welcome#product', as: 'product'
   get "welcome/product_list", to: 'welcome#product_list', as: 'product_list'
-  get "welcome/register"
+  get "welcome/register", as: 'register'
+  
   
   get "module/banner"
   get "module/footer"
@@ -28,7 +29,7 @@ Website::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-
+	
   # Sample resource route with options:
   #   resources :products do
   #     member do
@@ -65,7 +66,7 @@ Website::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
  root :to => 'welcome#index'
-
+	resources :users
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
