@@ -32,7 +32,7 @@
 						</label>
 						<button class="submit button" type="button">Sign in</button>
 						<p>
-						<a class="forgot register_form" href="Register.html">Register</a>
+						<a class="forgot register_form" href="welcome/register.html">Register</a>
 						<a class="forgot" href="#">Forgot your password?</a>
 						</p>        
 						</fieldset>
@@ -51,7 +51,17 @@
 					
 				</div>
 				<div id="Register_Container">
-
+					<%= form_for user do |f| %>
+					  <%= f.label :user_name %>
+					  <%= f.text_field :user_name %>
+					  <%= f.label :email %>
+					  <%= f.text_field :email %>
+					  <%= f.label :password %>
+					  <%= f.password_field :password %>
+					  <%= f.label :password_confirmation , 'Password Confirmation'%>
+					  <%= f.password_field :password_confirmation %>
+					  <%= f.submit %>
+					<% end %>
 				</div>
 			</div>
 		</div>
