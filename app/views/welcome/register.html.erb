@@ -21,7 +21,7 @@
 				<% if session[:user_name].nil? then %>
 					<a class="login-window top_bar_text" dialog="login-box">Login</a>
 				<% else %>
-					<%= link_to "Logout" , :controller => "sessions", :action => "session_end", class: "top_bar_text" %>
+					<%= link_to "Logout" , {:controller => "sessions", :action => "session_end"} , {:class =>  "top_bar_text"} %>
 				<% end %>
 				<div id="login-box" class="login-popup">
 				<a href="#" class="close"><img src="../assets/img/x_button.png" class="btn_close" title="Close Window" alt="Close" /></a>
