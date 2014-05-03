@@ -14,6 +14,11 @@ class WelcomeController < ApplicationController
   end
   
   def product_list
+	p "============================="
+	p params[:id]
+	p "============================="
+	
+	@product = Product.includes(:image).where(category: params[:id]).page(params[:page]).per(16)
 	render :layout => false,
 		:locals => {
 		  user: User.new

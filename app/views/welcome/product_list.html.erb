@@ -59,7 +59,31 @@
 					
 				</div>
 				<div id="product_container">
+					<div class="col-md-8 col-xs-8">
 
+					<% @product.each do |product| %>
+					<div class="col-md-3 col-xs-3 product">
+						<div class="col-md-11 col-md-offset-1 col-xs-11 col-xs-offset-1 image">
+						<% if product.image.nil? then %>
+						  <%= link_to image_tag("../assets/img/No_Image.png"), product_path(product) %>
+						<% else %>
+						  <%= link_to image_tag("../assets/img/#{product.category}/#{product.image.image_path}", width: '100px', height: '150px', class: 'product_image_little'), product_path(product) %>
+						<% end %>
+						</div>
+						<div class="col-md-11 col-md-offset-1 col-xs-11 col-xs-offset-1 name">
+							<%= product.product_name %>
+						</div>
+						<div class="col-md-7 col-md-offset-1 col-xs-7 col-xs-offset-1 price">
+							$<%= product.price %>
+						</div>
+						<div class="col-md-4 buttons col-xs-4">
+						<%= link_to "Buy", product_path(product) %>
+						</div>
+					</div>
+					<% end %>
+					<%= paginate @product %>
+					</div>
+					
 				</div>
 			</div>
 		</div>
