@@ -1,5 +1,5 @@
 /* line 1, ../sass/main.scss */
-#container, .menu, .sideMenu, .sidebar, .product .name, .product .image, .product .description, .product .price, .product .buttons, .item-image-container, .item-image, .item-content, .item-description, .item-suggest-container, .index-big-banner, .index-small-banner, .register_container, .footer {
+#container, .menu, .sideMenu, .sidebar, .product .name, .product .image, .product .description, .product .price, .product .buttons, .item-image-container, .item-image, .item-content, .item-description, .item-suggest-container, .index-big-banner, .index-small-banner, .register_container, .footer, .register_block {
   border: 1px solid #eee;
 }
 
@@ -335,18 +335,18 @@ form.signin input::-webkit-input-placeholder {
 /* line 292, ../sass/main.scss */
 .product {
   /*border: 1px solid #eee;*/
-  height: 200px;
+  height: 250px;
 }
 
 /* line 297, ../sass/main.scss */
 .product .name {
-  font-size:13;
-  height: 10%;
+  font-size:10;
+  
 }
 
 /* line 302, ../sass/main.scss */
 .product .image {
-  height: 76%;
+  height: 150px;
 }
 
 /* line 307, ../sass/main.scss */
@@ -434,6 +434,20 @@ form.signin input::-webkit-input-placeholder {
   height: 400px;
 }
 
+.register_label {
+ font-size: 20;
+ padding-top: 10px;
+}
+
+.register_box {
+ padding-top: 5px;
+}
+
+.register_block {
+ margin-top: 80px;
+ margin-left: 75px;
+ padding-bottom: 20px;
+}
 /* ================================= */
 /* ================================= */
 /* line 401, ../sass/main.scss */
