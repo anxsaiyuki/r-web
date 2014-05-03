@@ -3,6 +3,11 @@
   border: 1px solid #eee;
 }
 
+#error_message {
+	color: red;
+	font-size: 11px;
+}
+
 .notice {
 	color:red;
 }

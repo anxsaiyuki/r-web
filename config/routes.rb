@@ -8,6 +8,7 @@ Website::Application.routes.draw do
   get "welcome/register_succeed", as: 'register_succeed'
   get "welcome/registration"
   post "welcome/registration"
+  post "sessions/log_in"
   
   get "module/banner"
   get "module/footer"
@@ -70,7 +71,6 @@ Website::Application.routes.draw do
   # just remember to delete public/index.html.
  root :to => 'welcome#index'
 	resources :users
-	resources :sessions
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
