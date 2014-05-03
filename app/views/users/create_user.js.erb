@@ -1,0 +1,5 @@
+<% if @success == "Success" then %>
+$('#Register_Container').html('<div class="register_box"><%= @success_message %></div>');
+<% else %>
+$('#error_msg').html('<div class="col-md-8 col-xs-8"><div class="notice"><%= @error %></div></div>');
+<% end %>

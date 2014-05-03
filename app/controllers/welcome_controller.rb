@@ -21,7 +21,7 @@ class WelcomeController < ApplicationController
   end
   
   def register
-  @user = User.new
+	@user = User.new
 	render :layout => false
 			
 
@@ -29,7 +29,7 @@ class WelcomeController < ApplicationController
 
   def registration
 		user = User.new(user_name: params[:user][:user_name], password: params[:user][:password], email: params[:user][:email])
-	user.save
+		user.save
   end
   
   def register_succeed

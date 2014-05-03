@@ -1,17 +1,15 @@
 class UsersController < ApplicationController
-  def new
-  
-  end
-  
-  def create
+  def create_user
 	@user = User.new
 	p "================================================="
 	p User.validate_email(params[:user][:email])
 	p "================================================="
 	
 	if params[:user][:password_confirmation].blank? || params[:user][:user_name].blank? || params[:user][:password].blank? || params[:user][:email].blank? 
-		flash[:notice] = "Cannot leave blank"
-		redirect_to register_path
+		@error = "Cannot leave blank"
+		respond_to do |format|
+			format.js
+		end
 		
 	else
 		user = User.find_by_user_name(params[:user][:user_name])
@@ -22,33 +20,37 @@ class UsersController < ApplicationController
 				if User.validate_email(params[:user][:email])
 					userdata = User.new(user_name: params[:user][:user_name], password: params[:user][:password], email: params[:user][:email])
 					userdata.save
-
-					flash[:notice] = "You have successfully Registered."
-					redirect_to register_succeed_path
+					@success = "Success"
+					@success_message = "You have successfully registered" 
+				    respond_to do |format|
+						format.js
+					end
 				else
-					flash[:notice] = "That is not a correct email"
-					redirect_to register_path
+					@error = "That is not a correct email"
+				    respond_to do |format|
+						format.js
+					end
 				end
 			else 
 			
-			flash[:notice] = "Passwords are not the same"
-			redirect_to register_path
+			@error = "Passwords are not the same"
+			respond_to do |format|
+				format.js
+			end
 			
 			end
 
 		else 	
 		
 
-			flash[:notice] = "Username already exists"
-			redirect_to register_path
+			@error = "Username already exists"
+			respond_to do |format|
+				format.js
+			end
 			
 		end
 		
 	end
-  end
-  
-  def edit
-  
   end
 
 end
