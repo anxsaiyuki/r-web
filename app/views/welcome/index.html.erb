@@ -5,6 +5,8 @@
 <link rel="stylesheet" href="../assets/css/bootstrap.css">
 <link rel="stylesheet" href="../assets/css/bootstrap-theme.css">
 <link rel="stylesheet" href="../assets/css/main.css">
+<script data-turbolinks-track="true" src="/assets/jquery.js?body=1"></script>
+<script data-turbolinks-track="true" src="/assets/jquery_ujs.js?body=1"></script>
 <script data-main="../assets/js/main.js" src="../assets/js/lib/require.js" charset="utf-8" type="text/javascript"></script>
 </head>
 <style>
@@ -25,7 +27,7 @@
 				<div id="login-box" class="login-popup">
 				<a href="#" class="close"><img src="../assets/img/x_button.png" class="btn_close" title="Close Window" alt="Close" /></a>
 
-				  <%= form_for user, :url => url_for(:controller => 'sessions', :action => 'create'), :html => {:class => 'signin'}, remote: true do |f| %>
+				  <%= form_for user, :url => url_for(:controller => 'sessions', :action => 'log_in'), :html => {:class => 'signin'}, remote: true do |f| %>
 						<fieldset class="textbox">
 						<label class="username">
 						<span>Username or email</span>
@@ -38,7 +40,9 @@
 						<%= f.submit "Login"%>
 						<p>
 						<a class="forgot register_form" href="/welcome/register.html">Register</a>
-						</p>        
+						</p>
+						<div id="error_message">
+						</div>
 						</fieldset>
 				  <% end %>
 				</div>

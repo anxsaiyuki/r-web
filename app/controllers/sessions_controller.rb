@@ -1,22 +1,24 @@
 class SessionsController < ApplicationController
 
-	def create
+	def log_in
 			p "============================"
 			p params[:user][:user_name]
 			p "============================"
 			authorized_user = User.authenticate(params[:user][:user_name],params[:user][:password])
 			p "============================"
 			p authorized_user
-			p "============================"
+			p "==========End============"
 			if authorized_user
 			  
 				session[:user_name] = authorized_user.user_name
-				redirect_to index_path
+				    respond_to do |format|
+						format.js{ render :js => "window.location = 'http://localhost:3000/'" } 
+					end
 			else
-
 			    #redirect_to index_path
-			  	flash[:notice] = "Invalid User_name or Password"
-				redirect_to index_path
+				    respond_to do |format|
+						format.js
+					end
 			end
 
 	end
