@@ -27,7 +27,7 @@
 				<div id="login-box" class="login-popup">
 				<a href="#" class="close"><img src="../assets/img/x_button.png" class="btn_close" title="Close Window" alt="Close" /></a>
 
-				  <%= form_for user, :url => url_for(:controller => 'sessions', :action => 'log_in'), :html => {:class => 'signin'}, remote: true do |f| %>
+				  <%= form_for @user, :url => url_for(:controller => 'sessions', :action => 'log_in'), :html => {:class => 'signin'}, remote: true do |f| %>
 						<fieldset class="textbox">
 						<label class="username">
 						<span>Username or email</span>
@@ -59,36 +59,52 @@
 					
 				</div>
 				<div id="Register_Container">
+					<div class="col-md-8 col-xs-8 register_block">
 					<div class="col-md-8 col-xs-8 register_label"> Registration </div>
 					<div class="col-md-8 col-xs-8 register_box">	
-					<%= form_for @user, remote: true do |f| %>
-						  <div class="col-md-8 col-xs-8">
-						  <%= f.label :user_name %>
-						  <%= f.text_field :user_name %>
+					<%= form_for @user, :url => create_user_path(@user), remote: true do |f| %>
+						  <div class="col-md-10 col-xs-10 register_box">
+							  <div class="col-md-8 col-xs-8">
+								<%= f.label :user_name %>
+							  </div>
+							  <div class="col-md-4 col-xs-4">
+								<%= f.text_field :user_name %>
+							  </div>
 						  </div>
-						  <div class="col-md-8 col-xs-8">
-						  <%= f.label :email %>
-						  <%= f.text_field :email %>
+						  <div class="col-md-10 col-xs-10 register_box">
+							  <div class="col-md-8 col-xs-8">
+								<%= f.label :email %>
+							  </div>
+							  <div class="col-md-4 col-xs-4">
+								<%= f.text_field :email %>
+							  </div>
 						  </div>
-						  <div class="col-md-8 col-xs-8">
-						  <%= f.label :password %>
-						  <%= f.password_field :password %>
+						  <div class="col-md-10 col-xs-10 register_box">
+							  <div class="col-md-8 col-xs-8">
+								<%= f.label :password %>
+							  </div>
+							  <div class="col-md-4 col-xs-4">
+								<%= f.password_field :password %>
+							  </div>
 						  </div>
-						  <div class="col-md-8 col-xs-8">
-						  <%= f.label :password_confirmation , 'Password Confirmation'%>
-						  <%= f.password_field :password_confirmation %>
+						  <div class="col-md-10 col-xs-10 register_box">
+							  <div class="col-md-8 col-xs-8">
+								<%= f.label :password_confirmation , 'Password Confirmation'%>
+							  </div>
+							  <div class="col-md-4 col-xs-4">
+								<%= f.password_field :password_confirmation %>
+							  </div>
 						  </div>
 						  <div class="col-md-8 col-xs-8">
 						  <%= f.submit %>
 						  </div>
 					<% end %>
 					</div>
-					<div class="col-md-8 col-xs-8">
-					<% flash.each do |name, msg| -%>
-					  <%= content_tag :div, msg, class: name %>
-					<% end -%>
+					<div id="error_msg" >
+					
+					</div>
+					</div>
 				</div>
-			</div>
 		</div>
 		
 		<div id="footer">

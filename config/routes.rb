@@ -9,6 +9,7 @@ Website::Application.routes.draw do
   get "welcome/registration"
   post "welcome/registration"
   post "sessions/log_in"
+  post "users/create_user", as: 'create_user'
   
   get "module/banner"
   get "module/footer"
