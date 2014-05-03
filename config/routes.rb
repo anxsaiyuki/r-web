@@ -2,7 +2,7 @@ Website::Application.routes.draw do
  
   get "welcome/index", as: 'index'
   get "welcome/product.:id", to: 'welcome#product', as: 'product'
-  get "welcome/product_list", to: 'welcome#product_list', as: 'product_list'
+  get "welcome/product_list.:id", to: 'welcome#product_list', as: 'product_list'
   get "welcome/register", as: 'register'
   get "sessions/session_end"
   get "welcome/register_succeed", as: 'register_succeed'
