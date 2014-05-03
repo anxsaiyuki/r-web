@@ -1,5 +1,5 @@
 /* line 1, ../sass/main.scss */
-#container, .menu, .sideMenu, .sidebar, .product .name, .product .image, .product .description, .product .price, .product .buttons, .item-image-container, .item-image, .item-content, .item-description, .item-suggest-container, .index-big-banner, .index-small-banner, .register_container, .footer, .register_block {
+#container, .menu, .sideMenu, .sidebar, .product .name/*, .product .image*/, .product .description, .product .price, .product .buttons, .item-image-container, .item-image, .item-content, .item-description, .item-suggest-container, .index-big-banner, .index-small-banner, .register_container, .footer, .register_block {
   border: 1px solid #eee;
 }
 
@@ -341,7 +341,7 @@ form.signin input::-webkit-input-placeholder {
 /* line 297, ../sass/main.scss */
 .product .name {
   font-size:10;
-  
+  height:38px;
 }
 
 /* line 302, ../sass/main.scss */
