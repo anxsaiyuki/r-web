@@ -1,13 +1,12 @@
 Website::Application.routes.draw do
  
-  get "welcome/index", as: 'index'
-  get "welcome/product.:id", to: 'welcome#product', as: 'product'
-  get "welcome/product_list.:id", to: 'welcome#product_list', as: 'product_list'
-  get "welcome/register", as: 'register'
+  get "main/index", as: 'index'
+  get "product/item.:id", to: 'product#index', as: 'product'
+  get "product/list.:id", to: 'product#list', as: 'product_list'
+  
+  get "register", to: 'register#index', as: 'register'
+  
   get "sessions/session_end"
-  get "welcome/register_succeed", as: 'register_succeed'
-  get "welcome/registration"
-  post "welcome/registration"
   post "sessions/log_in"
   post "users/create_user", as: 'create_user'
   
@@ -70,7 +69,7 @@ Website::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
- root :to => 'welcome#index'
+ root :to => 'main#index'
 	resources :users
   # See how all your routes lay out with "rake routes"
 

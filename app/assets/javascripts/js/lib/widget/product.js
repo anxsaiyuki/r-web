@@ -9,7 +9,7 @@ define(['jquery'],function($){
 				return vars;
 			}
 
-			$.get( "../module/product." + getUrlVars()["category"] , function( data ) {
+			$.get( "/module/product." + getUrlVars()["category"] , function( data ) {
 			  $( "#product_container" ).html( data );
 			  console.log( "Product Load was Performed." );
 			});
