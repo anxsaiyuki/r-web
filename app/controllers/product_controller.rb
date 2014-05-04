@@ -12,7 +12,7 @@ class ProductController < ApplicationController
 	p params[:id]
 	p "============================="
 	
-	@product = Product.includes(:image).where(category: params[:id]).page(params[:page]).per(16)
+	@product = Product.includes(:image).where(category: params[:id]).page(params[:page]).per(25)
 	render :layout => false,
 		:locals => {
 		  user: User.new
