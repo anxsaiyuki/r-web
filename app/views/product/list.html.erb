@@ -77,7 +77,10 @@
 							$<%= product.price %>
 						</div>
 						<div class="col-md-4 buttons col-xs-4">
-						<%= link_to "Buy", product_path(product) %>
+							<%= link_to "Buy", product_path(product) %>
+						</div>
+						<div class="col-md-11 col-md-offset-1 col-xs-11 col-xs-offset-1s quantity">
+							[ 在庫存數: <%= product.quantity %> ]
 						</div>
 					</div>
 					<% end %>
