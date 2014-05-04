@@ -1,4 +1,5 @@
-class WelcomeController < ApplicationController
+class ProductController < ApplicationController
+  
   def index
 	render :layout => false,
 		:locals => {
@@ -6,14 +7,7 @@ class WelcomeController < ApplicationController
 		}
   end
   
-  def product
-	render :layout => false,
-		:locals => {
-		  user: User.new
-		}
-  end
-  
-  def product_list
+  def list
 	p "============================="
 	p params[:id]
 	p "============================="
