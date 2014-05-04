@@ -458,6 +458,11 @@ form.signin input::-webkit-input-placeholder {
  padding-top: 5px;
 }
 
+.register_success_box {
+padding-top: 25px;
+padding-left: 175px;
+}
+
 .register_block {
  margin-top: 80px;
  margin-left: 75px;
