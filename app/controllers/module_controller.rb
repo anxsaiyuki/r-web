@@ -12,6 +12,7 @@ class ModuleController < ApplicationController
   end
   
   def item
+	p params[:id]
 	@product = Product.includes(:image).find(params[:id])
 	render :layout => false
   end
