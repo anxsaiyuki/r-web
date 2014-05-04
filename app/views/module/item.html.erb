@@ -3,9 +3,10 @@
 		<div class="col-md-12 col-xs-12 item-image">
 			Product Name:<%= @product.product_name %>
 				<% if @product.image.nil? then %>
-				  Image Name: No Image
+				<img src="../assets/img/<%= @product.category %>/<%= @product.image.image_path %>">
+				 
 				<% else %>
-				  <img src="../assets/img/<%= @product.category %>/<%= @product.image.image_path %>">
+				   Image Name: No Image
 				<% end %>
 		</div>
 		<div class="col-md-12 col-xs-12 item-description">
