@@ -349,6 +349,7 @@ form.signin input::-webkit-input-placeholder {
 .product .name {
   font-size:10;
   height:43px;
+  margin-bottom: 3px;
 }
 
 /* line 302, ../sass/main.scss */
