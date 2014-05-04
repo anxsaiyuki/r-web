@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
 			  
 				session[:user_name] = authorized_user.user_name
 				    respond_to do |format|
-						format.js{ render :js => "window.location = 'http://localhost:3000/'" } 
+						format.js{ render :js => "window.location = 'http://www.anxsaiyuki.com'" } 
 					end
 			else
 			    #redirect_to index_path
