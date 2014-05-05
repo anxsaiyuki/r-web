@@ -10,6 +10,10 @@ Website::Application.routes.draw do
   post "sessions/log_in"
   post "users/create_user", as: 'create_user'
   
+  get "cart", to: 'cart#index', as: 'cart'
+  get "cart/add_cart.:id", to: 'cart#add_cart', as: 'add_cart'
+  
+  
   get "module/banner"
   get "module/footer"
   get "module/index_banner"

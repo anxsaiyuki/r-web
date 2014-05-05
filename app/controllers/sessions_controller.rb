@@ -6,11 +6,15 @@ class SessionsController < ApplicationController
 			p "============================"
 			authorized_user = User.authenticate(params[:user][:user_name],params[:user][:password])
 			p "============================"
-			p authorized_user
+			p authorized_user.user_name
+			p "==========End============"
+			user = User.find_by_user_name(authorized_user.user_name)
+			p user.id
 			p "==========End============"
 			if authorized_user
 			  
-				session[:user_name] = authorized_user.user_name
+				session[:userid] = user.id
+			p session[:userid]
 				    respond_to do |format|
 						format.js{ render :js => "window.location = 'http://localhost:3000/'" } 
 					end
