@@ -47,6 +47,7 @@
 /* line 34, ../sass/main.scss */
 .home_button {
   float: right;
+  padding-right: 7px;
 }
 
 /* line 37, ../sass/main.scss */
@@ -66,6 +67,11 @@
   background: white;
 }
 
+.cart_button {
+  float:right;
+  margin-top: -2px;
+}
+
 /* line 52, ../sass/main.scss */
 .line {
   float: right;
@@ -82,7 +88,7 @@
 .login-container {
   margin-top: -20px;
   position: absolute;
-  padding-left: 890px;
+  padding-left: 860px;
 }
 
 /* line 69, ../sass/main.scss */
@@ -500,6 +506,31 @@ padding-left: 175px;
  margin-top: 80px;
  margin-left: 75px;
  padding-bottom: 20px;
+}
+
+/* ================================= */
+/* Cart */
+/* ================================= */
+#add_cart {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-top: -106px;
+	margin-left: -112px;
+	z-index:1000;
+	background-color:grey;
+	opacity:0.4;
+}
+
+.add_cart_message{
+	color:white;
+	height:85px;
+	width:200px;
+	padding: 15px 15px 15px 15px;
+}
+
+.add_cart_box {
+	border: 2px solid black;
 }
 /* ================================= */
 /* ================================= */
