@@ -58,8 +58,27 @@
 				<div id="side_menu">
 					
 				</div>
-				<div id="Register_Container">
-					
+				<div id="Cart_Container">
+					<div class="col-md-8 col-xs-8">
+							<div class="col-md-6 col-xs-6 Cart_Product_Name Cart_Title">Product Name</div>
+							<div class="col-md-2 col-xs-2 Cart_Quantity Cart_Title">Quantity</div>
+							<div class="col-md-2 col-xs-2 Cart_Price Cart_Title">Price</div>
+							<div class="col-md-2 col-xs-2 Cart_Price Cart_Title">Options</div>
+						<% @cart.each do |cart| %>
+							<div class="col-md-6 col-xs-6 Cart_Product_Name">
+								<%= cart.product.product_name %>
+							</div>
+							<div class="col-md-2 col-xs-2 Cart_Quantity">
+								<%= cart.quantity %>
+							</div>
+							<div class="col-md-2 col-xs-2 Cart_Price">
+								<%= cart.price %>
+							</div>
+							<div class="col-md-2 col-xs-2 Cart_Price">
+								<%= link_to "Delete", remove_cart_path(cart.id)%>
+							</div>
+						<% end %>
+					</div>
 				</div>
 		</div>
 		
