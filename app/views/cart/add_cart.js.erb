@@ -1,0 +1,6 @@
+if (<%= @user_exist %> == 0) {
+$("#add_cart").html('<div class="add_cart_box"><div class="add_cart_message">Please Log On First</div></div>').fadeIn( "fast" ).delay(800).fadeOut();
+}
+else {
+$("#add_cart").html('<div class="add_cart_box"><div class="add_cart_message">You added  1 <%= @product.product_name %> to the cart</div></div>').fadeIn( "fast" ).delay(800).fadeOut();
+}
