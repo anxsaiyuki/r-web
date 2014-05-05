@@ -12,7 +12,7 @@ Website::Application.routes.draw do
   
   get "cart", to: 'cart#index', as: 'cart'
   get "cart/add_cart.:id", to: 'cart#add_cart', as: 'add_cart'
-  
+  get "cart/remove_cart.:id", to: 'cart#remove_cart', as: 'remove_cart'
   
   get "module/banner"
   get "module/footer"

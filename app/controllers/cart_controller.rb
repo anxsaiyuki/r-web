@@ -1,6 +1,13 @@
 class CartController < ApplicationController
   def index
 	   @user = User.new
+	   p "=========================="
+	   p session[:userid]
+	   p "=========================="
+	   @cart = Cart.includes(:product).group(:product_id).order("quantity desc").where(user_id: session[:userid], status: 1).includes(:product)
+	   #@cart = Cart.includes(:product)
+	   p @cart
+
   end
 
   def add_cart
@@ -22,6 +29,16 @@ class CartController < ApplicationController
 		  format.js
 		end
 	
+  end
+  
+  def remove_cart
+		p "==========================="
+		p params[:id]
+		p "==========================="
+		@cart = Cart.find(params[:id])
+		@cart.destroy
+		p cart_path
+		redirect_to cart_path
   end
   
 end
