@@ -18,7 +18,11 @@
 		Price: $<%= @product.price %>
 	</div>
 	<div class="col-md-4 col-xs-4 item-content">
-		Quantity: <%= @product.quantity %>
+		<%= form_for @product, :url => add_item_cart_path, remote: true do |f| %>
+			<%= f.label :quantity %>
+			<%= f.select :quantity, options_for_select(@quantity.map), :prompt => 'Select One' %>
+			<%= f.submit "Buy"%>
+		<% end %>
 	</div>
 
 	<div class="col-md-10 col-xs-10 item-suggest-container"> Suggestion </div>

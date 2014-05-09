@@ -14,7 +14,16 @@ class ModuleController < ApplicationController
   def item
 	p params[:id]
 	@product = Product.includes(:image).find(params[:id])
+	@cart = Cart.new
+	@quantity = Array.new
+	item_stock = @product.quantity
+	@product.quantity.to_i.times do |i|
+		@quantity << item_stock
+		item_stock = item_stock - 1
+	end
+	p @quantity 
 	render :layout => false
+
   end
   
   def menu
