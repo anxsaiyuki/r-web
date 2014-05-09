@@ -438,6 +438,7 @@ form.signin input::-webkit-input-placeholder {
 /* line 340, ../sass/main.scss */
 .item-image {
   /*height: 78%;*/
+  font-size: 24px;
 }
 
 /* line 345, ../sass/main.scss */
@@ -503,9 +504,8 @@ padding-left: 175px;
 }
 
 .register_block {
- margin-top: 80px;
- margin-left: 75px;
- padding-bottom: 20px;
+	margin-top: 80px;
+	margin-bottom: 80px;
 }
 
 /* ================================= */
@@ -537,6 +537,16 @@ padding-left: 175px;
 	Background-Color: grey;
 }	
 
+.cart_box {
+	padding-top:20px;
+	padding-bottom:20px;
+}
+
+.cart_empty{
+	text-align: center;
+	margin-top: 80px;
+	margin-bottom: 90px;
+}
 /* ================================= */
 /* ================================= */
 /* line 401, ../sass/main.scss */

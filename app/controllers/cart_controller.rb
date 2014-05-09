@@ -6,7 +6,7 @@ class CartController < ApplicationController
 	   p "=========================="
 	   @cart = Cart.includes(:product).group(:product_id).order("quantity desc").where(user_id: session[:userid], status: 1).includes(:product)
 	   #@cart = Cart.includes(:product)
-	   p @cart
+
 
   end
 
@@ -37,8 +37,12 @@ class CartController < ApplicationController
 		p "==========================="
 		@cart = Cart.find(params[:id])
 		@cart.destroy
-		p cart_path
-		redirect_to cart_path
+
+		@cart_left = Cart.includes(:product).group(:product_id).order("quantity desc").where(user_id: session[:userid], status: 1).includes(:product)
+		p @cart_left
+		respond_to do |format|
+		  format.js
+		end
   end
   
 end
