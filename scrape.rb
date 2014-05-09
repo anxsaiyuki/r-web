@@ -13,7 +13,7 @@ html = agent.get(url).body
 
 html_doc = Nokogiri::HTML(html)
 arr = Array.new
-arr = [" product_name: ", " card_number: ", " C: ", " D: ", " E: ", " F: ", " G: ", " H: ", " I: ", " J: ", " K: ", " description: "]
+arr = [" product_name: ", " product_number: ", " C: ", " D: ", " E: ", " F: ", " G: ", " H: ", " I: ", " J: ", " K: ", " description: "]
 counter = 0
 counter_desc = 1
 count = 0
@@ -65,7 +65,7 @@ list.each { |i|
 
 			end
 		else
-			fp.write(arr[counter] + '"-"' + ", pack_number = 1, quantity: 1, price: 500, category: " + '"vanguard"'+ ")\nProduct.create(" + arr[0] + '"' + i.text + '"') 
+			fp.write(arr[counter] + '"-"' + ", pack_number: 1, quantity: 1, price: 500, category: " + '"vanguard"'+ ")\nProduct.create(" + arr[0] + '"' + i.text + '",') 
 			counter_desc = 2
 			counter = 1
 		end

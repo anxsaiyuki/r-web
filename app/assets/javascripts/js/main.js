@@ -19,7 +19,7 @@ require(['banner','menu','sideMenu','product','footer','index_banner','top_bar',
   
 	a.start();
 	b.start();
-	c.start();
+	//c.start();
 	//d.start();
 	e.start();
 	f.start();
