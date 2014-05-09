@@ -1,5 +1,3 @@
-Pack1
-
 Product.create( product_name: "騎士王 アルフレッド", product_number: "BT01/001", description: "【永】【(V)】：あなたのユニットはこのユニットを【ブースト】できない。【永】【(V)】：あなたのターン中、あなたの《ロイヤルパラディン》のリアガード1枚につき、このユニットのパワー+2000。【起】【(V)/(R)】：［CB(3)］あなたの山札からグレード2以下の《ロイヤルパラディン》を1枚まで探し、(R)にコールし、その山札をシャッフルする。", pack_number: 1, quantity: 1, price: 500, category: "vanguard")
 Product.create( product_name: "ブラスター・ブレード", product_number: "BT01/002", description: "【自】：［CB(2)］このユニットが(V)に登場した時、コストを払ってよい。払ったら、相手のリアガードを1枚選び、退却させる。【自】：［CB(2)］このユニットが(R)に登場した時、あなたの《ロイヤルパラディン》のヴァンガードがいるなら、コストを払ってよい。払ったら、相手のグレード2以上のリアガードを1枚選び、退却させる。", pack_number: 1, quantity: 1, price: 500, category: "vanguard")
 Product.create( product_name: "ばーくがる", product_number: "BT01/003", description: "【自】：他の《ロイヤルパラディン》がこのユニットにライドした時、このカードを(R)にコールしてよい。【起】【(R)】：［このユニットをレストする］あなたの山札から、「未来の騎士 リュー」か「ふろうがる」を1枚まで探し、(R)にコールし、その山札をシャッフルする。", pack_number: 1, quantity: 1, price: 500, category: "vanguard")
