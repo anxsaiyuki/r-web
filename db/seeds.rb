@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
 #encoding: utf-8
 Product.create( product_name: "騎士王 アルフレッド", product_number: "BT01/001", description: "【永】【(V)】：あなたのユニットはこのユニットを【ブースト】できない。【永】【(V)】：あなたのターン中、あなたの《ロイヤルパラディン》のリアガード1枚につき、このユニットのパワー+2000。【起】【(V)/(R)】：［CB(3)］あなたの山札からグレード2以下の《ロイヤルパラディン》を1枚まで探し、(R)にコールし、その山札をシャッフルする。", pack_number: 1, quantity: 1, price: 500, category: "Vanguard")
 Product.create( product_name: "ブラスター・ブレード", product_number: "BT01/002", description: "【自】：［CB(2)］このユニットが(V)に登場した時、コストを払ってよい。払ったら、相手のリアガードを1枚選び、退却させる。【自】：［CB(2)］このユニットが(R)に登場した時、あなたの《ロイヤルパラディン》のヴァンガードがいるなら、コストを払ってよい。払ったら、相手のグレード2以上のリアガードを1枚選び、退却させる。", pack_number: 1, quantity: 1, price: 500, category: "Vanguard")
