@@ -68,14 +68,17 @@
 							<div class="cart_empty">Please Add Item to Cart</div>
 						<% else %>
 							<% @cart.each do |cart| %>
-								<div class="col-md-6 col-xs-6 Cart_Product_Name">
+								<div class="col-md-4 col-xs-4 Cart_Product_Name">
 									<%= cart.product.product_name %>
 								</div>
 								<div class="col-md-2 col-xs-2 Cart_Quantity">
 									<%= cart.quantity %>
 								</div>
 								<div class="col-md-2 col-xs-2 Cart_Price">
-									<%= cart.price %>
+									$<%= cart.price %>
+								</div>
+								<div class="col-md-2 col-xs-2 Cart_Total">
+									$<%= cart.total_value %>
 								</div>
 								<div class="col-md-2 col-xs-2 Cart_Price">
 									<%= link_to "Delete", remove_cart_path(cart.id), remote: true%>

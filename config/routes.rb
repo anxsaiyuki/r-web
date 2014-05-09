@@ -4,7 +4,7 @@ Website::Application.routes.draw do
   get "product/item.:id", to: 'product#index', as: 'product'
   get "product/list.:id", to: 'product#list', as: 'product_list'
   get "product/list.:id.:pack", to: 'product#list', as: 'product_list_item'
-  
+
   get "register", to: 'register#index', as: 'register'
   
   get "sessions/session_end"
@@ -13,6 +13,7 @@ Website::Application.routes.draw do
   
   get "cart", to: 'cart#index', as: 'cart'
   get "cart/add_cart.:id", to: 'cart#add_cart', as: 'add_cart'
+  put "cart/add_item_cart.:id", to: 'cart#add_item_cart', as: 'add_item_cart'
   get "cart/remove_cart.:id", to: 'cart#remove_cart', as: 'remove_cart'
   
   get "module/banner"
