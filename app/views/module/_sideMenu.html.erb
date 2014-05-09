@@ -1,0 +1,20 @@
+<div class="col-md-2 col-xs-2 side_container">
+	<div class="col-md-12 sideMenu">
+		<div class="col-md-12 col-xs-12 sidebar is-Title">Side Menu</div>
+		<div class="col-md-12 col-xs-12 sidebar is-Top"><%= @category_name.category %></div>
+			<% @category.each do |category| %>
+			<div class="col-md-12 col-xs-12 sidebar is-Sub">
+				<%= link_to "Pack #{category.pack_number}", product_list_item_path(:id => category.category, :pack => category.pack_number) %>
+			</div>
+			<% end %>
+
+		
+		<div class="col-md-12 col-xs-12 sidebar is-Title NewArrival">New Arrival</div>
+		<div class="col-md-12 col-xs-12 sidebar is-Arrival">1</div>
+		<div class="col-md-12 col-xs-12 sidebar is-Arrival">2</div>
+		<div class="col-md-12 col-xs-12 sidebar is-Arrival">3</div>
+		<div class="col-md-12 col-xs-12 sidebar is-Arrival">4</div>
+		<div class="col-md-12 col-xs-12 sidebar is-Arrival">5</div>
+		
+	</div>
+</div>
