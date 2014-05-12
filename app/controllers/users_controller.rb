@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 	p "================================================="
 	p User.validate_email(params[:user][:email])
 	p "================================================="
-	
+	UserMailer.welcome_email(@user).deliver	
 	if params[:user][:password_confirmation].blank? || params[:user][:user_name].blank? || params[:user][:password].blank? || params[:user][:email].blank? 
 		@error = "Cannot leave blank"
 		respond_to do |format|

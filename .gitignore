@@ -20,3 +20,9 @@
 
 # Ignore log in
 /app/controllers/sessions_controller.rb
+
+/app/mailers/user_mailer.rb
+
+/config/environments/development.rb
+
+
