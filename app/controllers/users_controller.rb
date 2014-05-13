@@ -21,11 +21,11 @@ class UsersController < ApplicationController
 				if params[:user][:password] == params[:user][:password_confirmation]
 
 					if User.validate_email(params[:user][:email])
-						userdata = User.new(user_name: params[:user][:user_name], password: params[:user][:password], email: params[:user][:email])
-						userdata.save
+						@userdata = User.new(user_name: params[:user][:user_name], password: params[:user][:password], email: params[:user][:email])
+						@userdata.save
 						@success = "Success"
 						@success_message = "You have successfully registered" 
-						UserMailer.welcome_email(@user).deliver	
+						UserMailer.welcome_email(@userdata).deliver	
 						respond_to do |format|
 							format.js
 						end
