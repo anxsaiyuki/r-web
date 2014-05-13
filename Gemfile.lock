@@ -53,11 +53,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
-<<<<<<< HEAD
-    multi_json (1.9.3)
-=======
     multi_json (1.10.0)
->>>>>>> 15b3ed794b771f4054e499b47ef7c527363ba22a
     polyglot (0.3.4)
     rack (1.5.2)
     rack-cache (1.2)
@@ -84,11 +80,7 @@ GEM
     rake (10.3.1)
     rdoc (3.12.2)
       json (~> 1.4)
-<<<<<<< HEAD
-    sass (3.3.6)
-=======
     sass (3.3.7)
->>>>>>> 15b3ed794b771f4054e499b47ef7c527363ba22a
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
@@ -117,6 +109,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
   jquery-rails
+  json (= 1.8.1)
   kaminari
   rails (= 3.2.13)
   sass-rails (~> 3.2.3)
