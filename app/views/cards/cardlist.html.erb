@@ -17,9 +17,9 @@
 	<div id="container">
 					<div class="col-md-10 col-xs-10">
 					<div class="col-md-7 col-xs-7 item-content">Product Name</div>
-					<div class="col-md-1 col-xs-1 item-content">Pack Number</div>
-					<div class="col-md-2 col-xs-2 item-content	">Card Number</div>
-					<div class="col-md-2 col-xs-2 item-content	">Image Name</div>
+					<div class="col-md-1 col-xs-1 item-content">Pack</div>
+					<div class="col-md-2 col-xs-2 item-content">Card Number</div>
+					<div class="col-md-2 col-xs-2 item-content">Image Name</div>
 					<% @product.each do |product| %>
 					<div class="col-md-7 col-xs-7 item-content">
 					<%= product.product_name %>
@@ -30,7 +30,7 @@
 					<div class="col-md-2 col-xs-2 item-content	">
 					<%= product.product_number %>
 					</div>
-					<div class="col-md-2 col-xs-2 item-content	">
+					<div class="col-md-2 col-xs-2 item-content">
 					VG-<%= product.product_number.slice(0,4) %>-<%= product.product_number.slice(5,4) %>
 					</div>
 					<% end %>
