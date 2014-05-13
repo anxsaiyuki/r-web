@@ -18,7 +18,19 @@
 					<div class="col-md-10 col-xs-10">
 					
 					<% @product.each do |product| %>
-					
+					<div class="col-md-7 col-xs-7 item-content">
+					<%= product.product_name %>
+					</div>
+					<div class="col-md-1 col-xs-1 item-content">
+					<%= product.pack_number %>
+					</div>
+					<div class="col-md-2 col-xs-2 item-content	">
+					<%= product.product_number %>
+					</div>
+					<div class="col-md-2 col-xs-2 item-content	">
+					VG-<%= product.product_number.slice(0,4) %>-<%= product.product_number.slice(5,4) %>
+					</div>
+					<% end %>
 					</div>
 
 	</div>

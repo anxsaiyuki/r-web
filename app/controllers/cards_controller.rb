@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class CardsController < ApplicationController
   def cardlist
 	@product = Product.all
   end
