@@ -22,10 +22,10 @@ class UsersController < ApplicationController
 					@userdata.save
 					@success = "Success"
 					@success_message = "You have successfully registered" 
-					UserMailer.welcome_email(@userdata).deliver	
-				    respond_to do |format|
+					respond_to do |format|
 						format.js
 					end
+					UserMailer.welcome_email(@userdata).deliver	
 				else
 					@error = "That is not a correct email"
 				    respond_to do |format|
