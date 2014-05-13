@@ -31,10 +31,7 @@ class ProductController < ApplicationController
 		@category = Product.select("category, pack_number").uniq.find_all_by_category(params[:id])
 		@product = Product.includes(:image).where(category: params[:id], pack_number: params[:format]).page(params[:page]).per(25)
 	end 
-	render :layout => false,
-		:locals => {
-		  user: User.new
-		}
+
 	unless @category_name.nil?
 		if params[:format].nil?
 			@category = Product.select("category, pack_number").uniq.find_all_by_category(params[:id])
@@ -43,14 +40,13 @@ class ProductController < ApplicationController
 			@category = Product.select("category, pack_number").uniq.find_all_by_category(params[:id])
 			@product = Product.includes(:image).where(category: params[:id], pack_number: params[:format]).page(params[:page]).per(25)
 		end 
-		render :layout => false,
-			:locals => {
-			  user: User.new
-			}
 	else	
 		redirect_to index_path
 	end
-
+	render :layout => false,
+		:locals => {
+		  user: User.new
+		}
   end
   
   def register
