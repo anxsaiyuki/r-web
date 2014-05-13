@@ -16,8 +16,6 @@ class UsersController < ApplicationController
 			
 		if user.nil?
 		
-			email = User.find_by_email(params[:user][:email])
-			if email.nil?
 				if params[:user][:password] == params[:user][:password_confirmation]
 
 					if User.validate_email(params[:user][:email])
@@ -43,12 +41,7 @@ class UsersController < ApplicationController
 					end
 				
 				end
-			else
-				@error = "Email already exists"
-				respond_to do |format|
-					format.js
-				end
-			end
+
 
 		else 	
 		
