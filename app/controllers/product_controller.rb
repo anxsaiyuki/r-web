@@ -17,11 +17,16 @@ class ProductController < ApplicationController
 
   
   def list
+<<<<<<< HEAD
+=======
+
+>>>>>>> 15b3ed794b771f4054e499b47ef7c527363ba22a
 	p "============================="
 	p params[:format]
 	p params[:id]
 	p "============================="
 	@category_name = Product.find_by_category(params[:id])
+<<<<<<< HEAD
 	if params[:format].nil?
 		@category = Product.select("category, pack_number").uniq.find_all_by_category(params[:id])
 		@product = Product.includes(:image).where(category: params[:id]).page(params[:page]).per(25)
@@ -33,6 +38,24 @@ class ProductController < ApplicationController
 		:locals => {
 		  user: User.new
 		}
+=======
+	unless @category_name.nil?
+		if params[:format].nil?
+			@category = Product.select("category, pack_number").uniq.find_all_by_category(params[:id])
+			@product = Product.includes(:image).where(category: params[:id]).page(params[:page]).per(25)
+		else
+			@category = Product.select("category, pack_number").uniq.find_all_by_category(params[:id])
+			@product = Product.includes(:image).where(category: params[:id], pack_number: params[:format]).page(params[:page]).per(25)
+		end 
+		render :layout => false,
+			:locals => {
+			  user: User.new
+			}
+	else	
+		redirect_to index_path
+	end
+
+>>>>>>> 15b3ed794b771f4054e499b47ef7c527363ba22a
   end
   
   def register
