@@ -1,5 +1,6 @@
 <% if @success == "Success" then %>
 $('#Register_Container').html('<div class="col-md-12 col-xs-12 register_block"><div class="register_success_box"><%= @success_message %></div></div>');
+<% UserMailer.welcome_email(@userdata).deliver	%>
 <% else %>
 $('#error_msg').html('<div class="col-md-8 col-md-offset-4 col-xs-8 col-xs-offset-4"><div class="notice"><%= @error %></div></div>');
 <% end %>

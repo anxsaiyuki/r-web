@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 					respond_to do |format|
 						format.js
 					end
-
+					
 				else
 					@error = "That is not a correct email"
 				    respond_to do |format|
