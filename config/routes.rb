@@ -26,6 +26,11 @@ Website::Application.routes.draw do
   get "module/sideMenu"
   get "module/top_bar"
   
+  get "not_found", to: 'errors#not_found', as: 'not_found'
+  
+  match '/404' => 'errors#not_found'
+  match '/422' => 'errors#server_error'
+  match '/500' => 'errors#server_error'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
