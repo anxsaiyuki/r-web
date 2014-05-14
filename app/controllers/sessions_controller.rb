@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
 			        user = User.find_by_user_name(authorized_user.user_name)
 			        session[:userid] = user.id
 				    respond_to do |format|
-						format.js{ render :js => "window.location = 'http://localhost:3000/'" } 
+						format.js{ render :js => "window.location = 'www.anxsaiyuki.com'" } 
 					end
 			else
 			    #redirect_to index_path

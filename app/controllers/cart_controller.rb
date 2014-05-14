@@ -21,6 +21,7 @@ class CartController < ApplicationController
 			@user_exist = 1
 			@cartProduct = Cart.find_by_user_id_and_product_id(session[:userid], @product.id)
 			if @cartProduct.nil?
+				@quantityStatus = 0
 				cart = Cart.new(user_id: session[:userid], product_id: @product.id, price: @product.price, quantity: 1, status: 1)
 				cart.save
 			else
