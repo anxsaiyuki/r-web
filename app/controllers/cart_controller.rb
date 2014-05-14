@@ -57,7 +57,7 @@ class CartController < ApplicationController
 				cart = Cart.new(user_id: session[:userid], product_id: @product.id, price: @product.price, quantity: params[:product][:quantity], status: 1)
 				cart.save
 			else
-				@cartQuantity = @cartProduct.quantity + params[:product][:quantity]
+				@cartQuantity = @cartProduct.quantity + params[:product][:quantity].to_i
 				if @cartQuantity > @product.quantity 
 					@quantityStatus = 1
 				else
