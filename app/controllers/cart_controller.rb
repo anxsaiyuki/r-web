@@ -87,5 +87,19 @@ class CartController < ApplicationController
 		end
   end
   
+  def edit_cart_quantity
+		p "==========================="
+		p params.size
+		p "==========================="
+		cartsize = params.size
+		cartsize.times do |x|
+			Cart.find_by_user_id_and_product_id(session[:userid], params[:product_id][x]).update_attributes(quantity: params[:cart_quantity][x])
+		end
+		@cart = Cart.group(:product_id).order("quantity desc").where(user_id: session[:userid], status: 1).includes(:product)
+		respond_to do |format|
+		  format.js
+		end
+  end
+  
 end
 
