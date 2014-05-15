@@ -89,11 +89,28 @@ class CartController < ApplicationController
   
   def edit_cart_quantity
 		p "==========================="
-		p params.size
+		p params[:cart_quantity][0]
+		p params[:product_id].size
 		p "==========================="
+		cartQuantity = params[:cart_quantity]
+		cartProduct = params[:product_id]
 		cartsize = params.size
 		cartsize.times do |x|
-			Cart.find_by_user_id_and_product_id(session[:userid], params[:product_id][x]).update_attributes(quantity: params[:cart_quantity][x])
+		
+			@product = Product.find(cartProduct[x.to_i])
+			if cartQuantity[0] = 0
+				
+				p cartQuantity[0] 
+				p "=======Delete=========="
+				
+			elsif cartQuantity[0].to_i > @product.quantity.to_i
+				
+				p cartQuantity[0]  
+				p"=====Quantity Over========"
+				
+			else
+				Cart.find_by_user_id_and_product_id(session[:userid], cartProduct[x]).update_attributes(quantity: cartQuantity[x.to_i])
+			end
 		end
 		@cart = Cart.group(:product_id).order("quantity desc").where(user_id: session[:userid], status: 1).includes(:product)
 		respond_to do |format|
