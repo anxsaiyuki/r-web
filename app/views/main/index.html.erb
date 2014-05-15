@@ -1,51 +1,10 @@
-<!DOCTYPE HTML PUBLIC>
-<html>
-<head>
-<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.16.0/build/cssreset/cssreset-min.css">
-<link rel="stylesheet" href="/assets/css/bootstrap.css">
-<link rel="stylesheet" href="/assets/css/bootstrap-theme.css">
-<link rel="stylesheet" href="/assets/css/main.css">
-<script data-turbolinks-track="true" src="/assets/jquery.js?body=1"></script>
-<script data-turbolinks-track="true" src="/assets/jquery_ujs.js?body=1"></script>
-<script data-main="/assets/js/main.js" src="/assets/js/lib/require.js" charset="utf-8" type="text/javascript"></script>
-</head>
-<style>
-
-</style>
-
 <body>
 	<div id="container">
 		<div id="top_bar">
 		
 		</div>
 		<div class="login-container">
-				<% if session[:userid].nil? then %>
-				<a class="login-window top_bar_text" dialog="login-box">Login</a>
-				<% else %>
-					<%= link_to "Logout" , {:controller => "sessions", :action => "session_end"} , {:class =>  "top_bar_text"} %>
-				<% end %>
-				<div id="login-box" class="login-popup">
-				<a href="#" class="close"><img src="../assets/img/x_button.png" class="btn_close" title="Close Window" alt="Close" /></a>
-
-				  <%= form_for user, :url => url_for(:controller => 'sessions', :action => 'log_in'), :html => {:class => 'signin'}, remote: true do |f| %>
-						<fieldset class="textbox">
-						<label class="username">
-						<span>Username or email</span>
-						 <%= f.text_field :user_name %>
-						</label>
-						<label class="password">
-						<span>Password</span>
-						<%= f.password_field :password %>
-						</label>
-						<%= f.submit "Login"%>
-						<p>
-						<%= link_to "Register", register_path, {:class =>  "forgot register_form"} %>
-						</p>
-						<div id="error_message">
-						</div>
-						</fieldset>
-				  <% end %>
-				</div>
+				<%= render partial: "module/login" %>
 		</div>
 		<div id="banner">
 
@@ -68,4 +27,3 @@
 	</div>
 <div id="mask"></div>
 </body>
-</html>

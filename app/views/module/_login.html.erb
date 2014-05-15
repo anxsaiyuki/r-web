@@ -1,0 +1,27 @@
+<% if session[:userid].nil? then %>
+				<a class="login-window top_bar_text" dialog="login-box">Login</a>
+				<% else %>
+					<%= link_to "Logout" , {:controller => "sessions", :action => "session_end"} , {:class =>  "top_bar_text"} %>
+				<% end %>
+				<div id="login-box" class="login-popup">
+				<a href="#" class="close"><img src="../assets/img/x_button.png" class="btn_close" title="Close Window" alt="Close" /></a>
+
+				  <%= form_for @user, :url => url_for(:controller => 'sessions', :action => 'log_in'), :html => {:class => 'signin'}, remote: true do |f| %>
+						<fieldset class="textbox">
+						<label class="username">
+						<span>Username or email</span>
+						 <%= f.text_field :user_name %>
+						</label>
+						<label class="password">
+						<span>Password</span>
+						<%= f.password_field :password %>
+						</label>
+						<%= f.submit "Login"%>
+						<p>
+						<%= link_to "Register", register_path, {:class =>  "forgot register_form"} %>
+						</p>
+						<div id="error_message">
+						</div>
+						</fieldset>
+				  <% end %>
+				</div>

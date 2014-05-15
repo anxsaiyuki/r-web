@@ -1,6 +1,7 @@
 class ProductController < ApplicationController
   
   def index
+    @user = User.new
   	p params[:id]
 	@product = Product.select("category").find(params[:id])
 	p "============================="
@@ -9,15 +10,12 @@ class ProductController < ApplicationController
 	@category_name = @product
 	@category = Product.select("category, pack_number").uniq.find_all_by_category(@category_name.category)
 	
-	render :layout => false,
-		:locals => {
-		  user: User.new
-		}
+
   end
 
   
   def list
-
+	@user = User.new
 	p "============================="
 	p params[:format]
 	p params[:id]
@@ -43,10 +41,7 @@ class ProductController < ApplicationController
 	else	
 		redirect_to index_path
 	end
-	render :layout => false,
-		:locals => {
-		  user: User.new
-		}
+
   end
   
   def register
