@@ -19,17 +19,17 @@
 				</div>
 				<div id="Register_Container">
 					<div class="col-md-12 col-xs-12 register_block">
-					<div class="col-md-12 col-xs-12 register_label"> Registration </div>
+					<div class="col-md-12 col-xs-12 register_label"> Payment Method </div>
 					<div class="col-md-12 col-xs-12 register_box">	
 					<%= form_tag payment_method_path, remote: true do %>
 						  <div class="col-md-10 col-xs-10 register_box">
 							  <div class="col-md-8 col-xs-8">
 							  </div>
 							  <div class="col-md-4 col-xs-4">
-								<%= text_field_tag "cart_quantity[]", "", :size=>"10" %>
+								<%= select_tag "Option", options_for_select([ "VISA", "MasterCard" ]), :'data-remote' => 'true', :'data-url' => url_for(:action => 'payment_method')%>
 							  </div>
 						  </div>
-
+						  <div class="col-md-8 col-xs-8 
 						  </div>
 					<% end %>
 					</div>

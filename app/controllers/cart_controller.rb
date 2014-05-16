@@ -108,11 +108,11 @@ class CartController < ApplicationController
 				
 			elsif @cartQuantity[x].to_i > @product.quantity.to_i or @cartQuantity[x].to_i < 0
 				@overQuantity = 1
-				p"=====Quantity Over========"
+				p "=====Quantity Over========"
 				
 			elsif @cartQuantity[x].to_i <= @product.quantity.to_i and @cartQuantity[x].to_i > 0
 				Cart.find_by_user_id_and_product_id(session[:userid], @cartProduct[x]).update_attributes(quantity: @cartQuantity[x])
-				p"=====Update========"
+				p "=====Update========"
 				
 			end
 		end
