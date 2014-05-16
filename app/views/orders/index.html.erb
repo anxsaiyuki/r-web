@@ -1,0 +1,50 @@
+<body>
+	<div id="container">
+		<div id="top_bar">
+
+		</div>
+		<div class="login-container">
+				<%= render partial: "module/login" %>
+		</div>
+		<div id="banner">
+
+		</div>
+		<div id="menu_bar">
+		
+		</div>
+		<div id="content">
+			<div class="row">
+				<div id="side_menu">
+					
+				</div>
+				<div id="Register_Container">
+					<div class="col-md-12 col-xs-12 register_block">
+					<div class="col-md-12 col-xs-12 register_label"> Registration </div>
+					<div class="col-md-12 col-xs-12 register_box">	
+					<%= form_tag payment_method_path, remote: true do %>
+						  <div class="col-md-10 col-xs-10 register_box">
+							  <div class="col-md-8 col-xs-8">
+							  </div>
+							  <div class="col-md-4 col-xs-4">
+								<%= text_field_tag "cart_quantity[]", "", :size=>"10" %>
+							  </div>
+						  </div>
+
+						  </div>
+					<% end %>
+					</div>
+					<div id="error_msg" >
+					
+					</div>
+					</div>
+				</div>
+		</div>
+		
+		<div id="footer">
+
+		</div>
+
+	</div>
+<div id="mask"></div>
+</body>
+

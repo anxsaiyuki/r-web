@@ -33,7 +33,7 @@
 										<%= cart.product.product_name %>
 									</div>
 									<div class="col-md-2 col-xs-2 Cart_Quantity" style="line-height: normal;">
-										<%= text_field_tag "cart_quantity[]", cart.quantity, :size=>"1" %>
+										<%= text_field_tag "cart_quantity[]", cart.quantity, :size=>"1" %> / <%= cart.product.quantity %>
 										<%= hidden_field_tag "product_id[]", cart.product_id %>
 									</div>
 									<div class="col-md-2 col-xs-2 Cart_Price">
@@ -49,8 +49,10 @@
 							<%= submit_tag "Update Quantity" %>
 							<% end %>
 						<% end %>
+						<div class="Cart_Price_Total">Total Amount: $<%= @cartPriceTotal %></div>
 					</div>
 				</div>
+				
 						<div id="add_cart"></div>
 		</div>
 		

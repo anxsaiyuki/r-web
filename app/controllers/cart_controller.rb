@@ -5,6 +5,10 @@ class CartController < ApplicationController
 	   p session[:userid]
 	   p "=========================="
 	   @cart = Cart.group(:product_id).order("quantity desc").where(user_id: session[:userid], status: 1).includes(:product)
+	   @cartPriceTotal = 0
+	   @cart.each do |cart|
+			@cartPriceTotal = @cartPriceTotal + (cart.quantity * cart.price)
+		end
 	   #@cart = Cart.includes(:product)
 
 
@@ -79,8 +83,12 @@ class CartController < ApplicationController
 		p "==========================="
 		@cart = Cart.find(params[:id])
 		@cart.destroy
-
+		
 		@cart_left = Cart.includes(:product).group(:product_id).order("quantity desc").where(user_id: session[:userid], status: 1).includes(:product)
+		@cartPriceTotal = 0
+	    @cart_left.each do |cart_left|
+			@cartPriceTotal = @cartPriceTotal + (cart_left.quantity * cart_left.price)
+		end
 		respond_to do |format|
 		  format.js
 		end
@@ -98,18 +106,21 @@ class CartController < ApplicationController
 				Cart.find_by_user_id_and_product_id(session[:userid], @cartProduct[x]).destroy
 				p "=======Delete=========="
 				
-			elsif @cartQuantity[x].to_i > @product.quantity.to_i
+			elsif @cartQuantity[x].to_i > @product.quantity.to_i or @cartQuantity[x].to_i < 0
 				@overQuantity = 1
-				break
 				p"=====Quantity Over========"
 				
-			elsif @cartQuantity[x].to_i <= @product.quantity.to_i
+			elsif @cartQuantity[x].to_i <= @product.quantity.to_i and @cartQuantity[x].to_i > 0
 				Cart.find_by_user_id_and_product_id(session[:userid], @cartProduct[x]).update_attributes(quantity: @cartQuantity[x])
 				p"=====Update========"
 				
 			end
 		end
 		@cart_left = Cart.includes(:product).group(:product_id).order("quantity desc").where(user_id: session[:userid], status: 1).includes(:product)
+		@cartPriceTotal = 0
+	    @cart_left.each do |cart_left|
+			@cartPriceTotal = @cartPriceTotal + (cart_left.quantity * cart_left.price)
+		end
 		respond_to do |format|
 		  format.js
 		end

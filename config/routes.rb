@@ -17,6 +17,11 @@ Website::Application.routes.draw do
   post "cart/edit_cart_quantity", to: 'cart#edit_cart_quantity', as: 'edit_cart_quantity'
   get "cart/remove_cart.:id", to: 'cart#remove_cart', as: 'remove_cart'
   
+  get "order", to: 'orders#index', as: 'order'
+  get "order/payment_method", to: 'orders#payment_method', as: 'payment_method'
+  
+  
+  
   get "module/banner"
   get "module/footer"
   get "module/index_banner"
