@@ -81,38 +81,35 @@ class CartController < ApplicationController
 		@cart.destroy
 
 		@cart_left = Cart.includes(:product).group(:product_id).order("quantity desc").where(user_id: session[:userid], status: 1).includes(:product)
-		p @cart_left
 		respond_to do |format|
 		  format.js
 		end
   end
   
   def edit_cart_quantity
-		p "==========================="
-		p params[:cart_quantity][0]
-		p params[:product_id].size
-		p "==========================="
-		cartQuantity = params[:cart_quantity]
-		cartProduct = params[:product_id]
-		cartsize = params.size
+		@overQuantity = 0
+		@cartQuantity = params[:cart_quantity]
+		@cartProduct = params[:product_id]
+		cartsize = params[:product_id].size.to_i
 		cartsize.times do |x|
-		
-			@product = Product.find(cartProduct[x.to_i])
-			if cartQuantity[0] = 0
-				
-				p cartQuantity[0] 
+
+			@product = Product.find(@cartProduct[x])
+			if @cartQuantity[x].to_i == 0
+				Cart.find_by_user_id_and_product_id(session[:userid], @cartProduct[x]).destroy
 				p "=======Delete=========="
 				
-			elsif cartQuantity[0].to_i > @product.quantity.to_i
-				
-				p cartQuantity[0]  
+			elsif @cartQuantity[x].to_i > @product.quantity.to_i
+				@overQuantity = 1
+				break
 				p"=====Quantity Over========"
 				
-			else
-				Cart.find_by_user_id_and_product_id(session[:userid], cartProduct[x]).update_attributes(quantity: cartQuantity[x.to_i])
+			elsif @cartQuantity[x].to_i <= @product.quantity.to_i
+				Cart.find_by_user_id_and_product_id(session[:userid], @cartProduct[x]).update_attributes(quantity: @cartQuantity[x])
+				p"=====Update========"
+				
 			end
 		end
-		@cart = Cart.group(:product_id).order("quantity desc").where(user_id: session[:userid], status: 1).includes(:product)
+		@cart_left = Cart.includes(:product).group(:product_id).order("quantity desc").where(user_id: session[:userid], status: 1).includes(:product)
 		respond_to do |format|
 		  format.js
 		end
