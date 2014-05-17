@@ -1,6 +1,6 @@
 Website::Application.routes.draw do
  
-  get "main/index", as: 'index'
+  get "", to: 'main#index', as: 'index'
   get "product/item.:id", to: 'product#index', as: 'product'
   get "product/list.:id", to: 'product#list', as: 'product_list'
   get "product/list.:id.:pack", to: 'product#list', as: 'product_list_item'
@@ -19,8 +19,9 @@ Website::Application.routes.draw do
   
   get "order", to: 'orders#index', as: 'order'
   get "order/payment_method", to: 'orders#payment_method', as: 'payment_method'
-  
-  
+  post "order/payment_method", to: 'orders#payment_method', as: 'payment_method'
+  post "order/order_confirmation", to: 'orders#order_confirmation', as: 'order_confirmation'
+  get "order/order_confirmation", to: 'orders#order_confirmation', as: 'order_confirmation'
   
   get "module/banner"
   get "module/footer"

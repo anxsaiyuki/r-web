@@ -1,0 +1,28 @@
+<div class="col-md-12 col-xs-12 register_block">
+	<div class="col-md-12 col-xs-12 register_label"> Order Confirmation </div>
+		<div class="col-md-12 col-xs-12 register_box">	
+				<div class="col-md-4 col-xs-4 Cart_Product_Name Cart_Title">Product Name</div>
+				<div class="col-md-2 col-xs-2 Cart_Quantity Cart_Title">Quantity</div>
+				<div class="col-md-2 col-xs-2 Cart_Price Cart_Title">Price</div>
+				<div class="col-md-2 col-xs-2 Cart_Price Cart_Title">Total</div>
+			<% @cart.each do |cart| %>
+				<div class="col-md-4 col-xs-4 Cart_Product_Name">
+					<%= cart.product.product_name %>
+				</div>
+				<div class="col-md-2 col-xs-2 Cart_Quantity">
+					<%= cart.product.quantity %>
+				</div>
+				<div class="col-md-2 col-xs-2 Cart_Price">
+					$<%= cart.price %>
+				</div>
+				<div class="col-md-2 col-xs-2 Cart_Total">
+					$<%= cart.total_value %>
+				</div>
+			<% end %>
+				<div class="col-md-3 col-md-offset-7 col-xs-3 col-xs-offset-7 Cart_Total">
+					總價錢: $<%= @cartPriceTotal %>
+				</div>
+	
+		</div>
+	</div>
+</div>

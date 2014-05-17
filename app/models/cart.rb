@@ -7,13 +7,7 @@ class Cart < ActiveRecord::Base
   end
   
   
-   def self.add element
-    if @the_array
-      @the_array << element
-    else
-      @the_array = [element]
-    end
-  end
+
   
   
   

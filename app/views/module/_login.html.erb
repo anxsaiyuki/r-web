@@ -1,5 +1,5 @@
-			<% if session[:userid].nil? then %>
-				<a class="login-window top_bar_text" dialog="login-box">Login</a>
+				<% if session[:userid].nil? then %>
+					<a class="login-window top_bar_text" dialog="login-box">Login</a>
 				<% else %>
 					<%= link_to "Logout" , {:controller => "sessions", :action => "session_end"} , {:class =>  "top_bar_text"} %>
 				<% end %>

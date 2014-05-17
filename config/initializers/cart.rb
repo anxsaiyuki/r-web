@@ -1,1 +1,0 @@
-@THIS_IS_AN_ARRAY = [1,2,3,4]

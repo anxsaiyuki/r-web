@@ -1,0 +1,15 @@
+Post<div class="col-md-8 col-xs-8 register_box">	
+					<%= form_tag order_confirmation_path, remote: true do %>
+						<div class="col-md-10 col-xs-10" style="line-height: normal;">
+							<% if @order_info.nil? %>
+							Customer Name <%= text_field_tag "customer_name", "", :size=>"5" %>
+							<% else %>
+							Customer Name <%= text_field_tag "customer_name", @order_info[2], :size=>"5" %>
+							<% end %>
+							<%= hidden_field_tag "payment_type", @paymentChoice %>
+						</div>
+						<div class="col-md-10 col-xs-10" style="line-height: normal;">
+							<%= submit_tag "Next Step" %>
+						</div>
+					<% end %>
+</div>
