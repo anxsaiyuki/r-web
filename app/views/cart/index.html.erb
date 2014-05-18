@@ -48,14 +48,16 @@
 								<% end %>
 							<%= submit_tag "Update Quantity" %>
 							<% end %>
-						<% end %>
 						<div class="Cart_Price_Total">Total Amount: $<%= @cartPriceTotal %></div>
+						<%= link_to "Complete Order", order_path %>
+						<% end %>
+						
 					</div>
 				</div>
 				
 						<div id="add_cart"></div>
 		</div>
-		<%= link_to "Order Confirm", order_path %>
+		 
 		<div id="footer">
 
 		</div>

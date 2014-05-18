@@ -27,14 +27,26 @@ class OrdersController < ApplicationController
 		@cart.each do |cart|
 			@cartPriceTotal = @cartPriceTotal + (cart.quantity * cart.price)
 		end
+
+		unless cookies[:orderInfo].nil?
+			@order_info = cookies[:orderInfo]
+		end
 		p "==============================="
 		p params[:customer_name]
 		p params[:payment_type]
 		p cookies[:orderInfo]
+		p @order_info
 		p "==============================="
-		unless cookies[:orderInfo].nil?
-			@order_info = cookies[:orderInfo]
+		respond_to do |format|
+		  format.js
 		end
+  end
+  
+  def order_complete
+		
+		Cart.where(user_id: session[:userid], status: 1).update_all(status: 0)
+		
+		
 		respond_to do |format|
 		  format.js
 		end

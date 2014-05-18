@@ -22,6 +22,8 @@ Website::Application.routes.draw do
   post "order/payment_method", to: 'orders#payment_method', as: 'payment_method'
   post "order/order_confirmation", to: 'orders#order_confirmation', as: 'order_confirmation'
   get "order/order_confirmation", to: 'orders#order_confirmation', as: 'order_confirmation'
+  get "order/order_complete", to: 'orders#order_complete', as: 'order_complete'
+  
   
   get "module/banner"
   get "module/footer"

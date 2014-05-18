@@ -23,7 +23,7 @@ class CartController < ApplicationController
 		else
 		
 			@user_exist = 1
-			@cartProduct = Cart.find_by_user_id_and_product_id(session[:userid], @product.id)
+			@cartProduct = Cart.find_by_user_id_and_product_id_and_status(session[:userid], @product.id, 1)
 			if @cartProduct.nil?
 				@quantityStatus = 0
 				cart = Cart.new(user_id: session[:userid], product_id: @product.id, price: @product.price, quantity: 1, status: 1)
@@ -34,7 +34,7 @@ class CartController < ApplicationController
 					@quantityStatus = 1
 				else
 					@quantityStatus = 0
-				Cart.find_by_user_id_and_product_id(session[:userid], @product.id).update_attributes(quantity: @cartQuantity)
+				Cart.find_by_user_id_and_product_id_and_status(session[:userid], @product.id, 1).update_attributes(quantity: @cartQuantity)
 				end
 			end
 			
@@ -55,7 +55,7 @@ class CartController < ApplicationController
 		else
 		
 			@user_exist = 1
-			@cartProduct = Cart.find_by_user_id_and_product_id(session[:userid], @product.id)
+			@cartProduct = Cart.find_by_user_id_and_product_id_and_status(session[:userid], @product.id, 1)
 			if @cartProduct.nil?
 				@quantityStatus = 0
 				cart = Cart.new(user_id: session[:userid], product_id: @product.id, price: @product.price, quantity: params[:product][:quantity], status: 1)
@@ -66,7 +66,7 @@ class CartController < ApplicationController
 					@quantityStatus = 1
 				else
 					@quantityStatus = 0
-				Cart.find_by_user_id_and_product_id(session[:userid], @product.id).update_attributes(quantity: @cartQuantity)
+				Cart.find_by_user_id_and_product_id_and_status(session[:userid], @product.id, 1).update_attributes(quantity: @cartQuantity)
 				end
 			end
 
