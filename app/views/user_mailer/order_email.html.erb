@@ -8,7 +8,7 @@
     <p> Here are the items you have ordered </p>
 	
 	<% @order.each do |order| %>
-	<div><%= order.product_id %></div>
+	<div><%= order.product.product_name %></div>
 	<% end %>
   </body>
 </html>
