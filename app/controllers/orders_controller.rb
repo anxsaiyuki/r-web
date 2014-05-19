@@ -43,7 +43,7 @@ class OrdersController < ApplicationController
   end
   
   def order_complete
-		@orderInfo = Cart.where(user_id: session[:userid], status: 1)
+		@orderInfo = Cart.group(:product_id).order("quantity desc").where(user_id: session[:userid], status: 1).includes(:product)	  
 		
 		Cart.where(user_id: session[:userid], status: 1).update_all(status: 0)
 		

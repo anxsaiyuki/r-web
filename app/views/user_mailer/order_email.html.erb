@@ -4,12 +4,11 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Welcome to example.com</h1>
-    <p>
-      You have successfully signed up to example.com,
-    </p>
-    <p>
-    </p>
-    <p>Thanks for joining and have a great day!</p>
+    <h1>Thank you for Purchasing</h1>
+    <p> Here are the items you have ordered </p>
+	
+	<% @order.each do |order| %>
+	<div><%= order.product_id %></div>
+
   </body>
 </html>
