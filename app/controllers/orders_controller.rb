@@ -49,7 +49,7 @@ class OrdersController < ApplicationController
 		
 		@userdata = User.find_by_user_id(session[:userid])
 		
-		UserMailer.order_emai(@userdata).deliver
+		UserMailer.order_email(@userdata).deliver
 		
 		respond_to do |format|
 		  format.js
