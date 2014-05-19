@@ -7,7 +7,7 @@
     <h1>Thank you for Purchasing</h1>
     <p> Here are the items you have ordered </p>
 	<% @order.each do |d| %>
-	<div><%= d.product.product_name %></div>
+	<div style="width:8%;"><%= d.product.product_name %></div><div style="width:8%;"><%= d.quantity %></div><div style="width:8%;"><%= d.price %></div>
 	<% end %>
   </body>
 </html>
