@@ -43,12 +43,13 @@ class OrdersController < ApplicationController
   end
   
   def order_complete
-
+		@orderInfo = Cart.where(user_id: session[:userid], status: 1)
+		
 		Cart.where(user_id: session[:userid], status: 1).update_all(status: 0)
 		
 		@userdata = User.find(session[:userid])
 		
-		UserMailer.order_email(@userdata).deliver
+		UserMailer.order_email(@userdata, @orderInfo).deliver
 		
 		respond_to do |format|
 		  format.js
