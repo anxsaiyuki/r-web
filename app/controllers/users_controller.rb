@@ -17,6 +17,9 @@ class UsersController < ApplicationController
 		if user.nil?
 			if params[:user][:password] == params[:user][:password_confirmation]
 					
+				email = User.find_by_email(params[:user][:email])
+				
+				if email.nil?
 					@userdata = User.new(user_name: params[:user][:user_name], password: params[:user][:password], email: params[:user][:email])
 					@userdata.save
 					@success = "Success"
@@ -35,15 +38,13 @@ class UsersController < ApplicationController
 			else 
 			
 			@error = "Passwords are not the same"
-			respond_to do |format|
-				format.js
-			end
+				respond_to do |format|
+					format.js
+				end
 			
 			end
 
 		else 	
-		
-
 			@error = "Username already exists"
 			respond_to do |format|
 				format.js
