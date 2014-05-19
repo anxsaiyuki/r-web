@@ -6,9 +6,8 @@
   <body>
     <h1>Thank you for Purchasing</h1>
     <p> Here are the items you have ordered </p>
-	
-	<% @order.each do |order| %>
-	<div><%= order.product.product_name %></div>
+	<% @order.each do |d| %>
+	<div><%= d.product.product_name %></div>
 	<% end %>
   </body>
 </html>

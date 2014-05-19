@@ -43,13 +43,18 @@ class OrdersController < ApplicationController
   end
   
   def order_complete
-		@orderInfo = Cart.group(:product_id).order("quantity desc").where(user_id: session[:userid], status: 1).includes(:product)	  
+
+		@orderProduct = Cart.includes(:product).order("quantity desc").where(user_id: session[:userid], status: 1)
+
+		p "====Product==============="
+		p @orderProduct
+		p "==============================="
 		
 		Cart.where(user_id: session[:userid], status: 1).update_all(status: 0)
 		
 		@userdata = User.find(session[:userid])
 		
-		UserMailer.order_email(@userdata, @orderInfo).deliver
+		UserMailer.order_email(@userdata, @orderProduct).deliver
 		
 		respond_to do |format|
 		  format.js
