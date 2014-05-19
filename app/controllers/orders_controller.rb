@@ -48,7 +48,7 @@ class OrdersController < ApplicationController
 		
 		Cart.where(user_id: session[:userid], status: 1).update_all(status: 0)
 		
-		@userdata = User.find_by_user_id(session[:userid]
+		@userdata = User.find_by_user_id(session[:userid])
 		
 		UserMailer.order_emai(@userdata, @orderProducts).deliver
 		respond_to do |format|
