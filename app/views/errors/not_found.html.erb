@@ -12,7 +12,11 @@
 <style>
 
 </style>
-
+<script>
+setTimeout(function() {
+  location.href = '<%= index_path %>';
+}, 3000);
+</script>
 <body>
 	<div id="container">
 		<div id="top_bar">
@@ -30,7 +34,7 @@
 				<div id="side_menu">
 
 				</div>
-				<div id="item_container">
+				<div id="item_container" style="height:200px;">
 					Not Found
 				</div>
 			</div>
