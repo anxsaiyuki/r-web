@@ -513,17 +513,17 @@ padding-left: 175px;
 /* ================================= */
 #add_cart {
 	position: fixed;
-	top: 50%;
-	left: 50%;
+	top: 20%;
+	left: 80%;
 	margin-top: -106px;
 	margin-left: -112px;
 	z-index:1000;
-	background-color:grey;
-	opacity:0.4;
+	background-color:White;
+	opacity:0.8;
 }
 
 .add_cart_message{
-	color:white;
+	color:black;
 	height:85px;
 	width:200px;
 	padding: 15px 15px 15px 15px;

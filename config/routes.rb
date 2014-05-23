@@ -43,6 +43,7 @@ Website::Application.routes.draw do
   match '/422' => 'errors#server_error'
   match '/500' => 'errors#server_error'
 
+  get '*unmatched_route', :to => 'application#render_404'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
