@@ -3,13 +3,14 @@
 <head>
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0;" />
 	<link rel="stylesheet" href="/assets/css/reset.css">
-	<link rel="stylesheet" href="/assets/css/bootstrap-mobile.css">
+	<link rel="stylesheet" href="/assets/css/main-mobile.css">
+	<link rel="stylesheet" href="/assets/css/bootstrap-mobile1.css">
 	<link rel="stylesheet" href="/assets/css/bootstrap-theme.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/af.ui.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/icons.css" />
-    <script type="text/javascript" charset="utf-8" src="assets/js/appframework.ui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/assets/css/af.ui.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/icons.css" />
+    <script type="text/javascript" charset="utf-8" src="/assets/js/appframework.ui.min.js"></script>
     <!--AppFramework plugin for sliding side menu-->
-    <script type="text/javascript" charset="utf-8" src="assets/js/af.slidemenu.js"></script>
+    <script type="text/javascript" charset="utf-8" src="/assets/js/af.slidemenu.js"></script>
 	<style>
 
 	.device_change {
@@ -29,7 +30,45 @@
         });
     </script>
 </head>
+<body> 
 
+<div id="afui">
+    
+    <!--Left Side Menu Navigation bar -->
+    <nav>
+        <ul class="list">
+			<li class="Slider-Title">Slide Menu</li>
+            <li><%= link_to "Vanguard", product_list_path("Vanguard") %></li></li>
+            <li><%= link_to "Mats", product_list_path("Mats") %></li></li>
+
+
+        </ul>
+    </nav>
+        <div id="content" style="">
+
+            <!--Main Pages-->
+            <div class="panel" title="Home" id="home" data-header="top-header" data-footer="none" selected="true">
+				<header>
+					<a id="menubadge" onclick='$.ui.toggleSideMenu()' class='menuButton' style="float:left !important"></a>
+
+						<a href=".." class="home_button">
+							<div class="home_button_top"></div>
+							<div class="home_button_bottom"></div>
+						</a>
+						<a href="/cart" class="cart_button">
+							<img src="../assets/img/cart_icon.png" width="40px" height="40px"></img>
+						</a>
+				</header>
 <%= yield %>
 
+			<div class="device_change">
+			<%= link_to "電腦版", :ua_ => 0 %> | <%= link_to "手機板", :ua_ => 1 %>
+			</div>
+		</div>
+			
+			
+		</div>
+
+</div>
+</body>
 </html>    

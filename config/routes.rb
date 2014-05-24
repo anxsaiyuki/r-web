@@ -3,7 +3,7 @@ Website::Application.routes.draw do
   get "", to: 'main#index', as: 'index'
   get "product/item.:id", to: 'product#index', as: 'product'
   get "product/list.:id", to: 'product#list', as: 'product_list'
-  get "product/list.:id.:pack", to: 'product#list', as: 'product_list_item'
+  get "product/list.:id", to: 'product#list', as: 'product_list_item'
 
   get "register", to: 'register#index', as: 'register'
   

@@ -1,0 +1,35 @@
+<div class="col-md-12 col-xs-12">
+	<img src="../assets/img/<%= @category_name.category %>_Banner.png" style="width: 103%;">
+<% @product.each do |product| %>
+<div class="col-md-6 col-xs-6 product">
+	<div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1 image">
+	<% if product.image.nil? then %>
+	  
+		<%= link_to image_tag("../assets/img/No_Image.png"), product_path(product) %>
+	<% else %>
+	<%= link_to image_tag("../assets/img/#{product.category}/#{product.image.image_path}", width: '100px', height: '150px', class: 'product_image_little'), product_path(product) %>
+	
+	<% end %>
+	</div>
+	<div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1 name">
+		<%= link_to "#{product.product_name}", product_path(product) %>
+	</div>
+	<div class="col-md-5 col-md-offset-1 col-xs-5 col-xs-offset-1 price">
+		$<%= product.price %>
+	</div>
+	<div class="col-md-6 buttons col-xs-6">
+		<%= link_to "購買", add_cart_path(product), :remote => true%>
+	</div>
+	<div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1 quantity">
+		[ 在庫存數: <%= product.quantity %> ]
+	</div>
+</div>
+<% end %>
+
+</div>
+<div class="col-md-4 col-md-offset-6 col-xs-4 col-xs-offset-6 ">
+<%= paginate @product %>
+</div>
+
+
+	

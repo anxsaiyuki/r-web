@@ -17,29 +17,30 @@ class ProductController < ApplicationController
   def list
 	@user = User.new
 	p "============================="
-	p params[:format]
+	p params
+	p params[:pack]
 	p params[:id]
 	p "============================="
 	@category_name = Product.find_by_category(params[:id])
 
-	if params[:format].nil?
+	if params[:pack].nil?
 		@category = Product.select("category, pack_number").uniq.find_all_by_category(params[:id])
 		@product = Product.includes(:image).where(category: params[:id]).page(params[:page]).per(25)
 	else
 		@category = Product.select("category, pack_number").uniq.find_all_by_category(params[:id])
-		@product = Product.includes(:image).where(category: params[:id], pack_number: params[:format]).page(params[:page]).per(25)
+		@product = Product.includes(:image).where(category: params[:id], pack_number: params[:pack]).page(params[:page]).per(25)
 	end 
 
 	unless @category_name.nil?
-		if params[:format].nil?
+		if params[:pack].nil?
 			@category = Product.select("category, pack_number").uniq.find_all_by_category(params[:id])
 			@product = Product.includes(:image).where(category: params[:id]).page(params[:page]).per(25)
 		else
 			@category = Product.select("category, pack_number").uniq.find_all_by_category(params[:id])
-			@product = Product.includes(:image).where(category: params[:id], pack_number: params[:format]).page(params[:page]).per(25)
+			@product = Product.includes(:image).where(category: params[:id], pack_number: params[:pack]).page(params[:page]).per(25)
 		end 
 	end
-
+	p @product
   end
   
   def register
