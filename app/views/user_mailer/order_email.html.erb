@@ -6,9 +6,10 @@
   <body>
     <h1>Thank you for Purchasing</h1>
     <p> Here are the items you have ordered </p>
+	<div style="width:30%;display:inline-block;">Product Name</div><div style="width:30%;display:inline-block;">Quantity</div><div style="width:30%; display: inline-block;">Price</div>
 	<% @order.each do |d| %>
 	<div style="width:100%">
-	<div style="width:33%"><%= d.product.product_name %></div><div style="width:33%;display:inline-block;"><%= d.quantity %></div><div style="width:33%; display: inline-block;"><%= d.price %></div>
+	<div style="width:30%;display:inline-block;"><%= d.product.product_name %></div><div style="width:30%;display:inline-block;"><%= d.quantity %></div><div style="width:30%; display: inline-block;"><%= d.price %></div>
 	</div>
 	<% end %>
   </body>
