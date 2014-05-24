@@ -3,11 +3,11 @@
 <head>
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0;" />
 	<link rel="stylesheet" href="/assets/css/reset.css">
-	<link rel="stylesheet" href="/assets/css/main-mobile.css">
 	<link rel="stylesheet" href="/assets/css/bootstrap-mobile1.css">
 	<link rel="stylesheet" href="/assets/css/bootstrap-theme.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/af.ui.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/icons.css" />
+	<link rel="stylesheet" href="/assets/css/main-mobile.css">
     <script type="text/javascript" charset="utf-8" src="/assets/js/appframework.ui.min.js"></script>
     <!--AppFramework plugin for sliding side menu-->
     <script type="text/javascript" charset="utf-8" src="/assets/js/af.slidemenu.js"></script>
@@ -23,7 +23,8 @@
         $.ui.animateHeaders = false;
 		$.ui.useOSThemes=false;
 		$.ui.useInternalRouting = false;
-                
+        $.feat.nativeTouchScroll=true;
+		
         $(document).ready(function(){
             $.ui.setSideMenuWidth('260px');
             $.ui.launch();
@@ -61,7 +62,7 @@
 				</header>
 <%= yield %>
 
-			<div class="device_change">
+			<div class="col-md-12 col-xs-12 device_change">
 			<%= link_to "電腦版", :ua_ => 0 %> | <%= link_to "手機板", :ua_ => 1 %>
 			</div>
 		</div>

@@ -11,7 +11,7 @@
 	
 	<% end %>
 	</div>
-	<div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1 name">
+	<div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1 name" style="overflow:hidden">
 		<%= link_to "#{product.product_name}", product_path(product) %>
 	</div>
 	<div class="col-md-5 col-md-offset-1 col-xs-5 col-xs-offset-1 price">
@@ -27,7 +27,7 @@
 <% end %>
 
 </div>
-<div class="col-md-4 col-md-offset-6 col-xs-4 col-xs-offset-6 ">
+<div class="col-md-8 col-md-offset-4 col-xs-12 col-xs-offset-4 ">
 <%= paginate @product %>
 </div>
 
