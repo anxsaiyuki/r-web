@@ -14,6 +14,8 @@
     <script>   
         $.ui.autoLaunch = false;
         $.ui.animateHeaders = false;
+		$.ui.useOSThemes=false;
+		$.ui.useInternalRouting = false;
                 
         $(document).ready(function(){
             $.ui.setSideMenuWidth('260px');
@@ -27,21 +29,23 @@
     <!--Left Side Menu Navigation bar -->
     <nav>
         <ul class="list">
-            <li><a href="#" class="icon home">Home</a></li>
-            <li><a href="#" class="icon heart">Favorites</a></li>
-            <li><a href="#" class="icon chat">Messages</a></li>
-            <li><a href="#" class="icon user">Profile</a></li>
+            <li>test</li>
+            <li>test2</li>
+
         </ul>
     </nav>
-	<div id="content" style="">
-
+        <div id="content" style="">
 
             <!--Main Pages-->
-		<div class="panel" title="Home" id="home" data-header="top-header" data-footer="none" selected="true">
-
-			<a href="http://www.anxsaiyuki.com/?ua_=0">電腦版</a> | <a href="http://www.anxsaiyuki.com/?ua_=1">手機板</a>
+            <div class="panel" title="Home" id="home" data-header="top-header" data-footer="none" selected="true">
+				<header>
+					<a id="menubadge" onclick='$.ui.toggleSideMenu()' class='menuButton' style="float:left !important"></a>
+				</header>
+					<%= link_to "電腦版", index_path(:ua_ => 0) %> | <%= link_to "手機板", index_path(:ua_ => 1) %>
+			
+			</div>
+			
 		</div>
-	</div>
 </div>
 </body>
 </html>    
