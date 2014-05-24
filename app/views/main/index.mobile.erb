@@ -1,36 +1,27 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Left Side Menu App template</title>
 
-    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0;" />
-    <link rel="stylesheet" type="text/css" href="assets/css/af.ui.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/icons.css" />
-    <script type="text/javascript" charset="utf-8" src="assets/js/appframework.ui.min.js"></script>
-    <!--AppFramework plugin for sliding side menu-->
-    <script type="text/javascript" charset="utf-8" src="assets/js/af.slidemenu.js"></script>
-
-    
-    <script>   
-        $.ui.autoLaunch = false;
-        $.ui.animateHeaders = false;
-		$.ui.useOSThemes=false;
-		$.ui.useInternalRouting = false;
-                
-        $(document).ready(function(){
-            $.ui.setSideMenuWidth('260px');
-            $.ui.launch();
-        });
-    </script>
-</head>
 <body> 
+	<style>
+	.banner {
+		height:200px;
+		border: 1px solid #eee;
+	}
+	.Slider-Title {
+		background-color:black;
+		color:white
+	}
+	.device_change {
+		text-align: center;
+	}
+	</style>
 <div id="afui">
     
     <!--Left Side Menu Navigation bar -->
     <nav>
         <ul class="list">
-            <li>test</li>
-            <li>test2</li>
+			<li class="Slider-Title">Slide Menu</li>
+            <li>Vanguard</li>
+            <li>Mats</li>
+
 
         </ul>
     </nav>
@@ -41,11 +32,17 @@
 				<header>
 					<a id="menubadge" onclick='$.ui.toggleSideMenu()' class='menuButton' style="float:left !important"></a>
 				</header>
+
+				  <div class="col-md-12 banner">Banner</div>
+
+				<div class="device_change">
 					<%= link_to "電腦版", index_path(:ua_ => 0) %> | <%= link_to "手機板", index_path(:ua_ => 1) %>
-			
+				</div>
+
 			</div>
 			
+			
 		</div>
+
 </div>
 </body>
-</html>    
