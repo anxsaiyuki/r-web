@@ -10,6 +10,8 @@ Website::Application.routes.draw do
   get "sessions/session_end"
   post "sessions/log_in"
   post "users/create_user", as: 'create_user'
+  get "log_in", to: 'users#mobile_log_in', as: 'mobile_log_in'
+  
   
   get "cart", to: 'cart#index', as: 'cart'
   get "cart/add_cart.:id", to: 'cart#add_cart', as: 'add_cart'
@@ -23,7 +25,6 @@ Website::Application.routes.draw do
   post "order/order_confirmation", to: 'orders#order_confirmation', as: 'order_confirmation'
   get "order/order_confirmation", to: 'orders#order_confirmation', as: 'order_confirmation'
   get "order/order_complete", to: 'orders#order_complete', as: 'order_complete'
-  
   
   get "module/banner"
   get "module/footer"

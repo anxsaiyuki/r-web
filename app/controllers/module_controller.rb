@@ -46,13 +46,7 @@ class ModuleController < ApplicationController
   end
   
   def top_bar
-	
-	if session[:userid]
-	user = User.find(session[:userid])
-	@user_logged_in = user.user_name
-	else
-	@user_logged_in = nil	
-	end
+
 	render :layout => false
   end
   

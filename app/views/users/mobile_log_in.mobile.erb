@@ -1,0 +1,18 @@
+<%= form_for @user, :url => url_for(:controller => 'sessions', :action => 'log_in'), :html => {:class => 'signin'}, remote: true do |f| %>
+	<fieldset class="textbox">
+	<label class="username">
+	<span>Username or email</span>
+	 <%= f.text_field :user_name %>
+	</label>
+	<label class="password">
+	<span>Password</span>
+	<%= f.password_field :password %>
+	</label>
+	<%= f.submit "Login"%>
+	<p>
+	<%= link_to "Register", register_path, {:class =>  "forgot register_form"} %>
+	</p>
+	<div id="error_message">
+	</div>
+	</fieldset>
+<% end %>

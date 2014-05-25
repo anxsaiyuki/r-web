@@ -55,4 +55,7 @@ class UsersController < ApplicationController
 	end
   end
 
+  def mobile_log_in
+	@user = User.new
+  end
 end

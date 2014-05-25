@@ -10,7 +10,9 @@
 	<link rel="stylesheet" href="/assets/css/main-mobile.css">
 	<script data-main="/assets/js/main-mobile.js" src="/assets/js/lib/require.js" charset="utf-8" type="text/javascript"></script>
 	<style>
-
+	ul.list {
+		text-align: center;
+	}
 	.device_change {
 		text-align: center;
 	}
@@ -25,18 +27,23 @@
     <!--Left Side Menu Navigation bar -->
     <nav>
         <ul class="list">
-			<li class="Slider-Title">Slide Menu</li>
-            <li><%= link_to "Vanguard", product_list_path("Vanguard") %></li></li>
-            <li><%= link_to "Mats", product_list_path("Mats") %></li></li>
+			<li class="Slider-Title">商品</li>
+            <li><%= link_to "Vanguard (先導者)", product_list_path("Vanguard") %></li>
+            <li><%= link_to "Mats (卡墊)", product_list_path("Mats") %></li>
 
 
         </ul>
     </nav>
 	<aside>
 		<ul class="list">
-			<li class="Slider-Title">Slide Menu</li>
-            <li><%= link_to "Vanguard", product_list_path("Vanguard") %></li></li>
-            <li><%= link_to "Mats", product_list_path("Mats") %></li></li>
+			<li class="Slider-Title">我的帳戶</li>
+			<% if @user_logged_in.nil? then %>
+			<li><%= link_to "登入" , mobile_log_in_path %></li>
+			<% else %>
+			<li>Welcome <%= @user_logged_in %></li>
+			<li><%= link_to "登出" , {:controller => "sessions", :action => "session_end"} %></li>
+			<% end %>
+            <li><%= link_to "免費註冊", register_path  %></li>
 		</ul>
     </aside>
 

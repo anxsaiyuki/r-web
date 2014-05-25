@@ -26,6 +26,8 @@ class SessionsController < ApplicationController
 
 	end
 	
+	
+	
 	def session_end
 		
 		session.clear

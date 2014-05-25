@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   rescue_from NoMethodError, :with => :render_404
   helper :all
   before_filter :prepare_for_mobile
+  before_filter :logged_in
   
   def render_404
 	respond_to do |format|
@@ -29,5 +30,14 @@ class ApplicationController < ActionController::Base
   def prepare_for_mobile
 	session[:mobile_param] = params[:ua_] if params[:ua_]
 	request.format = :mobile if mobile_device? && !request.xhr?
+  end
+  
+  def logged_in
+	if session[:userid]
+	user = User.find(session[:userid])
+	@user_logged_in = user.user_name
+	else
+	@user_logged_in = nil	
+	end
   end
 end
