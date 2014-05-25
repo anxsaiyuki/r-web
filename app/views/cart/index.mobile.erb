@@ -1,0 +1,41 @@
+
+<div id="Cart_Container">
+	<div class="col-md-12 col-xs-12 cart_box">
+			<div class="col-md-4 col-xs-4 Cart_Product_Name Cart_Title">Product Name</div>
+			<div class="col-md-2 col-xs-2 Cart_Quantity Cart_Title">Quantity</div>
+			<div class="col-md-2 col-xs-2 Cart_Price Cart_Title">Price</div>
+			<div class="col-md-2 col-xs-2 Cart_Price Cart_Title">Total</div>
+			<div class="col-md-2 col-xs-2 Cart_Price Cart_Title">Options</div>
+		<% if @cart.empty? then %>
+			<div class="cart_empty">Please Add Item to Cart</div>
+		<% else %>
+			<%= form_tag edit_cart_quantity_path, remote: true do %>
+				<% for cart in @cart %>
+					<div class="col-md-4 col-xs-4 Cart_Product_Name">
+						<%= cart.product.product_name %>
+					</div>
+					<div class="col-md-2 col-xs-2 Cart_Quantity" style="line-height: normal;">
+						<%= text_field_tag "cart_quantity[]", cart.quantity, :size=>"1" %> / <%= cart.product.quantity %>
+						<%= hidden_field_tag "product_id[]", cart.product_id %>
+					</div>
+					<div class="col-md-2 col-xs-2 Cart_Price">
+						$<%= cart.price %>
+					</div>
+					<div class="col-md-2 col-xs-2 Cart_Total">
+						$<%= cart.total_value %>
+					</div>
+					<div class="col-md-2 col-xs-2 Cart_Price">
+						<%= link_to "Delete", remove_cart_path(cart.id), remote: true%>
+					</div>
+				<% end %>
+			<%= submit_tag "Update Quantity" %>
+			<% end %>
+		<div class="Cart_Price_Total">Total Amount: $<%= @cartPriceTotal %></div>
+		<%= link_to "Complete Order", order_path %>
+		<% end %>
+		
+	</div>
+</div>
+				
+<div id="add_cart"></div>
+

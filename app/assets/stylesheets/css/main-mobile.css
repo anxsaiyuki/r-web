@@ -9,14 +9,21 @@
 		background-color:black;
 		color:white
 	}
+	.list {
+		background-color:white;
+	}
 	.device_change {
 		text-align: center;
 	}
 	/* line 34, ../sass/main.scss */
 	.home_button {
 	  float: right;
-	  padding-right: 20px;
-	  padding-top:10px;
+	  padding-right: 14px;
+	  padding-left: 14px;
+	  padding-top:5px;
+	  margin-top:5px;
+	  border-right: 1px solid white;
+	  border-left: 1px solid white;
 	}
 
 	/* line 37, ../sass/main.scss */
@@ -34,6 +41,7 @@
 	  width: 14px;
 	  height: 11px;
 	  background: white;
+	  margin-bottom: 5px;
 	}
 
 	.cart_button {
@@ -99,6 +107,48 @@
 .product .quantity {
   padding-left: 23px;
   font-size: 10;
+}
+/* ================================= */
+/* ================================= */
+
+/* ================================= */
+/* Cart */
+/* ================================= */
+#add_cart {
+	position: fixed;
+	top: 20%;
+	left: 77.5%;
+	margin-top: -106px;
+	margin-left: -112px;
+	z-index:1000;
+	background-color:White;
+	opacity:0.8;
+}
+
+.add_cart_message{
+	color:black;
+	height:85px;
+	width:200px;
+	padding: 15px 15px 15px 15px;
+}
+
+.add_cart_box {
+	border: 2px solid black;
+}
+
+.Cart_Title {
+	Background-Color: grey;
+}	
+
+.cart_box {
+	padding-top:20px;
+	padding-bottom:20px;
+}
+
+.cart_empty{
+	text-align: center;
+	margin-top: 80px;
+	margin-bottom: 90px;
 }
 /* ================================= */
 /* ================================= */

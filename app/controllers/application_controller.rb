@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   def render_404
 	respond_to do |format|
 		format.html { render :file => "/errors/not_found", :status => :not_found }
+		format.mobile { render :file => "/errors/not_found", :status => :not_found }
 	end
   end
   
@@ -27,6 +28,6 @@ class ApplicationController < ActionController::Base
   
   def prepare_for_mobile
 	session[:mobile_param] = params[:ua_] if params[:ua_]
-	request.format = :mobile if mobile_device?
+	request.format = :mobile if mobile_device? && !request.xhr?
   end
 end

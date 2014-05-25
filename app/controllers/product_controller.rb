@@ -3,14 +3,23 @@ class ProductController < ApplicationController
   def index
     @user = User.new
   	p params[:id]
-	@product = Product.select("category").find(params[:id])
+	@product_cat = Product.select("category").find(params[:id])
 	p "============================="
-	p @product
+	p @product_cat
 	p "============================="
-	@category_name = @product
+	@category_name = @product_cat
 	@category = Product.select("category, pack_number").uniq.find_all_by_category(@category_name.category)
 	
-
+	p "=========================== Mobiel =========================="
+	@product = Product.includes(:image).find(params[:id])
+	@cart = Cart.new
+	@quantity = Array.new
+	item_stock = @product.quantity
+	@product.quantity.to_i.times do |i|
+		@quantity << item_stock
+		item_stock = item_stock - 1
+	end
+	p "=========================== Mobiel =========================="
   end
 
   

@@ -837,7 +837,7 @@ body {
 
 #afui #aside_menu .list .divider,
 #afui #menu .list .divider {
-    background:#0088D1;
+    background:white;
     color:inherit;
     font-size: 1em;
 }
@@ -1123,7 +1123,6 @@ body {
 }
 #afui label {
   float: left;
-  width: 33%;
   font-weight: normal;
   font-size: 14px;
   color: inherit;
