@@ -15,7 +15,6 @@ require(['jquery'], function() {
 		require(['app-ui'], function() {
 			$.ui.autoLaunch = true;
 			$.ui.animateHeaders = false;
-			$.ui.useOSThemes=false;
 			$.ui.useInternalRouting = false;
 			$.feat.nativeTouchScroll=true;
 			require(['item'], function(a){
