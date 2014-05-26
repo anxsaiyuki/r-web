@@ -677,11 +677,11 @@ body {
     background:white;
     color:#53575E;
 }
-
+/* Andrew */
 #afui .header{
-    background:grey;
+    background:#006600;
     border:none;
-    border-bottom:1px solid grey;
+    border-bottom:1px solid #006600;
     color:white;
 }
 
@@ -833,12 +833,12 @@ body {
 #afui input[type="radio"]:checked+label:before,#afui input[type="checkbox"]:checked+label:before {
     background: #33B5E5;
 }
-
+/* Andrew */
 #afui > #aside_menu,
 #afui > #menu.tabletMenu {
-    color:black;
+    color:#006600;
     background:white;
-    border-right:1px solid black;
+    border-right:1px solid #006600;
 }
 
 #afui #aside_menu .list li,#afui #aside_menu .list .divider,#afui #aside_menu .list li:last-child,
