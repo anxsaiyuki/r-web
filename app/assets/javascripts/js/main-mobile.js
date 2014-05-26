@@ -3,7 +3,7 @@ require.config({
     paths: {
 		"jquery": 'jquery',
 		"jqury_ui": 'jquery_ujs',
-		"app-ui": 'js/lib/appframework.ui2',
+		"app-ui": 'js/lib/appframework.ui',
 		"app-slide": 'js/lib/af.slidemenu',
 		item: 'js/lib/widget/item'
     }
