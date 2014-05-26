@@ -1,6 +1,6 @@
 <%= form_for @user, :url => url_for(:controller => 'sessions', :action => 'log_in'), :html => {:class => 'signin'}, remote: true do |f| %>
 	<fieldset class="textbox">
-	<label class="col-md-10 col-xs-10 username">
+	<label class="username">
 	<div class="col-md-12 col-xs-12" >
 	<span>Username or email</span>
 	</div>
@@ -8,7 +8,7 @@
 	 <%= f.text_field :user_name %>
 	 </div>
 	</label>
-	<label class="col-md-10 col-xs-10 password">
+	<label class="password">
 	<div class="col-md-12 col-xs-12" >
 	<span>Password</span>
 	</div>
