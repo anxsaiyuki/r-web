@@ -2,6 +2,7 @@
   border: 1px solid #eee;
 }
 	.col-prod {
+		display:inline-block;
 		width:45%;
 	}
 	.banner {
