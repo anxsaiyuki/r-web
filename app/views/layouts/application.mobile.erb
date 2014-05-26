@@ -30,7 +30,7 @@
     <nav>
         <ul class="list">
 			<li class="Slider-Title">商品</li>
-            <li><%= link_to "Vanguard (先導者)", product_list_path("Vanguard") %></li>
+            <li><%= link_to "Vanguard (先導者)", product_list_path("Vanguard"), :class => "SliderTab" %></li>
 				<li><%= link_to "Pack1", product_list_item_path(:id => "Vanguard", :pack => 1) %></li>
 				<li><%= link_to "Pack2", product_list_item_path(:id => "Vanguard", :pack => 2) %></li>
 				<li><%= link_to "Pack3", product_list_item_path(:id => "Vanguard", :pack => 3) %></li>
@@ -45,7 +45,7 @@
 				<li><%= link_to "Pack12", product_list_item_path(:id => "Vanguard", :pack => 12) %></li>
 				<li><%= link_to "Pack13", product_list_item_path(:id => "Vanguard", :pack => 13) %></li>
 				<li><%= link_to "Pack14", product_list_item_path(:id => "Vanguard", :pack => 14) %></li>
-            <li><%= link_to "Mats (卡墊)", product_list_path("Mats") %></li>
+            <li><%= link_to "Mats (卡墊)", product_list_path("Mats"), :class => "SliderTab"%></li>
 
 
         </ul>
