@@ -1,7 +1,9 @@
 #container, .menu, .sideMenu, .sidebar, .product .name, .Cart_Product_Name , .Cart_Quantity, .Cart_Price, .Cart_Total/*, .product .image, .product .quantity, .product .price, .product .buttons*/, .product .description, .item-image-container, .item-image, .item-content, .item-description, .item-suggest-container, .index-big-banner, .index-small-banner, .register_container, .footer, .register_block {
   border: 1px solid #eee;
 }
-
+	.col-prod {
+		width:45%;
+	}
 	.banner {
 		height:200px;
 	}

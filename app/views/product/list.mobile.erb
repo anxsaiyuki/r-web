@@ -1,7 +1,7 @@
 <div class="col-md-12 col-xs-12">
 
 <% @product.each do |product| %>
-<div class="col-md-6 col-xs-6 product">
+<div class="col-prod product">
 	<div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1 image">
 	<% if product.image.nil? then %>
 	  
@@ -17,12 +17,12 @@
 	<div class="col-md-5 col-md-offset-1 col-xs-5 col-xs-offset-1 price">
 		$<%= product.price %>
 	</div>
-	<li class="col-md-6 buttons col-xs-6">
+	<div class="col-md-6 buttons col-xs-6">
 		<%= link_to "購買", add_cart_path(product), :remote => true%>
-	</li>
-	<li class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1 quantity">
+	</div>
+	<div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1 quantity">
 		[ 在庫存數: <%= product.quantity %> ]
-	</li>
+	</div>
 </div>
 <% end %>
 
