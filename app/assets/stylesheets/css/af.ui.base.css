@@ -1134,11 +1134,9 @@ body {
 }
 #afui label {
   float: left;
-  width: 33%;
   font-weight: normal;
   font-size: 14px;
   color: inherit;
-  text-align: right;
   padding: 11px 6px;
 }
 #afui label + select,
