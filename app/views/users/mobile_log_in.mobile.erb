@@ -1,22 +1,18 @@
-<div class="col-md-12 col-xs-12 register_box"> Testing
+<div class="col-md-12 col-xs-12 register_box">
 <%= form_for @user, :url => url_for(:controller => 'sessions', :action => 'log_in'), :html => {:class => 'signin'}, remote: true do |f| %>
 	<fieldset class="textbox">
+	<div class="col-md-12 col-xs-12" >
 	<label class="username">
-	<div class="col-md-12 col-xs-12" >
 	<span>Username or email</span>
-	</div>
-	<div class="col-md-12 col-xs-12" >
 	 <%= f.text_field :user_name %>
-	 </div>
 	</label>
+	</div>
+	<div class="col-md-12 col-xs-12" >
 	<label class="password">
-	<div class="col-md-12 col-xs-12" >
 	<span>Password</span>
-	</div>
-	<div class="col-md-12 col-xs-12" >
 	<%= f.password_field :password %>
-	</div>
 	</label>
+	</div>
 	<div class="col-md-6 col-xs-6" >
 	<%= f.submit "Login"%>
 	</div>
