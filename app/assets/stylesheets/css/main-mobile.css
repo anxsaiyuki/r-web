@@ -2,6 +2,7 @@
   border: 1px solid #eee;
 }
 	.col-prod {
+		margin-left: 16px;
 		display:inline-block;
 		width:45%;
 	}
