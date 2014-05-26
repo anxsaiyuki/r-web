@@ -843,7 +843,7 @@ body {
 
 #afui #aside_menu .list li,#afui #aside_menu .list .divider,#afui #aside_menu .list li:last-child,
 #afui #menu .list li,#afui #menu .list .divider,#afui #menu .list li:last-child {
-    border-color: black;
+    border-color: #006600;
 }
 
 #afui #aside_menu .list .divider,
