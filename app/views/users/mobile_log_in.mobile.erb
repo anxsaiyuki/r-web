@@ -1,3 +1,4 @@
+<div class="col-md-12 col-xs-12 register_box">	
 <%= form_for @user, :url => url_for(:controller => 'sessions', :action => 'log_in'), :html => {:class => 'signin'}, remote: true do |f| %>
 	<fieldset class="textbox">
 	<label class="username">
@@ -26,3 +27,4 @@
 	</div>
 	</fieldset>
 <% end %>
+</div>
