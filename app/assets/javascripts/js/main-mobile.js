@@ -15,6 +15,7 @@ require(['jquery'], function() {
 		require(['app-ui'], function() {
 			$.ui.autoLaunch = !1, $.ui.animateHeaders = !1, $.ui.useOSThemes = !1, $.ui.splitview = !1, $.feat.nativeTouchScroll=false, require(['item'], function(a){
 				$(document).ready(function(){
+					$.ui.lockPageBounce=true
 					$.ui.useInternalRouting = !1;
 					$.ui.setSideMenuWidth('260px');
 					$.ui.launch();
