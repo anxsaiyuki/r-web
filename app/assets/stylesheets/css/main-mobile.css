@@ -82,6 +82,7 @@
 		border: 5px solid #2D5781;
 		margin-top: 1px;
 		position:fixed;
+		top:20px;
 		width: 98%;
 	}
 	.search_header {

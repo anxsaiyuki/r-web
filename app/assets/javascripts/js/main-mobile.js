@@ -26,7 +26,6 @@ require(['jquery'], function() {
 							
 							$('.search_box').removeClass('off');
 							$('.search_box_dummy').removeClass('off');
-							$('#afui .header').css('height','86px');
 
 						});
 					});
