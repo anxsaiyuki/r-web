@@ -81,9 +81,12 @@
 	.search_box {
 		border: 5px solid #2D5781;
 		margin-top: 1px;
-		position:fixed;
 		top:20px;
 		width: 98%;
+		position: relative;
+		overflow: hidden;
+		display: block;
+		z-index: 250;
 	}
 	.search_header {
 		padding-left: 58px;
