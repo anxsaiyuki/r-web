@@ -25,13 +25,16 @@ require(['jquery'], function() {
 						$('.search_header').on('click', function() { 
 							
 							if  ($('.search_box').hasClass('off')) {
-							
+								$('.search_box').fadeIn(500);
+								$('.search_box_dummy').fadeIn(500);
 								$('.search_box').removeClass('off');
 								$('.search_box_dummy').removeClass('off');
 							
 							}
 							else {
 							
+								$('.search_box').fadeOut(500);
+								$('.search_box_dummy').fadeOut(500);
 								$('.search_box').addClass('off');
 								$('.search_box_dummy').addClass('off');
 							
@@ -44,8 +47,8 @@ require(['jquery'], function() {
 							if  ($('.search_box').hasClass('off')) {
 							}
 							else{
-								$('.search_box').addClass('off').fadeout('slow');
-								$('.search_box_dummy').addClass('off').fadeout('slow');
+								$('.search_box').fadeout('slow').addClass('off');
+								$('.search_box_dummy').fadeout('slow').addClass('off');
 							}
 						
 						});

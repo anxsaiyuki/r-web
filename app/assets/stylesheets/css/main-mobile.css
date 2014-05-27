@@ -4,11 +4,9 @@
 	#afui{
 		height:100% !important;
 	}
-	.on {
-		display:block;
-	}
+
 	.off {
-		display:none;
+		
 	}
 	.col-prod {
 		margin-left: 1%;
