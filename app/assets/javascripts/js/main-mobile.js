@@ -19,6 +19,17 @@ require(['jquery'], function() {
 					$.ui.setSideMenuWidth('260px');
 					$.ui.launch();
 					//a.start();
+					
+					$('.search_header').on('click', function() { 
+						
+						$('.search_box').removeClass('off');
+						$('.search_box_dummy').removeClass('off');
+						
+						$('.search_box').addClass('on');
+						$('.search_box_dummy').addClass('on');
+
+
+					});
 				});
 			});
 		});

@@ -1,6 +1,12 @@
 #container, .menu, .sideMenu, .sidebar, .product .name, .Cart_Product_Name , .Cart_Quantity, .Cart_Price, .Cart_Total/*, .product .image, .product .quantity, .product .price, .product .buttons*/, .product .description, .item-image-container, .item-image, .item-content, .item-description, .item-suggest-container, .index-big-banner, .index-small-banner, .register_container, .footer, .register_block {
   border: 1px solid #eee;
 }
+	.on {
+		display:block;
+	}
+	.off {
+		display:none;
+	}
 	.col-prod {
 		margin-left: 1%;
 		display:inline-block;
@@ -72,8 +78,14 @@
 	.search_box {
 		border: 5px solid #2D5781;
 		margin-top: 1px;
+		position:fixed;
+		top:8%;
+		width: 92%;
 	}
-	
+	.search_header {
+		padding-left: 58px;
+		padding-top: 13px;
+	}
 	.search_button {
 		background-image: url(/assets/img/search_icon.jpg);
 		background-size: 31px;
@@ -101,6 +113,10 @@
 		margin-top: 3px;
 		margin-bottom: 3px;
 		width:85% !important;
+	}
+	
+	.search_box_dummy {
+		height:60px;
 	}
 	/* ================================= */
 /* ================================= */

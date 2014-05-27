@@ -74,7 +74,7 @@
 				<header>
 					<a onclick='$.ui.toggleLeftSideMenu()' class='menuButton leftmenu' style="float:left"></a>
 					<a onclick='$.ui.toggleRightSideMenu()' class='button icon user' style="float:right"></a>
-
+					
 						<a href=".." class="home_button">
 							<div class="home_button_top"></div>
 							<div class="home_button_bottom"></div>
@@ -82,13 +82,15 @@
 						<a href="/cart" class="cart_button">
 							<img src="../assets/img/cart_icon.png" width="40px" height="40px"></img>
 						</a>
-					                
+					<div class="search_header"> Search</div>          
 					
 				</header>
-				<div class="search_box">
+				<div class="search_box_dummy off">
+				<div class="search_box off">
 				<%= form_tag edit_cart_quantity_path, remote: true do %>
 						<%= search_field_tag "cart_quantity", "", {:class=> "search_bar"}%><%= button_tag "", {:class => "search_button"} %>
 				<% end %>
+				</div>
 				</div>
 <%= yield %>
 
