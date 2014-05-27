@@ -44,8 +44,8 @@ require(['jquery'], function() {
 							if  ($('.search_box').hasClass('off')) {
 							}
 							else{
-								$('.search_box').addClass('off');
-								$('.search_box_dummy').addClass('off');
+								$('.search_box').addClass('off').fadeout('slow');
+								$('.search_box_dummy').addClass('off').fadeout('slow');
 							}
 						
 						});
