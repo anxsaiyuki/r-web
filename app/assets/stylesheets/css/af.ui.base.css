@@ -679,9 +679,9 @@ body {
 }
 /* Andrew */
 #afui .header{
-    background:#006600;
+    background:#2D5781;
     border:none;
-    border-bottom:1px solid #006600;
+    border-bottom:1px solid #2D5781;
     color:white;
 }
 
@@ -836,14 +836,14 @@ body {
 /* Andrew */
 #afui > #aside_menu,
 #afui > #menu.tabletMenu {
-    color:#006600;
+    color:#2D5781;
     background:white;
-    border-right:1px solid #006600;
+    border-right:1px solid #2D5781;
 }
 
 #afui #aside_menu .list li,#afui #aside_menu .list .divider,#afui #aside_menu .list li:last-child,
 #afui #menu .list li,#afui #menu .list .divider,#afui #menu .list li:last-child {
-    border-color: #006600;
+    border-color: #2D5781;;
 }
 
 #afui #aside_menu .list .divider,
