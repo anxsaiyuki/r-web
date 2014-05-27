@@ -2,7 +2,7 @@
   border: 1px solid #eee;
 }
 	#afui{
-		height:100%;
+		height:100% !important;
 	}
 	.on {
 		display:block;
