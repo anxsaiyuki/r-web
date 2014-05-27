@@ -24,7 +24,7 @@ require(['jquery'], function() {
 						
 						$('.search_header').on('click', function() { 
 							
-							if  $('.search_box').hasClass('off') {
+							if  ($('.search_box').hasClass('off')) {
 							
 								$('.search_box').removeClass('off');
 								$('.search_box_dummy').removeClass('off');
