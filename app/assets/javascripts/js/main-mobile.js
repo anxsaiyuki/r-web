@@ -21,23 +21,24 @@ require(['jquery'], function() {
 						$.ui.setSideMenuWidth('260px');
 						$.ui.launch();
 						//a.start();
-						
+						var searchbox = $('.search_box');
+						var searchdummy = $('.search_box_dummy')
 						$('.search_header').on('click', function() { 
+
+							if  (searchbox.hasClass('off')) {
 							
-							if  ($('.search_box').hasClass('off')) {
-							
-								$('.search_box').fadeIn(500);
-								$('.search_box_dummy').fadeIn(500);
-								$('.search_box').removeClass('off');
-								$('.search_box_dummy').removeClass('off');
+								searchbox.fadeIn(500);
+								searchdummy.fadeIn(500);
+								searchbox.removeClass('off');
+								searchdummy.removeClass('off');
 							
 							}
 							else {
 							
-								$('.search_box').fadeOut(500);
-								$('.search_box_dummy').fadeOut(500);
-								$('.search_box').addClass('off');
-								$('.search_box_dummy').addClass('off');
+								searchbox.fadeOut(500);
+								searchdummy.fadeOut(500);
+								searchbox.addClass('off');
+								searchdummy.addClass('off');
 							
 							}
 
@@ -45,13 +46,13 @@ require(['jquery'], function() {
 						
 						$(document).on("touchmove", function() {
 							
-							if  ($('.search_box').hasClass('off')) {
+							if  (searchbox.hasClass('off')) {
 							}
 							else{
-								$('.search_box').fadeOut(500);
-								$('.search_box_dummy').fadeOut(500);
-								$('.search_box').fadeout('slow').addClass('off');
-								$('.search_box_dummy').fadeout('slow').addClass('off');
+								searchbox.fadeOut(500);
+								searchdummy.fadeOut(500);
+								searchbox.fadeout('slow').addClass('off');
+								searchdummy.fadeout('slow').addClass('off');
 							}
 						
 						});

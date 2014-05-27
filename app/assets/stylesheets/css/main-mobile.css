@@ -86,8 +86,14 @@
 		z-index: 250;
 	}
 	.search_header {
-		padding-left: 58px;
+		/*padding-left: 58px;*/
+		
+		position:absolute;
+		left:50px;
+		width:89px;
 		padding-top: 13px;
+		padding-bottom:13px;
+		
 	}
 	.search_button {
 		background-image: url(/assets/img/search_icon.jpg);
