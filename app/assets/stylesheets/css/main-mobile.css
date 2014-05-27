@@ -2,7 +2,7 @@
   border: 1px solid #eee;
 }
 	div {
-		display: block;
+		display: block !important;
 	}
 	.on {
 		display:block;
