@@ -39,7 +39,7 @@ require(['jquery'], function() {
 
 						});
 						
-						$(document).on("touchstart", function() {
+						$(document).on("touchmove", function() {
 							
 							if  ($('.search_box').hasClass('off')) {
 							}
