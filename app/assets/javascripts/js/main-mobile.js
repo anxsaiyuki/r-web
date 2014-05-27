@@ -24,8 +24,18 @@ require(['jquery'], function() {
 						
 						$('.search_header').on('click', function() { 
 							
-							$('.search_box').removeClass('off');
-							$('.search_box_dummy').removeClass('off');
+							if  $('.search_box').hasClass('off') {
+							
+								$('.search_box').removeClass('off');
+								$('.search_box_dummy').removeClass('off');
+							
+							}
+							else {
+							
+								$('.search_box').addClass('off');
+								$('.search_box_dummy').addClass('off');
+							
+							}
 
 						});
 					});
