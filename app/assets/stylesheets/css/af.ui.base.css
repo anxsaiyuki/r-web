@@ -237,7 +237,7 @@ body {
 #afui .footer {  
     z-index:180;
     height:49px;
-    display:block;
+    display:none;
     left:0;
     right:0;
     position:relative;
