@@ -83,7 +83,7 @@
 		margin-top: 1px;
 		top:20px;
 		width: 98%;
-		position: relative;
+		position: fixed;
 		overflow: hidden;
 		display: block;
 		z-index: 250;
