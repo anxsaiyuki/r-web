@@ -1,6 +1,9 @@
 #container, .menu, .sideMenu, .sidebar, .product .name, .Cart_Product_Name , .Cart_Quantity, .Cart_Price, .Cart_Total/*, .product .image, .product .quantity, .product .price, .product .buttons*/, .product .description, .item-image-container, .item-image, .item-content, .item-description, .item-suggest-container, .index-big-banner, .index-small-banner, .register_container, .footer, .register_block {
   border: 1px solid #eee;
 }
+	div {
+		display: block;
+	}
 	.on {
 		display:block;
 	}
@@ -79,7 +82,7 @@
 		border: 5px solid #2D5781;
 		margin-top: 1px;
 		position:fixed;
-		width: 92%;
+		width: 88%;
 	}
 	.search_header {
 		padding-left: 58px;
@@ -92,7 +95,7 @@
 		background-position: 7px;
 		position: relative;
 		display: inline-block;
-		padding: 0px 23px;
+		padding: 0px 8%;
 		font-weight: bold;
 		color: black;
 		text-align: center;
@@ -111,7 +114,7 @@
 	.search_bar{
 		margin-top: 3px;
 		margin-bottom: 3px;
-		width:85% !important;
+		width:80% !important;
 	}
 	
 	.search_box_dummy {
