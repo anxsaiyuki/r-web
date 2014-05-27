@@ -47,6 +47,8 @@ require(['jquery'], function() {
 							if  ($('.search_box').hasClass('off')) {
 							}
 							else{
+								$('.search_box').fadeOut(500);
+								$('.search_box_dummy').fadeOut(500);
 								$('.search_box').fadeout('slow').addClass('off');
 								$('.search_box_dummy').fadeout('slow').addClass('off');
 							}
