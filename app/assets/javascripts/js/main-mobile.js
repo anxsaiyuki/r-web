@@ -38,6 +38,17 @@ require(['jquery'], function() {
 							}
 
 						});
+						
+						$(document).on('swipeUp', function() {
+							
+							if  ($('.search_box').hasClass('off')) {
+							}
+							else{
+								$('.search_box').addClass('off');
+								$('.search_box_dummy').addClass('off');
+							}
+						
+						});
 					});
 				});
 			});
