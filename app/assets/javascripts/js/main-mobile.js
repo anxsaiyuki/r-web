@@ -16,7 +16,7 @@ require(['jquery'], function() {
 	require(['jqury_ui'], function() {
 		require(['jq_app'], function() {
 			require(['app-ui3'], function() {
-				$.ui.autoLaunch = !1, $.ui.animateHeaders = !1, $.ui.useOSThemes = !1, $.ui.splitview = !1, $.feat.nativeTouchScroll=true, require(['item'], function(a){
+				$.ui.autoLaunch = !1, $.ui.animateHeaders = !1, $.ui.useOSThemes = !1, $.ui.splitview = !1, $.feat.nativeTouchScroll=false, require(['item'], function(a){
 					$(document).ready(function(){
 						$.ui.useInternalRouting = !1;
 						$.ui.setSideMenuWidth('260px');
