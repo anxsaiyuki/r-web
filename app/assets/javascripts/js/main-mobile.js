@@ -39,7 +39,7 @@ require(['jquery'], function() {
 
 						});
 						
-						$(document).on('swipeUp', function() {
+						$(document).on("touchstart", function() {
 							
 							if  ($('.search_box').hasClass('off')) {
 							}
