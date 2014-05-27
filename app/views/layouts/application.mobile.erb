@@ -86,8 +86,8 @@
 				</header>
 					<div class="search_box_dummy">
 						<div class="search_box">
-						<%= form_tag edit_cart_quantity_path, remote: true do %>
-								<%= text_field_tag "cart_quantity", "", {:class=> "search_bar"}%><%= button_tag "", {:class => "search_button"} %>
+						<%= form_tag search_path do %>
+								<%= text_field_tag "key", "", {:class=> "search_bar"}%><%= button_tag "", {:class => "search_button"} %>
 						<% end %>
 						</div>
 					</div>

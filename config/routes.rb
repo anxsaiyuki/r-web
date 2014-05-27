@@ -36,6 +36,8 @@ Website::Application.routes.draw do
   get "module/sideMenu"
   get "module/top_bar"
   
+  post "search", to: 'search#index', as: 'search'
+  
   get "not_found", to: 'errors#not_found', as: 'not_found'
   
   get "cardlist", to: 'cards#cardlist', as: 'cardlist'
