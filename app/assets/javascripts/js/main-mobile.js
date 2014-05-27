@@ -25,6 +25,7 @@ require(['jquery'], function() {
 						$('.search_header').on('click', function() { 
 							
 							if  ($('.search_box').hasClass('off')) {
+							
 								$('.search_box').fadeIn(500);
 								$('.search_box_dummy').fadeIn(500);
 								$('.search_box').removeClass('off');
