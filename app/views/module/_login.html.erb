@@ -16,9 +16,9 @@
 						<span>Password</span>
 						<%= f.password_field :password %>
 						</label>
-						<%= f.submit "Login"%>
+						<%= f.submit "Login", {:class => "button"}%>
 						<p>
-						<%= link_to "Register", register_path, {:class =>  "forgot register_form button"} %>
+						<%= link_to "R egister", register_path, {:class =>  "forgot register_form"} %>
 						</p>
 						<div id="error_message">
 						</div>
