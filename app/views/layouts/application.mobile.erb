@@ -83,15 +83,15 @@
 							<img src="../assets/img/cart_icon.png" width="40px" height="40px"></img>
 						</a>
 					<div class="search_header"> Search</div>          
-					
+					<div class="search_box_dummy off">
+						<div class="search_box off">
+						<%= form_tag edit_cart_quantity_path, remote: true do %>
+								<%= text_field_tag "cart_quantity", "", {:class=> "search_bar"}%><%= button_tag "", {:class => "search_button"} %>
+						<% end %>
+						</div>
+					</div>
 				</header>
-				<div class="search_box_dummy off">
-				<div class="search_box off">
-				<%= form_tag edit_cart_quantity_path, remote: true do %>
-						<%= text_field_tag "cart_quantity", "", {:class=> "search_bar"}%><%= button_tag "", {:class => "search_button"} %>
-				<% end %>
-				</div>
-				</div>
+
 <%= yield %>
 
 			<div class="col-md-12 col-xs-12 device_change">

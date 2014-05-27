@@ -14,8 +14,7 @@ require.config({
 
 require(['jquery'], function() {
 	require(['jqury_ui'], function() {
-		require(['jq_app'], function() {
-			require(['app-ui3'], function() {
+			require(['app-ui'], function() {
 				$.ui.autoLaunch = !1, $.ui.animateHeaders = !1, $.ui.useOSThemes = !1, $.ui.splitview = !1, $.feat.nativeTouchScroll=false, require(['item'], function(a){
 					$(document).ready(function(){
 						$.ui.useInternalRouting = !1;
@@ -27,15 +26,12 @@ require(['jquery'], function() {
 							
 							$('.search_box').removeClass('off');
 							$('.search_box_dummy').removeClass('off');
-							
-							$('.search_box').addClass('on');
-							$('.search_box_dummy').addClass('on');
-
+							$('#afui .header').css('height','86px');
 
 						});
 					});
 				});
 			});
-		});
+
 	});
 });
