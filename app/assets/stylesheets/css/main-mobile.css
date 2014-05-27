@@ -17,6 +17,7 @@
 		background-color:white;
 	}
 	.device_change {
+		padding-top: 40px;
 		text-align: center;
 	}
 	/* line 34, ../sass/main.scss */
@@ -57,6 +58,14 @@
 	.pagination {
 		display:block !important;
 		text-align:center;
+	}
+	
+	.login-button {
+		width:100%;
+	}
+	
+	.register-button {
+		width:100%;
 	}
 	/* ================================= */
 /* ================================= */
@@ -174,5 +183,9 @@
 }
 
 #error_msg{
+	color:red;
+}
+
+#error_message{
 	color:red;
 }
