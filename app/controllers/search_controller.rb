@@ -6,7 +6,9 @@ class SearchController < ApplicationController
 	p params[:key]
 
 	p "============================="
-		@product = Product.includes(:image).where("product_name like ?", "%#{params[:key]}%").page(params[:page]).per(25)
+		@product = Product.includes(:image).where("product_name LIKE :product_name OR product_number LIKE :product_number", {:product_name => "%#{params[:key]}%", :product_number => "%#{params[:key]}%"}).page(params[:page]).per(25)
+		
+		:name1 => "#{params[:name]}%", :cityId1 => params[:cityId]}
 	p @product
   end
 
