@@ -88,11 +88,12 @@
 	}
 	.search_header {
 		padding-left: 20px;
-		position:absolute;
-		left:50px;
-		width:89px;
+		position: absolute;
+		left: 50px;
+		width: 89px;
 		padding-top: 13px;
-		padding-bottom:13px;
+		padding-bottom: 16px;
+		margin-left: -6px;
 		
 	}
 	.search_button {
