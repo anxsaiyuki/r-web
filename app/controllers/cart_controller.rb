@@ -17,9 +17,9 @@ class CartController < ApplicationController
   def add_cart
 		@product = Product.find(params[:id])
 		if session[:userid].nil?
-
+			p "good"
 			@user_exist = 0
-			
+			@quantityStatus = 0
 		else
 		
 			@user_exist = 1
