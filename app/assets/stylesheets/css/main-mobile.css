@@ -79,7 +79,7 @@
 	.search_box {
 		border: 5px solid #2D5781;
 		margin-top: 1px;
-		width: 94%;
+		width: 100%;
 		position: fixed;
 		overflow: hidden;
 		display: block;
@@ -126,6 +126,7 @@
 	
 	.search_box_dummy {
 		height:60px;
+		
 	}
 	/* ================================= */
 /* ================================= */
