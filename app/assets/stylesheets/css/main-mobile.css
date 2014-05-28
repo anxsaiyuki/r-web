@@ -87,8 +87,7 @@
 		margin-left: -10px;
 	}
 	.search_header {
-		/*padding-left: 58px;*/
-		
+		padding-left: 20px;
 		position:absolute;
 		left:50px;
 		width:89px;
@@ -131,7 +130,7 @@
 	}
 	
 	.search-on {
-
+		
 		background-color:grey;
 		opacity:0.8;
 	}	

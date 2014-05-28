@@ -25,7 +25,7 @@ require(['jquery'], function() {
 						var searchbox = $('.search_box');
 						var searchdummy = $('.search_box_dummy');
 						var searchbar = $('.search_bar');
-						var searchheader = $('search_header');
+						var searchheader = $('.search_header');
 						
 						$('.search_header').on('click', function() { 
 
