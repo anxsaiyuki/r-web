@@ -1,9 +1,10 @@
-<div class="cart_box">
-<% if @cart.empty? then %>
+	<div class="cart_box">
+		<% if @cart_left.empty? then %>
 			<div class="cart_empty">Please Add Item to Cart</div>
 		<% else %>
 			<%= form_tag edit_cart_quantity_path, remote: true do %>
-				<% for cart in @cart %>
+				<% for cart in @cart_left %>
+					
 						<div class="cart_image">
 							<img src="../assets/img/No_Image.png" >
 						</div>
@@ -21,12 +22,12 @@
 							<div class="Cart_Price">
 								<%= link_to "Delete", remove_cart_path(cart.id), remote: true%>
 							</div>
-						</div>	
+						</div>
 				<% end %>
 			<%= submit_tag "Update Quantity" %>
 			<% end %>
 		<div class="Cart_Price_Total">Total Amount: $<%= @cartPriceTotal %></div>
 		<%= link_to "Complete Order", order_path %>
-<% end %>
-</div>
+		<% end %>
+	</div>
 
