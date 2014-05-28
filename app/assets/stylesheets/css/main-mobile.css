@@ -216,8 +216,7 @@
 }
 
 #Cart_Container {
-	padding-top:20px;
-	padding-bottom:20px;
+
 }
 
 .add_cart_message{
@@ -236,7 +235,19 @@
 }	
 
 .cart_box {
+	padding-top:20px;
+	padding-bottom:20px;
+}
+}
 
+.cart_image {
+	width:40%;
+	display:inline-block;
+}
+
+.cart_description {
+	width:40%;
+	display:inline-block;
 }
 
 .cart_empty{
