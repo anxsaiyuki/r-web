@@ -21,15 +21,19 @@ require(['jquery'], function() {
 						$.ui.setSideMenuWidth('260px');
 						$.ui.launch();
 						//a.start();
+						
 						var searchbox = $('.search_box');
 						var searchdummy = $('.search_box_dummy');
 						var searchbar = $('.search_bar');
+						var searchheader = $('search_header');
+						
 						$('.search_header').on('click', function() { 
 
 							if  (searchbox.hasClass('off')) {
-							
+								
 								searchbox.fadeIn(500);
 								searchdummy.fadeIn(500);
+								searchheader.addClass('search-on');
 								searchbox.removeClass('off');
 								searchdummy.removeClass('off');
 								searchbar.focus();
@@ -38,6 +42,7 @@ require(['jquery'], function() {
 							
 								searchbox.fadeOut(500);
 								searchdummy.fadeOut(500);
+								searchheader.removeClass('search-on');
 								searchbox.addClass('off');
 								searchdummy.addClass('off');
 							
@@ -52,6 +57,7 @@ require(['jquery'], function() {
 							else{
 								searchbox.fadeOut(500);
 								searchdummy.fadeOut(500);
+								searchheader.removeClass('search-on');
 								searchbox.fadeout('slow').addClass('off');
 								searchdummy.fadeout('slow').addClass('off');
 							}
