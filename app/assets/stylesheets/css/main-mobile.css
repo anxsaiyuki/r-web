@@ -84,6 +84,7 @@
 		overflow: hidden;
 		display: block;
 		z-index: 250;
+		margin-left: -10px;
 	}
 	.search_header {
 		/*padding-left: 58px;*/
