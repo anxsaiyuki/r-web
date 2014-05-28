@@ -22,7 +22,8 @@ require(['jquery'], function() {
 						$.ui.launch();
 						//a.start();
 						var searchbox = $('.search_box');
-						var searchdummy = $('.search_box_dummy')
+						var searchdummy = $('.search_box_dummy');
+						var searchbar = $('.search_bar');
 						$('.search_header').on('click', function() { 
 
 							if  (searchbox.hasClass('off')) {
@@ -31,7 +32,7 @@ require(['jquery'], function() {
 								searchdummy.fadeIn(500);
 								searchbox.removeClass('off');
 								searchdummy.removeClass('off');
-							
+								searchbar.focus();
 							}
 							else {
 							
