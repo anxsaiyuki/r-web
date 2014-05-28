@@ -84,8 +84,8 @@
 						</a>
 						<div class="search_header"> Search</div>    
 				</header>
-					<div class="search_box_dummy" style="display:none;">
-						<div class="search_box">
+					<div class="search_box_dummy off" style="display:none;">
+						<div class="search_box off">
 						<%= form_tag search_path do %>
 								<%= text_field_tag "key", "", {:class=> "search_bar"}%><%= button_tag "", {:class => "search_button"} %>
 						<% end %>
