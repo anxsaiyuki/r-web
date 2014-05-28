@@ -13,13 +13,15 @@
 			</div>
 			<div class="name">
 				<%= link_to "#{product.product_name}", product_path(product) %>
+			</div>
+			<div class="product_number"
 				<%= product.product_number %>
 			</div>
 			<div class="price">
 				$<%= product.price %>
 			</div>
 			<div>
-				<%= link_to "購買", add_cart_path(product), :remote => true%>
+				<%= button_to "購買", add_cart_path(product), :remote => true%>
 			</div>
 			<div class="quantity">
 				[ 在庫存數: <%= product.quantity %> ]
