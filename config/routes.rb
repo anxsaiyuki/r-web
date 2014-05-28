@@ -14,7 +14,7 @@ Website::Application.routes.draw do
   
   
   get "cart", to: 'cart#index', as: 'cart'
-  get "cart/add_cart.:id", to: 'cart#add_cart', as: 'add_cart'
+  post "cart/add_cart.:id", to: 'cart#add_cart', as: 'add_cart'
   put "cart/add_item_cart.:id", to: 'cart#add_item_cart', as: 'add_item_cart'
   post "cart/edit_cart_quantity", to: 'cart#edit_cart_quantity', as: 'edit_cart_quantity'
   get "cart/remove_cart.:id", to: 'cart#remove_cart', as: 'remove_cart'
