@@ -31,9 +31,7 @@ require(['jquery'], function() {
 						var searchbar = $('.search_bar');
 						var searchheader = $('.search_header');
 						
-						$('.loading_mask').on('click', function() {
-							$('#Loading_mask').addClass("load_mask");
-						});
+
 						
 						$('.search_header').on('click', function() { 
 
