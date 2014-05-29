@@ -5,8 +5,9 @@
 			<div class="cart_empty">Please Add Item to Cart</div>
 		<% else %>
 				<% counter = 1%>
+
 				<% for cart in @cart %>
-					<%= form_tag edit_cart_quantity_path, remote: true do %>
+					<%= form_tag  edit_cart_quantity_path, :loading => "console.log('loading');", :loaded => "console.log('good');", remote: true do %>
 						<div class="cart_image">
 							<img src="../assets/img/No_Image.png" >
 						</div>
@@ -19,14 +20,16 @@
 								<%= hidden_field_tag "product_id[]", cart.product_id %>
 							</div>
 							<div class="Cart_Total">
+								<%= image_tag "../assets/img/x_button.png", :style => 'display: none;', :id => 'loading' %>
 								$<%= cart.total_value %>
 							</div>
 							<div class="Cart_Price">
 								<%= link_to "Delete", remove_cart_path(cart.id), remote: true%>
 							</div>
 						</div>
-						<%= submit_tag "Update Quantity" %>
+						<%= submit_tag "Update Quantity", :class => "some_class" %>
 						<% counter = counter + 1 %>
+						
 					<% end %>
 				<% end %>
 		<div class="Cart_Price_Total">Total Amount: $<%= @cartPriceTotal %></div>
@@ -34,6 +37,4 @@
 		<% end %>
 	</div>
 </div>
-				
 <div id="add_cart"></div>
-
