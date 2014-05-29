@@ -27,7 +27,7 @@
 								<%= link_to "Delete", remove_cart_path(cart.id), remote: true%>
 							</div>
 						</div>
-						<%= submit_tag "Update Quantity", :class => "some_class" %>
+						<%= submit_tag "Update Quantity", :class=>"loading_mask" %>
 						<% counter = counter + 1 %>
 						
 					<% end %>
@@ -35,6 +35,8 @@
 		<div class="Cart_Price_Total">Total Amount: $<%= @cartPriceTotal %></div>
 		<%= link_to "Complete Order", order_path %>
 		<% end %>
+		
 	</div>
+	<div id="Loading_mask"></div>
 </div>
 <div id="add_cart"></div>

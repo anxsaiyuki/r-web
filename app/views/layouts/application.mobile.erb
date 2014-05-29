@@ -3,18 +3,13 @@
 <head>
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0;" />
 	<link rel="stylesheet" href="/assets/css/reset.css">
+	<link rel="stylesheet" href="/assets/css/bootstrap-mobile1.css">
+	<link rel="stylesheet" href="/assets/css/bootstrap-theme.css">
     <link rel="stylesheet" type="text/css" href="/assets/css/af.ui.base.css" />
     <link rel="stylesheet" type="text/css" href="/assets/css/icons.css" />
 	<link rel="stylesheet" href="/assets/css/main-mobile.css">
 	<script data-main="/assets/js/main-mobile.js" src="/assets/js/lib/require.js" charset="utf-8" type="text/javascript"></script>
 	<style>
-	.leftmenu {
-		border-right: 1px solid white;
-	}
-	.SliderTab{
-		background-color: black;
-		color: white;
-	}
 	ul.list {
 		text-align: center;
 	}
@@ -22,7 +17,6 @@
 		text-align: center;
 	}
 	</style>
-    
 
 </head>
 <body> 
@@ -32,23 +26,9 @@
     <!--Left Side Menu Navigation bar -->
     <nav>
         <ul class="list">
-			<li class="Slider-Title" >商品</li>
-            <li class="SliderTab" ><%= link_to "Vanguard (先導者)", product_list_path("Vanguard") %></li>
-				<li><%= link_to "Pack1", product_list_item_path(:id => "Vanguard", :pack => 1) %></li>
-				<li><%= link_to "Pack2", product_list_item_path(:id => "Vanguard", :pack => 2) %></li>
-				<li><%= link_to "Pack3", product_list_item_path(:id => "Vanguard", :pack => 3) %></li>
-				<li><%= link_to "Pack4", product_list_item_path(:id => "Vanguard", :pack => 4) %></li>
-				<li><%= link_to "Pack5", product_list_item_path(:id => "Vanguard", :pack => 5) %></li>
-				<li><%= link_to "Pack6", product_list_item_path(:id => "Vanguard", :pack => 6) %></li>
-				<li><%= link_to "Pack7", product_list_item_path(:id => "Vanguard", :pack => 7) %></li>
-				<li><%= link_to "Pack8", product_list_item_path(:id => "Vanguard", :pack => 8) %></li>
-				<li><%= link_to "Pack9", product_list_item_path(:id => "Vanguard", :pack => 9) %></li>
-				<li><%= link_to "Pack10", product_list_item_path(:id => "Vanguard", :pack => 10) %></li>
-				<li><%= link_to "Pack11", product_list_item_path(:id => "Vanguard", :pack => 11) %></li>
-				<li><%= link_to "Pack12", product_list_item_path(:id => "Vanguard", :pack => 12) %></li>
-				<li><%= link_to "Pack13", product_list_item_path(:id => "Vanguard", :pack => 13) %></li>
-				<li><%= link_to "Pack14", product_list_item_path(:id => "Vanguard", :pack => 14) %></li>
-            <li class="SliderTab" ><%= link_to "Mats (卡墊)", product_list_path("Mats") %></li>
+			<li class="Slider-Title">商品</li>
+            <li><%= link_to "Vanguard (先導者)", product_list_path("Vanguard") %></li>
+            <li><%= link_to "Mats (卡墊)", product_list_path("Mats") %></li>
 
 
         </ul>
@@ -68,13 +48,13 @@
 
 	
         <div id="content" style="">
-		
+
             <!--Main Pages-->
             <div class="panel" title="Home" id="home" data-header="top-header" data-footer="none" selected="true">
 				<header>
-					<a onclick='$.ui.toggleLeftSideMenu()' class='menuButton leftmenu' style="float:left"></a>
+					<a onclick='$.ui.toggleLeftSideMenu()' class='menuButton' style="float:left"></a>
 					<a onclick='$.ui.toggleRightSideMenu()' class='button icon user' style="float:right"></a>
-					
+
 						<a href=".." class="home_button">
 							<div class="home_button_top"></div>
 							<div class="home_button_bottom"></div>
@@ -82,15 +62,9 @@
 						<a href="/cart" class="cart_button">
 							<img src="../assets/img/cart_icon.png" width="40px" height="40px"></img>
 						</a>
-						<div class="search_header"> Search</div>    
+					                
+					
 				</header>
-					<div class="search_box_dummy off" style="display:none;">
-						<div class="search_box off">
-						<%= form_tag search_path do %>
-								<%= text_field_tag "key", "", {:class=> "search_bar"}%><%= button_tag "", {:class => "search_button"} %>
-						<% end %>
-						</div>
-					</div>
 <%= yield %>
 
 			<div class="col-md-12 col-xs-12 device_change">

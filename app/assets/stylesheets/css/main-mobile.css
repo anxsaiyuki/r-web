@@ -4,7 +4,17 @@
 	#afui{
 		height:100% !important;
 	}
-
+	.load_mask {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 2000;
+		background-color:grey;	
+		opacity:0.3;
+	}
+	
 	.off {
 		
 	}

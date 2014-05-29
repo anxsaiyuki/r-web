@@ -1,8 +1,8 @@
 <div>
 <% if @error_search == 1 %>
-	No Result Found
+	<div style="margin-top: 33px;">No Result Found</div>
 <% else %>
-	<div style="width:100%; padding-top:10x;" >Search Results:</div>
+	<div style="width:100%; margin-top: 33px;" >Search Results:</div>
 	<% @product.each do |product| %>
 		<div class="col-prod product">
 			<div class="image">
@@ -16,24 +16,26 @@
 			</div>
 			<div class="name">
 				<%= link_to "#{product.product_name}", product_path(product) %>
+			</div>
+			<div class="product_number">
 				<%= product.product_number %>
 			</div>
 			<div class="price">
 				$<%= product.price %>
 			</div>
 			<div>
-				<%= link_to "購買", add_cart_path(product), :remote => true%>
+				<%= button_to "購買", add_cart_path(product), {:class => "list-buy-button", :remote => true}%>
 			</div>
 			<div class="quantity">
 				[ 在庫存數: <%= product.quantity %> ]
 			</div>
 		</div>
 	<% end %>
-
+	
 	</div>
 	<div>
 	<%= paginate @product %>
 	</div>
-	<div id="add_cart">
+	<div id="add_cart"></div>
 <% end %>
 </div>

@@ -7,6 +7,7 @@ require.config({
 		"app-ui": 'js/lib/appframework.ui',
 		"app-slide": 'js/lib/af.slidemenu',
 		"app-ui3": 'js/lib/appframework.ui3',
+		"lm": 'js/lib/loading_mask',
 		item: 'js/lib/widget/item'
     }
 });
@@ -15,8 +16,11 @@ require.config({
 require(['jquery'], function() {
 	require(['jqury_ui'], function() {
 			require(['app-ui'], function() {
-				$.ui.autoLaunch = !1, $.ui.animateHeaders = !1, $.ui.useOSThemes = !1, $.ui.splitview = !1, $.feat.nativeTouchScroll=true, require(['item'], function(a){
+				$.ui.autoLaunch = !1, $.ui.animateHeaders = !1, $.ui.useOSThemes = !1, $.ui.splitview = !1, $.feat.nativeTouchScroll=true, require(['item', 'lm'], function(a, b){
+
+
 					$(document).ready(function(){
+
 						$.ui.useInternalRouting = !1;
 						$.ui.setSideMenuWidth('260px');
 						$.ui.launch();
@@ -26,6 +30,10 @@ require(['jquery'], function() {
 						var searchdummy = $('.search_box_dummy');
 						var searchbar = $('.search_bar');
 						var searchheader = $('.search_header');
+						
+						$('.loading_mask').on('click', function() {
+							$('#Loading_mask').addClass("load_mask");
+						});
 						
 						$('.search_header').on('click', function() { 
 
@@ -50,6 +58,8 @@ require(['jquery'], function() {
 
 						});
 						
+						
+						
 						$(document).on("touchmove", function() {
 							
 							if  (searchbox.hasClass('off')) {
@@ -63,6 +73,7 @@ require(['jquery'], function() {
 							}
 						
 						});
+						
 					});
 				});
 			});
