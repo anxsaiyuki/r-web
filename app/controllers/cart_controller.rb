@@ -1,17 +1,31 @@
 class CartController < ApplicationController
   def index
 	   @user = User.new
-	   p "=========================="
+	   p "=========Session=========="
 	   p session[:userid]
 	   p "=========================="
 	   @cart = Cart.group(:product_id).order("quantity desc").where(user_id: session[:userid], status: 1).includes(:product)
 	   @cartPriceTotal = 0
+	   @counter = 1
+	   
+	   @quantity_list = Hash.new
 	   @cart.each do |cart|
+	     
 			@cartPriceTotal = @cartPriceTotal + (cart.quantity * cart.price)
-		end
-	   #@cart = Cart.includes(:product)
-
-
+			@product = Product.includes(:image).find(cart.product_id)
+			@quantity = Array.new
+      item_stock = @product.quantity
+      @countersym = @counter.to_s.to_sym
+          @product.quantity.to_i.times do |i|
+            @quantity << item_stock
+            item_stock = item_stock - 1
+          end
+          @quantity_list["#{@countersym}"] = @quantity
+           p "=========quantity=========="
+           p @quantity_list["#{@countersym}"]
+           p "=========================="
+       @counter = @counter + 1
+		 end
   end
 
   def add_cart
@@ -86,9 +100,25 @@ class CartController < ApplicationController
 		
 		@cart_left = Cart.includes(:product).group(:product_id).order("quantity desc").where(user_id: session[:userid], status: 1).includes(:product)
 		@cartPriceTotal = 0
-	    @cart_left.each do |cart_left|
-			@cartPriceTotal = @cartPriceTotal + (cart_left.quantity * cart_left.price)
-		end
+    @counter = 1
+     
+    @quantity_list = Hash.new
+    @cart_left.each do |cart_left|
+      @cartPriceTotal = @cartPriceTotal + (cart_left.quantity * cart_left.price)
+      @product = Product.includes(:image).find(cart_left.product_id)
+      @quantity = Array.new
+      item_stock = @product.quantity
+      @countersym = @counter.to_s.to_sym
+          @product.quantity.to_i.times do |i|
+            @quantity << item_stock
+            item_stock = item_stock - 1
+          end
+          @quantity_list["#{@countersym}"] = @quantity
+           p "=========quantity=========="
+           p @quantity_list["#{@countersym}"]
+           p "=========================="
+       @counter = @counter + 1
+    end
 		respond_to do |format|
 		  format.js
 		end
@@ -118,8 +148,24 @@ class CartController < ApplicationController
 		end
 		@cart_left = Cart.includes(:product).group(:product_id).order("quantity desc").where(user_id: session[:userid], status: 1).includes(:product)
 		@cartPriceTotal = 0
-	    @cart_left.each do |cart_left|
+		@counter = 1
+     
+    @quantity_list = Hash.new
+	  @cart_left.each do |cart_left|
 			@cartPriceTotal = @cartPriceTotal + (cart_left.quantity * cart_left.price)
+      @product = Product.includes(:image).find(cart_left.product_id)
+      @quantity = Array.new
+      item_stock = @product.quantity
+      @countersym = @counter.to_s.to_sym
+          @product.quantity.to_i.times do |i|
+            @quantity << item_stock
+            item_stock = item_stock - 1
+          end
+          @quantity_list["#{@countersym}"] = @quantity
+           p "=========quantity=========="
+           p @quantity_list["#{@countersym}"]
+           p "=========================="
+       @counter = @counter + 1
 		end
 		respond_to do |format|
 		  format.js

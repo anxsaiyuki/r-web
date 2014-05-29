@@ -256,7 +256,7 @@
 	margin-bottom: 90px;
 }
 
-#afui div input.cart-quantity {
+#afui div select.cart-quantity {
 	width: 30%;
 	text-align:center;
 }
