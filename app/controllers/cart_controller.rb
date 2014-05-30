@@ -130,25 +130,22 @@ class CartController < ApplicationController
 		@cartProduct = params[:product_id]
 		@cartNumber = params[:cart_number]
 		p "=======Number======="
-		p params[:cart_number]
+		p = params[:cart_number]
 		cartsize = params[:product_id].size.to_i
-		cartsize.times do |x|
+		  cartsize.times do |x|
 
-			@product = Product.find(@cartProduct[x])
-			if @cartQuantity[x].to_i == 0
-				Cart.find_by_user_id_and_product_id(session[:userid], @cartProduct[x]).destroy
-				p "=======Delete=========="
-				
-			elsif @cartQuantity[x].to_i > @product.quantity.to_i or @cartQuantity[x].to_i < 0
-				@overQuantity = 1
-				p "=====Quantity Over========"
-				
-			elsif @cartQuantity[x].to_i <= @product.quantity.to_i and @cartQuantity[x].to_i > 0
+			  @product = Product.find(@cartProduct[x])
+
 				Cart.find_by_user_id_and_product_id_and_status(session[:userid], @cartProduct[x], 1).update_attributes(quantity: @cartQuantity[x])
 				p "=====Update========"
 				
-			end
-		end
+        
+		  end
+		@cart_number_price = @cartQuantity.to_i * @product.price.to_i
+		p "=====Cart Total========"
+		p @cartQuantity
+		p @product.price
+		p @cart_number_price
 		@cart_left = Cart.includes(:product).group(:product_id).order("quantity desc").where(user_id: session[:userid], status: 1).includes(:product)
 		@cartPriceTotal = 0
 		@counter = 1

@@ -20,7 +20,7 @@
 								<%= hidden_field_tag "product_id[]", cart.product_id %>
 								<%= hidden_field_tag "cart_number", counter %>
 							</div>
-							<div class="Cart_Total">
+							<div class="Cart_Total Cart_<%= counter %>">
 								$<%= cart.total_value %>
 							</div>
 							<div class="Cart_Price">
