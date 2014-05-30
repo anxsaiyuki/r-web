@@ -243,6 +243,10 @@
 	Background-Color: grey;
 }	
 
+.Cart_Product_Name_Title {
+	font-weight:bold;
+}
+
 .cart_box {
 	padding-top:20px;
 	padding-bottom:20px;
@@ -253,6 +257,7 @@
 .cart_image {
 	width:40%;
 	display:inline-block;
+
 }
 
 .cart_description {
@@ -267,17 +272,18 @@
 }
 
 #afui div select.cart-quantity {
+	padding-left: 10%;
 	width: 30%;
 	text-align:center;
 }
 
 .Cart_Price {
-	width:40%;
+	width:100%;
 	display:inline-block;
 }
 
 .Cart_Total {
-	width:40%;
+	width:100%;
 	display:inline-block;
 }
 
@@ -285,7 +291,13 @@
 	
 }
 
+#afui a.cart_delete {
+padding: 1% 36%;
+}
 
+.loading_mask {
+	width: 37%;
+}
 /* ================================= */
 /* ================================= */
 
