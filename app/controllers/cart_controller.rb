@@ -92,9 +92,8 @@ class CartController < ApplicationController
   end
   
   def remove_cart
-		p "==========================="
-		p params[:id]
-		p "==========================="
+
+		@cartNumber = params[:form_id]
 		@cart = Cart.find(params[:id])
 		@cart.destroy
 		

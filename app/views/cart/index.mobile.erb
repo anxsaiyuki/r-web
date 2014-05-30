@@ -7,7 +7,7 @@
 				<% counter = 1%>
 
 				<% for cart in @cart %>
-					<%= form_tag  edit_cart_quantity_path, :class=>"cart_form", remote: true do %>
+					<%= form_tag  edit_cart_quantity_path, :class=>"cart_form cart_form_#{counter}", remote: true do %>
 						<div class="cart_image">
 							<img src="../assets/img/No_Image.png" style="border: 1px solid #eee;margin-left: 10px;">
 						</div>
@@ -28,7 +28,7 @@
 								總價: $<%= cart.total_value %>
 							</div>
 							<div class="">
-								<%= link_to "刪除", remove_cart_path(cart.id), :class => "button cart_delete", remote: true%>
+								<%= link_to "刪除", remove_cart_path(:id => cart.id, :form_id => counter), :class => "button cart_delete", remote: true%>
 							</div>
 						</div>
 						<%= submit_tag "更新", :class=>"button loading_mask" %>
