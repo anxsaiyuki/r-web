@@ -15,9 +15,13 @@
 		background-image: url(/assets/img/loading1.gif);
 		background-repeat: no-repeat;
 		background-position: center;
-		background-size: cover;
+
+	}
+	#Loading_mask {
+		background-color:white;	
 		height: 100%;
 		width: 100%;
+		z-index: 1900;
 	}
 	
 	.off {

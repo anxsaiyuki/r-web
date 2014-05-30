@@ -1,5 +1,5 @@
 $('#Cart_Container').html('<%= escape_javascript(render partial: "cart_list") %>');
-
+$(')
 
 if (<%= @overQuantity %> == 1) {
 $("#add_cart").html('<div class="add_cart_box"><div class="add_cart_message">Exceed Maximum Quantity</div></div>').fadeIn( "fast" ).delay(800).fadeOut();
