@@ -1,37 +1,42 @@
-
 	<div class="cart_box">
-		<% if @cart_left.empty? then %>
+		<% if @cart.empty? then %>
 			<div class="cart_empty">Please Add Item to Cart</div>
 		<% else %>
 				<% counter = 1%>
 
-				<% for cart in @cart_left %>
+				<% for cart in @cart %>
 					<%= form_tag  edit_cart_quantity_path, :class=>"cart_form", remote: true do %>
 						<div class="cart_image">
-							<img src="../assets/img/No_Image.png" >
+							<img src="../assets/img/No_Image.png" style="border: 1px solid #eee;margin-left: 10px;">
 						</div>
 						<div class="cart_description">
 							<div class="Cart_Product_Name">
-								<%= cart.product.product_name %>
+								<ul class="Cart_Title">商品名稱: </ul><ul><%= cart.product.product_name %></ul>
+								<ul><%= cart.product.product_number %></ul>
 							</div>
 							<div class="Cart_Quantity" style="line-height: normal;">
 								<%= select_tag "cart_quantity", options_for_select(@quantity_list[counter.to_s].map, cart.quantity), {:class => "cart-quantity", :size=>"1"}%> / <%= cart.product.quantity %>
 								<%= hidden_field_tag "product_id[]", cart.product_id %>
-							</div>
-							<div class="Cart_Total">
-								$<%= cart.total_value %>
+								<%= hidden_field_tag "cart_number", counter %>
 							</div>
 							<div class="Cart_Price">
-								<%= link_to "Delete", remove_cart_path(cart.id), remote: true%>
+								單價: $<%= cart.product.price %>
+							</div>
+							<div class="Cart_Total Cart_<%= counter %>">
+								總價: $<%= cart.total_value %>
+							</div>
+							<div class="">
+								<%= link_to "刪除", remove_cart_path(cart.id), :class => "button cart_delete", remote: true%>
 							</div>
 						</div>
-						<%= submit_tag "Update Quantity", :class=>"loading_mask" %>
+						<%= submit_tag "更新", :class=>"button loading_mask" %>
 						<% counter = counter + 1 %>
 						
 					<% end %>
 				<% end %>
-		<div class="Cart_Price_Total">Total Amount: $<%= @cartPriceTotal %></div>
-		<%= link_to "Complete Order", order_path %>
-		<% end %>
-		
+		<div class="Cart-Options">
+			<div class="Cart_Price_Total"><div class="Cart_Title Whole-Cart-Total">總金額: </div>$<%= @cartPriceTotal %></div>
+			<%= link_to "訂購 ", order_path, :class => "button Complete_Order" %>
+			<% end %>
+		</div>
 	</div>
