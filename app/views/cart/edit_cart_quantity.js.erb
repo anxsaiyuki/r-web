@@ -1,5 +1,5 @@
 
-$('.Cart_<%= @cartNumber %>').html('總價: $<%= cart.total_value %>');
+$('.Cart_<%= @cartNumber %>').html('總價: $<%= @cart_number_price %>');
 $('.Cart_Price_Total').html('<div class="Cart_Title Whole-Cart-Total">總金額: </div>$<%= @cartPriceTotal %>');
 
 $("#add_cart").html('<div class="add_cart_box"><div class="add_cart_message">更新數量</div></div>').fadeIn( "fast" ).delay(800).fadeOut();
