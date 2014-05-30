@@ -1,4 +1,4 @@
-#container, .menu, .sideMenu, .sidebar, .product .name, .Cart_Product_Name , .Cart_Quantity, .Cart_Price, .Cart_Total/*, .product .image, .product .quantity, .product .price, .product .buttons*/, .product .description, .item-image-container, .item-image, .item-content, .item-description, .item-suggest-container, .index-big-banner, .index-small-banner, .register_container, .footer, .register_block {
+#container, .menu, .sideMenu, .sidebar, .product .name, .Cart_Product_Name , .Cart_Quantity, .Cart_Price, .Cart_Total, .Cart-Options/*, .product .image, .product .quantity, .product .price, .product .buttons*/, .product .description, .item-image-container, .item-image, .item-content, .item-description, .item-suggest-container, .index-big-banner, .index-small-banner, .register_container, .footer, .register_block {
   border: 1px solid #eee;
 }
 	#afui{
@@ -214,14 +214,21 @@
 /* Cart */
 /* ================================= */
 #add_cart {
+	display:none;
 	position: fixed;
 	top: 50%;
 	left: 50%;
 	margin-top: -106px;
 	margin-left: -112px;
 	z-index:1000;
-	background-color:White;
-	/* opacity:0.8; */
+	z-index: 100;
+	left: 50%;
+	width: 200px;
+	padding: 10px 30px;
+	background: #666;
+	background: rgba(0,0,0,.4);
+	border-radius: 9px;
+	color: white;
 }
 
 #Cart_Container {
@@ -229,28 +236,19 @@
 }
 
 .add_cart_message{
-	color:black;
-	height:85px;
 	width:200px;
 	padding: 15px 15px 15px 15px;
 }
 
-.add_cart_box {
-	border: 2px solid black;
-}
 
 .Cart_Title {
-	Background-Color: grey;
-}	
-
-.Cart_Product_Name_Title {
 	font-weight:bold;
 }
 
 .cart_box {
 	padding-top:20px;
 	padding-bottom:20px;
-	padding-left: 44px;
+	padding-left: 20px;
 }
 
 
@@ -299,6 +297,27 @@ padding: 1% 36%;
 
 .loading_mask {
 	width: 37%;
+}
+
+.Cart-Options {
+	background-color:#CCCCCC;
+	text-align:center;
+	
+}
+#afui a.Complete_Order {
+	margin-top: 23px;
+	width: 64%;
+	background-color:#000000;
+	color:#FFFFFF;
+}
+
+.Whole-Cart-Total {
+	display:inline-block;
+}
+
+.cart_form {
+	border-bottom: 1px solid black;
+	margin-top: 8px;
 }
 /* ================================= */
 /* ================================= */

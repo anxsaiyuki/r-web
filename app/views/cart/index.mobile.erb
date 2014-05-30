@@ -13,7 +13,7 @@
 						</div>
 						<div class="cart_description">
 							<div class="Cart_Product_Name">
-								<ul class="Cart_Product_Name_Title">商品名稱: </ul><ul><%= cart.product.product_name %></ul>
+								<ul class="Cart_Title">商品名稱: </ul><ul><%= cart.product.product_name %></ul>
 								<ul><%= cart.product.product_number %></ul>
 							</div>
 							<div class="Cart_Quantity" style="line-height: normal;">
@@ -36,10 +36,11 @@
 						
 					<% end %>
 				<% end %>
-		<div class="Cart_Price_Total">Total Amount: $<%= @cartPriceTotal %></div>
-		<%= link_to "Complete Order", order_path %>
-		<% end %>
-		
+		<div class="Cart-Options">
+			<div class="Cart_Price_Total"><div class="Cart_Title Whole-Cart-Total">總金額: </div>$<%= @cartPriceTotal %></div>
+			<%= link_to "訂購 ", order_path, :class => "button Complete_Order" %>
+			<% end %>
+		</div>
 	</div>
 
 </div>
