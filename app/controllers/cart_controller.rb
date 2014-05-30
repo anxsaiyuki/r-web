@@ -98,26 +98,15 @@ class CartController < ApplicationController
 		@cart.destroy
 		
 		@cart_left = Cart.includes(:product).group(:product_id).order("quantity desc").where(user_id: session[:userid], status: 1).includes(:product)
-		@cartPriceTotal = 0
-    @counter = 1
-     
-    @quantity_list = Hash.new
-    @cart_left.each do |cart_left|
-      @cartPriceTotal = @cartPriceTotal + (cart_left.quantity * cart_left.price)
-      @product = Product.includes(:image).find(cart_left.product_id)
-      @quantity = Array.new
-      item_stock = @product.quantity
-      @countersym = @counter.to_s.to_sym
-          @product.quantity.to_i.times do |i|
-            @quantity << item_stock
-            item_stock = item_stock - 1
-          end
-          @quantity_list["#{@countersym}"] = @quantity
-           p "=========quantity=========="
-           p @quantity_list["#{@countersym}"]
-           p "=========================="
-       @counter = @counter + 1
+    
+    if @cart_left.empty?
+      @cart_empty = 1
+    else
+      @cart_empty = 0
     end
+    p "===cart status==="
+    p @cart_left
+    p @cart_empty
 		respond_to do |format|
 		  format.js
 		end

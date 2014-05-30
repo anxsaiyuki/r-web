@@ -1,4 +1,9 @@
+if (<%= @cart_empty %> == 0) {
 $('.cart_form_<%= @cartNumber %>').remove();
+}
+else {
+$('#Cart_Container').html('<div class="cart_box"><div class="cart_empty">Please Add Item to Cart</div></div>');
+}
 
 $("#add_cart").html('<div class="add_cart_box"><div class="add_cart_message">刪除</div></div>').fadeIn( "fast" ).delay(800).fadeOut();
 $('#afui_mask').hide();
