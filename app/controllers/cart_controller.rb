@@ -128,6 +128,9 @@ class CartController < ApplicationController
 		@overQuantity = 0
 		@cartQuantity = params[:cart_quantity]
 		@cartProduct = params[:product_id]
+		@cartNumber = params[:cart_number]
+		p "=======Number======="
+		p params[:cart_number]
 		cartsize = params[:product_id].size.to_i
 		cartsize.times do |x|
 

@@ -1,13 +1,11 @@
-$('#Loading_mask').addClass("load_mask");
-
-
 $('#Cart_Container').html('<%= escape_javascript(render partial: "cart_list") %>');
+
 
 if (<%= @overQuantity %> == 1) {
 $("#add_cart").html('<div class="add_cart_box"><div class="add_cart_message">Exceed Maximum Quantity</div></div>').fadeIn( "fast" ).delay(800).fadeOut();
-$("#Loading_mask").removeClass("load_mask");
+$('#Loading_mask').hide();
 }
 else {
 $("#add_cart").html('<div class="add_cart_box"><div class="add_cart_message">Updated Quantity</div></div>').fadeIn( "fast" ).delay(800).fadeOut();
-$("#Loading_mask").removeClass("load_mask");
+$('#Loading_mask').hide();
 }

@@ -7,7 +7,7 @@
 				<% counter = 1%>
 
 				<% for cart in @cart %>
-					<%= form_tag  edit_cart_quantity_path, :loading => "console.log('loading');", :loaded => "console.log('good');", remote: true do %>
+					<%= form_tag  edit_cart_quantity_path, :class=>"cart_form", remote: true do %>
 						<div class="cart_image">
 							<img src="../assets/img/No_Image.png" >
 						</div>
@@ -18,16 +18,16 @@
 							<div class="Cart_Quantity" style="line-height: normal;">
 								<%= select_tag "cart_quantity", options_for_select(@quantity_list[counter.to_s].map, cart.quantity), {:class => "cart-quantity", :size=>"1"}%> / <%= cart.product.quantity %>
 								<%= hidden_field_tag "product_id[]", cart.product_id %>
+								<%= hidden_field_tag "cart_number", counter %>
 							</div>
 							<div class="Cart_Total">
-								<%= image_tag "../assets/img/x_button.png", :style => 'display: none;', :id => 'loading' %>
 								$<%= cart.total_value %>
 							</div>
 							<div class="Cart_Price">
 								<%= link_to "Delete", remove_cart_path(cart.id), remote: true%>
 							</div>
 						</div>
-						<%= submit_tag "Update Quantity", :class=>"loading_mask" %>
+						<%= submit_tag "Update Quantity", :onclick => "this.disabled=true;$('#Loading_mask').show();this.disabled=false;", :class=>"loading_mask" %>
 						<% counter = counter + 1 %>
 						
 					<% end %>
@@ -39,5 +39,5 @@
 	</div>
 
 </div>
-<div id="Loading_mask"></div>
+<div id="Loading_mask" class="load_mask", style="display: none;"></div>
 <div id="add_cart"></div>

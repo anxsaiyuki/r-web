@@ -32,7 +32,7 @@ require(['jquery'], function() {
 						var searchheader = $('.search_header');
 						
 
-						
+
 						$('.search_header').on('click', function() { 
 
 							if  (searchbox.hasClass('off')) {

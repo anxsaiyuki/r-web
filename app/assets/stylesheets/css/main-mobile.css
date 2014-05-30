@@ -15,7 +15,9 @@
 		background-image: url(/assets/img/loading1.gif);
 		background-repeat: no-repeat;
 		background-position: center;
-
+		background-size: cover;
+		height: 100%;
+		width: 100%;
 	}
 	
 	.off {
