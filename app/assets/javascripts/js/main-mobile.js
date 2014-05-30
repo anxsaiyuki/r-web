@@ -72,6 +72,22 @@ require(['jquery'], function() {
 							this.disabled=false;
 						});
 						
+						$('.item_buy_button').on('click', function(){
+							this.disabled=true;
+							$('#home').css('overflow','hidden');
+							$('#afui_mask').show();
+							$('.load_mask').show();
+							this.disabled=false;
+						});
+						
+						$('.list-buy-button').on('click', function(){
+							this.disabled=true;
+							$('#home').css('overflow','hidden');
+							$('#afui_mask').show();
+							$('.load_mask').show();
+							this.disabled=false;
+						});
+						
 						$(document).on("touchmove", function() {
 							
 							if  (searchbox.hasClass('off')) {

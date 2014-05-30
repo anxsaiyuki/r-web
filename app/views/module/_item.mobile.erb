@@ -1,32 +1,31 @@
 <div class="row">
-	<div class="col-md-12 col-xs-12 item-image-container">
-		<div class="col-md-12 col-xs-12 item-image">
-				<%= @product.product_name %>
+	<div class="item-image-container">
+		<div class="item-name">
+			<%= @product.product_name %>
+		</div>
+		<div class="item-image">
 				<% if @product.image.nil? then %>
-					<img src="../assets/img/No_Image.png" width ="280px" height="450px">
+					<img src="../assets/img/No_Image.png" width ="300px" height="450px">
 
 				<% else %>
 				   
 				  <img src="../assets/img/<%= @product.category %>/<%= @product.image.image_path %>">
 				<% end %>
 		</div>
-		<div class="col-md-12 col-xs-12 item-description">
+		<div class="item-description">
 			Description: <%= @product.description %>
 		</div>
 	</div>
-	<div class="col-md-12 col-xs-12 item-content">
-		Price: $<%= @product.price %>
+	<div class="item-content">
+		價格: $<%= @product.price %>
 	</div>
-	<div class="col-md-12 col-xs-12 item-content">
+	<div class="item-quantity">
 		<%= form_for @product, :url => add_item_cart_path, remote: true do |f| %>
-			<div class="col-md-4 col-xs-4">
-			<%= f.label :庫存數 %>
-			</div>
-			<div class="col-md-4 col-xs-4" style="margin-top: 3px;">	
-			<%= f.select :quantity, options_for_select(@quantity.map), :prompt => 'Select One' %>
+			<div style="margin-top: 3px;text-align: center;">	
+			<%= f.label :庫存數 %> <%= f.select :quantity, options_for_select(@quantity.map) %>
 			</div>
 			<div class="col-md-2 col-md-offset-2 col-xs-2 col-md-offset-2" style="padding-top:10px;">
-			<%= f.submit "購買"%>
+			<%= f.submit "購買", :class => "button item_buy_button"%>
 			</div>
 		<% end %>
 	</div>

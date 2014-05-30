@@ -92,7 +92,9 @@
 						</div>
 					</div>
 			<%= yield %>
-
+			
+			<div id="Loading_mask" class="load_mask", style="display: none;"></div>
+			<div id="add_cart"></div>
 			<div class="col-md-12 col-xs-12 device_change">
 			<%= link_to "電腦版", :ua_ => 0 %> | <%= link_to "手機板", :ua_ => 1 %>
 			</div>
