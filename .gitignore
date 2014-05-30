@@ -19,9 +19,7 @@
 
 
 # Ignore log in
-<<<<<<< HEAD
-/app/controllers/sessions_controller.rb
-=======
+
 /app/controllers/sessions_controller.rb
 
 /app/mailers/user_mailer.rb
@@ -29,4 +27,3 @@
 /config/environments/development.rb
 /config/environments/test.rb
 
->>>>>>> 15b3ed794b771f4054e499b47ef7c527363ba22a

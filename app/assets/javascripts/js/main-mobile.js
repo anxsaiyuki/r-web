@@ -56,7 +56,14 @@ require(['jquery'], function() {
 
 						});
 						
-						
+						$('.loading_mask').on('click', function(){
+							console.log("good");
+							this.disabled=true;
+							$('#home').css('overflow','hidden');
+							$('#afui_mask').show();
+							$('.load_mask').show();
+							this.disabled=false;
+						});
 						
 						$(document).on("touchmove", function() {
 							
