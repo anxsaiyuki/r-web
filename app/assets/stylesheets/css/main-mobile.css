@@ -273,8 +273,10 @@
 
 #afui div select.cart-quantity {
 	padding-left: 10%;
-	width: 30%;
+	width: 43%;
 	text-align:center;
+	-webkit-appearance: menulist;
+
 }
 
 .Cart_Price {
