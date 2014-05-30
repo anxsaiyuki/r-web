@@ -6,6 +6,6 @@ else {
 		$("#add_cart").html('<div class="add_cart_box"><div class="add_cart_message">You have exceeded maximum value</div></div>').fadeIn( "fast" ).delay(800).fadeOut();
 	}
 	else {
-		$("#add_cart").html('<div class="add_cart_box"><div class="add_cart_message">You added  1 <%= @product.product_name %> to the cart</div></div>').fadeIn( "fast" ).delay(800).fadeOut();
+		$("#add_cart").html('<div class="add_cart_box"><div class="add_cart_message"><div class="Cart_Title">您加了一個進購物車: </div><%= @product.product_name %></div></div>').fadeIn( "fast" ).delay(800).fadeOut();
 	}
 }
