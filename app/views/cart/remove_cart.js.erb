@@ -1,6 +1,5 @@
-$('#Loading_mask').addClass("load_mask");
-
 $('#Cart_Container').html('<%= escape_javascript(render partial: "cart_list") %>');
 
-
-$("#Loading_mask").removeClass("load_mask");
+$('#afui_mask').hide();
+$('.load_mask').hide();
+$('#home').css('overflow','auto');
