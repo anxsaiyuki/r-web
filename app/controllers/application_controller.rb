@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   
-  #rescue_from ActiveRecord::RecordNotFound, :with => :render_404
-  #rescue_from NoMethodError, :with => :render_404
+  rescue_from ActiveRecord::RecordNotFound, :with => :render_404
+  rescue_from NoMethodError, :with => :render_404
   helper :all
   before_filter :prepare_for_mobile
   before_filter :logged_in
