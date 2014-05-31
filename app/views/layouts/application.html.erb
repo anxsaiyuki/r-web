@@ -9,8 +9,16 @@
 <script data-turbolinks-track="true" src="/assets/jquery_ujs.js?body=1"></script>
 <script data-main="/assets/js/main.js" src="/assets/js/lib/require.js" charset="utf-8" type="text/javascript"></script>
 </head>
+<body>
+	
 
 <%= yield %>
 
+		<div class="device_change">
+			<%= link_to "電腦版", :ua_ => 0 %> | <%= link_to "手機板", :ua_ => 1 %>
+		</div>
+	</div>
+<div id="mask"></div>
+</body>
 
 </html>
