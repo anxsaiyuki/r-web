@@ -4,10 +4,11 @@ class CartController < ApplicationController
 	   p "=========Session=========="
 	   p session[:userid]
 	   p "=========================="
-	   @cart = Cart.group(:product_id).order("quantity desc").where(user_id: session[:userid], status: 1).includes(:product)
+	   @cart = Cart.group(:product_id).where(user_id: session[:userid], status: 1).includes(:product)
 	   @cartPriceTotal = 0
 	   @counter = 1
-	   
+	   p "====cart image===="
+	   p @cart
 	   @quantity_list = Hash.new
 	   @cart.each do |cart|
 	     
