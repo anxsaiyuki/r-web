@@ -9,7 +9,7 @@
 				<% for cart in @cart %>
 					<%= form_tag  edit_cart_quantity_path, :class=>"cart_form cart_form_#{counter}", remote: true do %>
 						<div class="cart_image">
-							<img src="../assets/img/product/<%= cart.product.category %>/<%= cart.product.pack_number %>/<%= cart.product.image.image_path %>.jpg" width=100px height=150px style="border: 1px solid #eee;margin-left: 10px;">
+							<img src="../assets/img/product/<%= cart.product.category %>/<%= cart.product.pack_number %>/<%= cart.product.image.image_path %>.jpg" width=100px height=150px">
 						</div>
 						<div class="cart_description">
 							<div class="Cart_Product_Name">
