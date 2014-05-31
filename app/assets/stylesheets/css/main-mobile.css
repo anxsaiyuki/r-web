@@ -173,6 +173,7 @@
 
 /* line 302, ../sass/main.scss */
 .product .image {
+  text-align: center;
   height: 150px;
 }
 
