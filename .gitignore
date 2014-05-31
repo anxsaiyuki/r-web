@@ -14,6 +14,8 @@
 /log/*.log
 /tmp
 
+/app/assets/images/img/product/
+
 # Ignore database.yml
 /config/database.yml
 
