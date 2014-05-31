@@ -41,6 +41,7 @@ Website::Application.routes.draw do
   get "not_found", to: 'errors#not_found', as: 'not_found'
   
   get "cardlist", to: 'cards#cardlist', as: 'cardlist'
+  get "cardimport", to: 'cards#cardimport', as: 'cardimport'
   
   match '/404' => 'errors#not_found'
   match '/422' => 'errors#server_error'
