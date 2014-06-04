@@ -1,0 +1,81 @@
+#container, .header, .banner, .menu, .footer, .index-content{
+    border: 1px solid #eee;
+}
+
+#content {
+    width: 975px;
+    margin: 0 auto;
+}
+
+.header {
+    
+}
+
+.banner {
+    height: 100px;
+}
+
+/*================================*/
+/*========== Menu ================*/
+.menu {
+    background-color: grey;
+}
+
+.menu-list{
+    text-align: center;
+    display: inline-block;
+    width: 10%;
+    padding-left: 19px;
+    height: 22px;
+}
+
+.menu-sublist{
+    padding-left: 13px;
+    display: none;
+}
+
+.menu-sublist li {
+  border-top: 1px solid black;
+  list-style-type: none;
+  margin-left: -32px;
+  background-color: grey;
+  width: 115px;
+
+}
+
+/* line 226, ../sass/main.scss */
+.menu-list:hover .menu-sublist {
+  position: absolute;
+  display: block;
+  z-index: 100;
+}
+
+/* line 232, ../sass/main.scss */
+.menu-list:hover {
+  background-color: #2D5781;
+}
+
+/* line 237, ../sass/main.scss */
+.sublist a {
+  color: white;
+  text-decoration: none;
+}
+
+/* line 242, ../sass/main.scss */
+.menu-sublist li:hover {
+  background-color: #2D5781;
+  text-decoration: none;
+}
+
+
+/*================================*/
+/*================================*/
+
+.footer {
+    height: 100px;
+}
+
+
+.index-content {
+    height: 200px;   
+}
