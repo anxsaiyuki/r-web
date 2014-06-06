@@ -8,7 +8,7 @@ require.config({
 		"app-slide": 'js/lib/af.slidemenu',
 		"app-ui3": 'js/lib/appframework.ui3',
 		"lm": 'js/lib/loading_mask',
-		item: 'js/lib/widget/item'
+		"item": 'js/lib/widget/item'
     }
 });
 
@@ -17,7 +17,7 @@ require(['jquery'], function() {
 	require(['jqury_ui'], function() {
 			require(['app-ui'], function() {
 				$.ui.autoLaunch = !1, $.ui.animateHeaders = !1, $.ui.useOSThemes = !1, $.ui.splitview = !1, $.feat.nativeTouchScroll=true, require(['item', 'lm'], function(a, b){
-
+					
 
 					$(document).ready(function(){
 
@@ -31,7 +31,7 @@ require(['jquery'], function() {
 						var searchbar = $('.search_bar');
 						var searchheader = $('.search_header');
 						
-
+					
 
 						$('.search_header').on('click', function() { 
 
@@ -55,6 +55,15 @@ require(['jquery'], function() {
 							}
 
 						});
+						
+						
+						window.loadingMask = function(){
+							this.disabled=true;
+							$('#home').css('overflow','hidden');
+							$('#afui_mask').show();
+							$('.load_mask').show();
+							this.disabled=false;
+						};
 						
 						$('.loading_mask').on('click', function(){
 							this.disabled=true;

@@ -1,0 +1,10 @@
+<div class="col-md-12 col-xs-12 menu">    
+    <li  ng-repeat="menu in menulist" class="menu-list">
+        {{menu.menuName}}
+        <ul class="menu-sublist">
+            <li ng-repeat="submenu in menu.submenulist">
+                {{submenu.sublistname}}
+            </li>
+        </ul>
+    </li>
+</div>
