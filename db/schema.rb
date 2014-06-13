@@ -50,6 +50,17 @@ ActiveRecord::Schema.define(:version => 201405051554343) do
     t.datetime "updated_at",     :null => false
   end
 
+  create_table "store_711s", :force => true do |t|
+    t.string   "city"
+    t.string   "zone"
+    t.string   "road"
+    t.string   "address"
+    t.integer  "store_number"
+    t.string   "store_name"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
   create_table "users", :force => true do |t|
     t.string   "user_name"
     t.string   "password"
