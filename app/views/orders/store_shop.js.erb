@@ -1,0 +1,1 @@
+$('.shop').html('<option value="0">--請選擇--</option><% @storeshop.each do |s| %><option value="<%= s.address %>"><%= s.store_name %>(<%= s.address %>)</option><% end %>');

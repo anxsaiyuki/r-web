@@ -25,7 +25,12 @@ Website::Application.routes.draw do
   post "order/order_confirmation", to: 'orders#order_confirmation', as: 'order_confirmation'
   get "order/order_confirmation", to: 'orders#order_confirmation', as: 'order_confirmation'
   get "order/order_complete", to: 'orders#order_complete', as: 'order_complete'
-  
+  get "order/store", to: 'orders#store', as: 'order_store'
+  get "order/store_zone", to: 'orders#store_zone', as: 'order_store_zone'
+  get "order/store_road", to: 'orders#store_road', as: 'order_store_road'
+  get "order/store_shop", to: 'orders#store_shop', as: 'order_store_shop'
+  get "order/store_confirm", to: 'orders#store_confirm', as: 'order_store_confirm'
+    
   get "module/banner"
   get "module/footer"
   get "module/index_banner"

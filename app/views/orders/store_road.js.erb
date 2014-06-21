@@ -1,0 +1,2 @@
+$('.road').html('<option value="0">--請選擇--</option><% @storeroad.each do |r| %><option value="<%= r.road %>"><%= r.road %></option><% end %>');
+$('.shop').html('<option value="0">--請選擇--</option>')

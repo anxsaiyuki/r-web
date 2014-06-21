@@ -1,0 +1,19 @@
+<div class="store_selection">
+<div class="store_selection_title">請選擇縣市：</div>
+<div><%= select_tag "Option", options_from_collection_for_select(@storecity, "city", "city"), :'data-remote' => 'true', :'data-url' => url_for(:action => 'store_zone')%></div>
+</div>
+
+<div class="store_selection">
+<div class="store_selection_title">請選擇鄉、鎮、行政區：</div>
+<div><%= select_tag "Option", options_for_select({"--請選擇--" => "0"}), :'data-remote' => 'true', :'class' => 'zone', :'data-url' => url_for(:action => 'store_road')%></div>
+</div>
+
+<div class="store_selection">
+<div class="store_selection_title">請選擇街道：</div>
+<div><%= select_tag "Option", options_for_select({"--請選擇--" => "0"}), :'data-remote' => 'true', :'class' => 'road', :'data-url' => url_for(:action => 'store_shop')%></div>
+</div>
+
+<div class="store_selection">
+<div class="store_selection_title">請選擇門市：</div>
+<div><%= select_tag "Option", options_for_select({"--請選擇--" => "0"}), :'data-remote' => 'true', :'class' => 'shop', :'data-url' => url_for(:action => 'store_confirm')%></div>
+</div>

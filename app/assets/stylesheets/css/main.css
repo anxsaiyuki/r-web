@@ -558,3 +558,15 @@ padding-left: 175px;
 .device_change {
 	text-align:center;
 }
+
+/* ================================= */
+/* ==========Order================== */
+/* ================================= */
+.store_selection_title {
+    font-weight: bold;
+    
+}
+.store_selection {
+
+    margin-bottom: 15px;
+}

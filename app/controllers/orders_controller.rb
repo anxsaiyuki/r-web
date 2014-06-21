@@ -60,5 +60,39 @@ class OrdersController < ApplicationController
 		  format.js
 		end
   end
+    
+  def store
+     @storecity = Store711.select("city").uniq
+  end
+    
+  def store_zone
+    p params[:Option]
+      @storezone = Store711.select("zone").uniq.find_all_by_city(params[:Option])
+    	respond_to do |format|
+		  format.js
+		end
+  end
+  
+  def store_road
+    p params[:Option]
+      @storeroad = Store711.select("road").uniq.find_all_by_zone(params[:Option])
+    	respond_to do |format|
+		  format.js
+		end
+  end
+
+  def store_shop
+    p params[:Option]
+      @storeshop = Store711.select("store_name, address").uniq.find_all_by_road(params[:Option])
+      p "==================================="
+      p @storeshop
+    	respond_to do |format|
+		  format.js
+		end
+  end
+    
+  def store_confim
+      
+  end
   
 end

@@ -1,0 +1,3 @@
+$('.zone').html('<option value="0">--請選擇--</option><% @storezone.each do |z| %><option value="<%= z.zone %>"><%= z.zone %></option><% end %>');
+$('.road').html('<option value="0">--請選擇--</option>')
+$('.shop').html('<option value="0">--請選擇--</option>')
